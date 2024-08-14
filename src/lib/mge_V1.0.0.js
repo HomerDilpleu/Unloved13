@@ -72,7 +72,8 @@ mge.sequencer = {
     }
     
     
-}///////////////////////////
+}
+///////////////////////////
 // Game API
 ///////////////////////////
 mge.game = {
@@ -114,7 +115,8 @@ mge.game = {
     createSprite: function() {
         return mge._game._createSprite()
     }
-}///////////////////////////
+}
+///////////////////////////
 // Keyboard API
 ///////////////////////////
 mge.keyboard = {
@@ -131,7 +133,8 @@ mge.keyboard = {
     isKeyPressed: function (_key) {
         return mge._keyboard._isKeyPressed(_key)
     }
-}///////////////////////////
+}
+///////////////////////////
 // Mouse API
 ///////////////////////////
 mge.mouse = {
@@ -149,7 +152,8 @@ mge.mouse = {
         return mge._mouse._y
     }
 
-}// API on sprite objects    
+}
+// API on sprite objects    
 mge._sprite = {
     ////////////////
     // Properties
@@ -293,7 +297,8 @@ mge._audio._applyADSR = function (_envelop, _audioParam, _startTime, _duration) 
         // Release
         _audioParam.exponentialRampToValueAtTime(_minValue, _startTime+_duration+r)         
     }
-}///////////////////////////
+}
+///////////////////////////
 // Create an audio context
 ///////////////////////////
 mge._audio._create = function () {
@@ -308,7 +313,8 @@ mge._audio._create = function () {
     this._audioGain = this._audioContext.createGain()
     this._audioGain.connect(this._audioContext.destination)
 
-}///////////////////////////
+}
+///////////////////////////
 // Plays a sound given
 ///////////////////////////
 mge._audio._playSound = function (_synthConfig,_outputNode,_frequency,_startTime,_duration,_volume) {
@@ -364,7 +370,8 @@ mge._audio._playSound = function (_synthConfig,_outputNode,_frequency,_startTime
     _filter.connect(_oscGainADSR)
     _oscGainADSR.connect(_oscVolume)
     _oscVolume.connect(_outputNode)
-}///////////////////////////
+}
+///////////////////////////
 // Set the general volume
 // of the game
 ///////////////////////////
@@ -384,10 +391,6 @@ mge._audio._setVolume = function (_volume) {
     // Change gain value
     mge._audio._audioGain.gain.setValueAtTime(mge._audio._volumeToGain(mge._audio._volume), mge.audio.currentAudioTime)
 }
-
-
-
-
 
 ///////////////////////////
 // Convert a volume to
@@ -557,7 +560,8 @@ mge._game._getClonesNb = function () {
     // Return the result
     return _clonesNb
 
-}///////////////////////////
+}
+///////////////////////////
 // Change the scene
 ///////////////////////////
 
@@ -637,7 +641,8 @@ mge._keyboard._onKeyUp = function(e) {
     if (indexOfKey != -1) {
         this._keyPressedDetected.splice(indexOfKey,1)
     }
-}///////////////////////////
+}
+///////////////////////////
 // Reset keyboard information
 ///////////////////////////
 mge._keyboard._reset = function() {
@@ -671,7 +676,8 @@ mge._keyboard._create = function() {
         mge._keyboard._onKeyUp(e)
     }
 
-}///////////////////////////
+}
+///////////////////////////
 // Create the loop
 ///////////////////////////
 mge._loop._create = function() {
@@ -863,7 +869,8 @@ mge._sprite._create = function(_ctx) {
     this._cloneIsValid = false
 
 
-}///////////////////////////
+}
+///////////////////////////
 // Draw the sprite
 ///////////////////////////
 mge._sprite._draw = function() {
@@ -907,7 +914,8 @@ mge._sprite._isClicked = function(_xTouched, _yTouched, _click) {
     } else {
         return false
     }
-}///////////////////////////
+}
+///////////////////////////
 // Check if the sprite is
 // colliding with another
 // sprite.
@@ -990,7 +998,8 @@ mge._sprite._cloneCreate = function() {
     // Return the clone
     return _clone
 
-}///////////////////////////
+}
+///////////////////////////
 // Delete a clone of 
 // the sprite
 ///////////////////////////
@@ -999,7 +1008,8 @@ mge._sprite._cloneDelete = function() {
     // Delete the clone
     this._cloneIsValid = false
 
-}///////////////////////////
+}
+///////////////////////////
 // Delete all the clones
 ///////////////////////////
 mge._sprite._cloneDeleteAll = function() {

@@ -80,7 +80,8 @@ mge._extensionImage._imageObject._setConfig = function(_value) {
     this._isLoaded = false
     this._bitmap = {}
 
-}///////////////////////////
+}
+///////////////////////////
 // Change image scale
 ///////////////////////////
 mge._extensionImage._imageObject._setScale = function(_value) {
@@ -90,7 +91,8 @@ mge._extensionImage._imageObject._setScale = function(_value) {
     this._isLoaded = false
     this._bitmap = {}
 
-}///////////////////////////
+}
+///////////////////////////
 // Load the image in a bitmap
 ///////////////////////////
 mge._extensionImage._imageObject._load = function() {
@@ -220,14 +222,16 @@ mge._extensionImage._imageObject._create = function() {
     this._scale=1
     this._bitmap={}
 
-}///////////////////////////
+}
+///////////////////////////
 // Draw the image to a given canvas
 ///////////////////////////
 mge._extensionImage._imageObject._draw = function(_ctx) {
 
     _ctx.drawImage(this._bitmap,0,0)
 
-}////////////////////////////////////
+}
+////////////////////////////////////
 // Create a new image object
 ////////////////////////////////////
 
@@ -242,7 +246,8 @@ mge._extensionImage._images._createImage = function () {
 
     // Return the image
     return _newImage
-}////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////
 // Load next image and return the load completion 
 // (nb images loaded / nb total images)
 ////////////////////////////////////////////////////////

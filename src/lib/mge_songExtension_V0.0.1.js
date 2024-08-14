@@ -66,7 +66,8 @@ mge._extensionSong._songObject._create = function() {
     this._isLoaded=false
     this._tracks=[]
 
-}///////////////////////////
+}
+///////////////////////////
 // Load the song in an array of tracks
 ///////////////////////////
 mge._extensionSong._songObject._load = function() {
@@ -141,7 +142,8 @@ mge._extensionSong._songObject._setConfig = function(_value) {
     this._isLoaded = false
     this._tracks=[]
 
-}////////////////////////////////////
+}
+////////////////////////////////////
 // Create a new song object
 ////////////////////////////////////
 
@@ -156,7 +158,8 @@ mge._extensionSong._songs._createSong = function () {
 
     // Return the image
     return _newSong
-}////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////
 // Load next song and return the load completion 
 // (nb songs loaded / nb total songs)
 ////////////////////////////////////////////////////////
