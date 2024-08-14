@@ -174,6 +174,40 @@ stringsToUglify+=['cloneExecuteForEach','listCollisionsWithClones']
 
 
 #########################################
+# MGE IMAGE EXTENTION
+#########################################
+stringsToUglify+=['_extensionImage','_images','_list','_imageObject']
+stringsToUglify+=['_setConfig','_config','_isLoaded','_bitmap']
+stringsToUglify+=['_setScale','_scale']
+stringsToUglify+=['_load','_offScreenCanvas','_gradient','_imageObject']
+stringsToUglify+=['_create']
+stringsToUglify+=['_draw']
+stringsToUglify+=['_createImage','_newImage','_list']
+stringsToUglify+=['_loadNextImage','_lst','_nbImagesLoaded','_hasLoadedOneImage','_lstLength']
+
+#########################################
+# MGE SONG EXTENTION
+#########################################
+stringsToUglify+=['_extensionSong','_songs','_list','_songObject']
+stringsToUglify+=['_create','_config','_isLoaded','_tracks']
+stringsToUglify+=['_load']
+stringsToUglify+=['_play','_defaultInstrument','_curTrack','_tracks']
+stringsToUglify+=['_setConfig']
+stringsToUglify+=['_createSong','_newSong']
+stringsToUglify+=['_loadNextSong','_nbSongsLoaded','_hasLoadedOneSong','_lstLength']
+
+#########################################
+# MGE ANIMATION EXTENTION
+#########################################
+stringsToUglify+=['_extensionAnimation','_animationObject']
+stringsToUglify+=['_loadExtension']
+stringsToUglify+=['_draw']
+stringsToUglify+=['_setFrames','_frames']
+stringsToUglify+=['_create','_currentFrame','_lastFrameTime','_timeBetweenFrames']
+stringsToUglify+=['_restart']
+
+
+#########################################
 # UNLOVED 13
 #########################################
 

@@ -3,6 +3,9 @@
 //////////////////////
 game.scenes.main.start = function() {
 
+        // Play the song with electic piano
+        game.songs.mainSong.playSongElectricPiano()
+
 }
 
 //////////////////////
