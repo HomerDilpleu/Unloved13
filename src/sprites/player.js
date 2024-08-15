@@ -18,7 +18,7 @@ game.sprites.player.init = function() {
     this.collidesUp = false
     this.collidesDown = false
     // HitBoxes
-    this.HitBoxSize = 1
+    this.HitBoxSize = 10
     this.hitBoxRight = {}
     this.hitBoxLeft = {}
     this.hitBoxUp = {}
@@ -72,6 +72,8 @@ game.sprites.player.update = function () {
     if (this.velocityX < 0 && this.velocityX<-this.maxVelocity) {this.velocityX=-this.maxVelocity}
 
     this.velocityY+=this.accelerationY
+    if (this.velocityY > 0 && this.velocityY>this.maxVelocity) {this.velocityY=this.maxVelocity}
+    if (this.velocityY < 0 && this.velocityY<-this.maxVelocity) {this.velocityY=-this.maxVelocity}
     
     // Update player position
     this.X+=Math.round(this.velocityX*deltaTime)

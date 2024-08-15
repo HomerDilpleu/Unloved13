@@ -25,7 +25,9 @@ game = {
   songs:{
     mainSong: mge.song.create()
   },
-  utils:{}
+  utils:{},
+  levels:{}
+
 }
 
 // Remove "Loading" div and start the game

@@ -10,6 +10,7 @@ inputFiles = ['../src/lib/mge_V1.0.0.js',\
               '../src/assets/images.js',\
               '../src/assets/instruments.js',\
               '../src/assets/songs.js',\
+              '../src/assets/levels.js',\
               '../src/scenes/boot.js',\
               '../src/scenes/main.js',\
               '../src/sprites/logoDilpleu.js',\
