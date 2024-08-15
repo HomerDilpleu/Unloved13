@@ -25,6 +25,7 @@ game.sprites.player.init = function() {
     this.hitBoxDown = {}
     // Movement settings
     this.moveForce = 500
+    this.jumpForce = 1000
     this.gravity = 50
     this.maxVelocity = 5000
     this.frictionRate = 0.2 
@@ -41,9 +42,10 @@ game.sprites.player.update = function () {
     // Calculate time since last frame
     let deltaTime = 1/mge.game.fps
 
-    // Keep track of last position
+    // Keep track of last state
     let lastX = this.X
     let lastY = this.Y
+    let lastCollidesDown = this.collidesDown
 
     // Get Controlers
     if(mge.keyboard.isKeyPressed('ArrowRight') && !mge.keyboard.isKeyPressed('ArrowLeft')) {this.ControllerRight = true} else {this.ControllerRight = false}
@@ -53,10 +55,12 @@ game.sprites.player.update = function () {
 
     // Update player acceleration
     this.accelerationX=0
-    if (this.ControllerLeft) {this.accelerationX=-this.moveForce}
-    if (this.ControllerRight) {this.accelerationX=this.moveForce}
+    if (this.ControllerLeft && lastCollidesDown) {this.accelerationX=-this.moveForce}
+    if (this.ControllerRight && lastCollidesDown) {this.accelerationX=this.moveForce}
     
-    this.accelerationY=this.gravity
+    this.accelerationY=0
+    if (this.ControllerUp && lastCollidesDown) {this.accelerationY=-this.jumpForce}
+    this.accelerationY+=this.gravity
 
     // Update player velocity
     this.velocityX+=this.accelerationX
@@ -66,19 +70,10 @@ game.sprites.player.update = function () {
 
     this.velocityY+=this.accelerationY
     
-
     // Update player position
     this.X+=Math.round(this.velocityX*deltaTime)
     this.Y+=Math.round(this.velocityY*deltaTime)
 
-
-/*
-    // Update player position
-    if (this.ControllerLeft) {this.X+=-10}
-    if (this.ControllerRight) {this.X+=10}
-    if (this.ControllerUp) {this.Y+=-10}
-    if (this.ControllerDown) {this.Y+=10}
-*/
     // Update hitboxes positions
     this.hitBoxRight = {Xmin:this.X + this.width/2,
                         Xmax:this.X + this.width/2 + this.HitBoxSize,
@@ -109,8 +104,7 @@ game.sprites.player.update = function () {
         this.X = lastX
         this.velocityX = 0
     }
-    if (this.collidesUp) {this.Y += 1}
-    if (this.collidesDown) {        
+    if (this.collidesDown || this.collidesUp) {        
         this.Y = lastY
         this.velocityY = 0}
  
