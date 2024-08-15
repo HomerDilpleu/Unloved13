@@ -4,3 +4,6 @@ game.images.logoDilpleu.scale = 0.3
 game.images.playButton.config = {"_s":{"_w":200,"_h":100},"_p":[{"_fs":["LG","0","0","0","12"],"_ss":["#0b3956","3","round","round"],"_gp":[[0,"#f7f7f7"],[1,"#2678ab"]],"_c":[["R","0","0","200","100"]]},{"_fs":["C","#0c3b59"],"_ss":["#0c3b59","1","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["100","54","50","normal","Arial","center","middle","PLAY"]}]}
 game.images.playButton.scale = 1
 
+game.images.pltf1.config = {"_s":{"_w":30,"_h":5000},"_p":[{"_fs":["LG","0","0","0","5000"],"_ss":["#000000","1","round","round"],"_gp":[[0,"#006eff"],[1,"#f40baa"]],"_c":[["R","0","0","30","5000"]],"_t":[8,8,8,"","","","",""]}]}
+game.images.pltf1.scale = 1
+

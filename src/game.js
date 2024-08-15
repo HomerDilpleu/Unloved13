@@ -8,7 +8,8 @@ game = {
   },
   images:{
     logoDilpleu: mge.image.create(),
-    playButton: mge.image.create()
+    playButton: mge.image.create(),
+    pltf1: mge.image.create()
   },
   animations:{},
   sprites:{

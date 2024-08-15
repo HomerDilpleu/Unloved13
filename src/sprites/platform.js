@@ -1,4 +1,13 @@
-game.sprites.platform.init = function() {
+game.sprites.platform.init = function (_pltfConfig) {
+    // Create a clone of himself
+    let _clone = game.sprites.platform.cloneCreate()
+    // Initialise properties
+    _clone.width = _pltfConfig._width
+    _clone.height = _pltfConfig._height
+    _clone.X = _pltfConfig.X
+    _clone.Y = _pltfConfig.Y
+    _clone.image = _pltfConfig._image
+    return _clone
 }
 
 game.sprites.platform.update = function () {
@@ -8,19 +17,14 @@ game.sprites.platform.update = function () {
 }
 
 game.sprites.platform.drawFunction = function (ctx) {
-    ctx.fillStyle='white'
-    ctx.fillRect(0,0,this.width,this.height)
+    if (this.image!='') {
+        this.image.draw(ctx)
+    } else {
+        ctx.fillStyle='white'
+        ctx.fillRect(0,0,this.width,this.height)
+    }
 }
 
-game.sprites.platform.clone = function (_level) {
-    // Create a clone of himself
-    let _clone = game.sprites.platform.cloneCreate()
-    _clone.width = _level._width
-    _clone.height = _level._height
-    _clone.X = _level.X
-    _clone.Y= _level.Y
-    return _clone
-}
 
 game.sprites.platform.checkPlayerCollision = function () {
     let _p = game.sprites.player
