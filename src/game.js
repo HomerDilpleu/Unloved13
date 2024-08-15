@@ -13,9 +13,13 @@ game = {
   animations:{},
   sprites:{
     logoDilpleu: mge.game.createSprite(),
-    playButton: mge.game.createSprite()
+    playButton: mge.game.createSprite(),
+    platform: mge.game.createSprite()
   },
-  variables:{},
+  variables:{
+    camX:0,
+    camY:0
+  },
   instruments:{},
   songs:{
     mainSong: mge.song.create()
