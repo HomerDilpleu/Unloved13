@@ -5,9 +5,9 @@ game.scenes.main.start = function() {
 
         // Create platforms
         game.sprites.platform.init()
-        pltf0 = game.sprites.platform.clone(500,10,20,50)
+        pltf0 = game.sprites.platform.clone(500,10,300,50)
         pltf1 = game.sprites.platform.clone(300,50,200,300)
-        pltf2 = game.sprites.platform.clone(50,300,0,0)
+        pltf2 = game.sprites.platform.clone(50,300,100,0)
 
         // Create player
         game.sprites.player.init()
