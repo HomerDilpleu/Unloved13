@@ -25,6 +25,7 @@ game.sprites.player.init = function() {
     this.hitBoxDown = {}
     // Movement settings
     this.moveForce = 500
+    this.moveForceWhenNoTouching = 100
     this.jumpForce = 1000
     this.gravity = 50
     this.maxVelocity = 5000
@@ -57,6 +58,8 @@ game.sprites.player.update = function () {
     this.accelerationX=0
     if (this.ControllerLeft && lastCollidesDown) {this.accelerationX=-this.moveForce}
     if (this.ControllerRight && lastCollidesDown) {this.accelerationX=this.moveForce}
+    if (this.ControllerLeft && !lastCollidesDown) {this.accelerationX=-this.moveForceWhenNoTouching}
+    if (this.ControllerRight && !lastCollidesDown) {this.accelerationX=this.moveForceWhenNoTouching}
     
     this.accelerationY=0
     if (this.ControllerUp && lastCollidesDown) {this.accelerationY=-this.jumpForce}
