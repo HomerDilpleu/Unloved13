@@ -5,7 +5,7 @@ game.sprites.player.init = function() {
     this.width = 100
     this.height = 50
     // Absolute coordonates
-    this.X = 0
+    this.X = 200
     this.Y = 0
     // Controllers
     this.ControllerLeft = false
@@ -53,19 +53,23 @@ game.sprites.player.update = function () {
 
     // Update player acceleration
     this.accelerationX=0
-    this.accelerationY=0
     if (this.ControllerLeft) {this.accelerationX=-this.moveForce}
     if (this.ControllerRight) {this.accelerationX=this.moveForce}
+    
+    this.accelerationY=this.gravity
 
     // Update player velocity
     this.velocityX+=this.accelerationX
     this.velocityX=this.velocityX*(1-this.frictionRate)
     if (this.velocityX > 0 && this.velocityX>this.maxVelocity) {this.velocityX=this.maxVelocity}
     if (this.velocityX < 0 && this.velocityX<-this.maxVelocity) {this.velocityX=-this.maxVelocity}
+
+    this.velocityY+=this.accelerationY
     
 
     // Update player position
     this.X+=Math.round(this.velocityX*deltaTime)
+    this.Y+=Math.round(this.velocityY*deltaTime)
 
 
 /*
@@ -106,7 +110,9 @@ game.sprites.player.update = function () {
         this.velocityX = 0
     }
     if (this.collidesUp) {this.Y += 1}
-    if (this.collidesDown) {this.Y += -1}
+    if (this.collidesDown) {        
+        this.Y = lastY
+        this.velocityY = 0}
  
 }
 
