@@ -14,7 +14,8 @@ game = {
   sprites:{
     logoDilpleu: mge.game.createSprite(),
     playButton: mge.game.createSprite(),
-    platform: mge.game.createSprite()
+    platform: mge.game.createSprite(),
+    player: mge.game.createSprite()
   },
   variables:{
     camX:0,
