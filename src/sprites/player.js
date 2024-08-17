@@ -18,7 +18,7 @@ game.sprites.player.init = function() {
     this.collidesUp = false
     this.collidesDown = false
     // HitBoxes
-    this.HitBoxSize = 10
+    this.HitBoxSize = 5
     this.hitBoxRight = {}
     this.hitBoxLeft = {}
     this.hitBoxUp = {}
@@ -97,12 +97,12 @@ game.sprites.player.update = function () {
                         Ymin:this.Y + this.height/2,
                         Ymax:this.Y + this.height/2 + this.HitBoxSize}
 
-    // Check collisions
+    // Manage collisions with platforms
     this.collidesRight = false
     this.collidesLeft = false
     this.collidesUp = false
     this.collidesDown = false
-    game.sprites.platform.cloneExecuteForEach('checkPlayerCollision')
+    game.sprites.platform.cloneExecuteForEach('managePlatformCollisions')
     
     // Manage collisions
     if (this.collidesRight || this.collidesLeft) {
