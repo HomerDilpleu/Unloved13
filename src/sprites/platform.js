@@ -14,6 +14,7 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Type of platform
     _clone._type = _pltfConfig._type || ''
     _clone._typeParams = _pltfConfig._typeParams || {}
+    _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
         
     return _clone
 }
@@ -92,5 +93,11 @@ game.sprites.platform.managePlatformCollisions = function () {
     // DOWN hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxDown)) {
         _p.collidesDown = true
+        // Autojumb platform
+        if (this._autoJumpForce != 0) {
+            game.sprites.player.velocityY = -this._autoJumpForce
+            game.sprites.player.Y = this.Y - this._height/2 - game.sprites.player.height/2
+            _p.collidesDown = false
+        }
     } 
 }
