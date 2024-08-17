@@ -4,8 +4,11 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Standard properties
     _clone._width = _pltfConfig._width
     _clone._height = _pltfConfig._height
+    // Physics
     _clone.X = _pltfConfig.X
     _clone.Y = _pltfConfig.Y
+    _clone._accelerationY=0
+    _clone._velocityY=0
     // Image
     _clone._image = _pltfConfig._image || ''
     // Type of platform
@@ -16,6 +19,23 @@ game.sprites.platform.init = function (_pltfConfig) {
 }
 
 game.sprites.platform.update = function () {
+
+    // Calculate time since last frame
+    let _deltaTime = 1/mge.game.fps
+
+    // Apply gravity on pushable platforms
+    if (this._type=='pushable') {
+        // If platform has not fallen yet
+        if (this.Y < this._typeParams._Yfall) {
+            // If platform is falling
+            if((this._typeParams._fallSide == 'right' && this.X >= this._typeParams._Xfall) || (this._typeParams._fallSide == 'left' && this.X <= this._typeParams._Xfall)) {
+                this._accelerationY=game.const.gravity
+                this._velocityY+=this._accelerationY
+                this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._typeParams._Yfall)
+            }
+        }
+    }
+
     // Scroll camera
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
@@ -74,5 +94,3 @@ game.sprites.platform.managePlatformCollisions = function () {
         _p.collidesDown = true
     } 
 }
-
-

@@ -27,7 +27,6 @@ game.sprites.player.init = function() {
     this.moveForce = 500
     this.moveForceWhenNoTouching = 100
     this.jumpForce = 1000
-    this.gravity = 50
     this.maxVelocity = 5000
     this.frictionRate = 0.2 
     // Sprite movement values
@@ -63,7 +62,7 @@ game.sprites.player.update = function () {
     
     this.accelerationY=0
     if (this.ControllerUp && lastCollidesDown) {this.accelerationY=-this.jumpForce}
-    this.accelerationY+=this.gravity
+    this.accelerationY+=game.const.gravity
 
     // Update player velocity
     this.velocityX+=this.accelerationX

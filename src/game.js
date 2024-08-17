@@ -22,6 +22,9 @@ game = {
     camX:0,
     camY:0
   },
+  const:{
+    gravity:50
+  },
   instruments:{},
   songs:{
     mainSong: mge.song.create()
