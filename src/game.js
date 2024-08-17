@@ -23,7 +23,7 @@ game = {
     camY:0
   },
   const:{
-    gravity:50
+    gravity:5000
   },
   instruments:{},
   songs:{

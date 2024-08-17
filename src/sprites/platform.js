@@ -30,7 +30,7 @@ game.sprites.platform.update = function () {
             // If platform is falling
             if((this._typeParams._fallSide == 'right' && this.X >= this._typeParams._Xfall) || (this._typeParams._fallSide == 'left' && this.X <= this._typeParams._Xfall)) {
                 this._accelerationY=game.const.gravity
-                this._velocityY+=this._accelerationY
+                this._velocityY+=this._accelerationY*_deltaTime
                 this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._typeParams._Yfall)
             }
         }

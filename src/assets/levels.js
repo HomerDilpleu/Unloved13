@@ -19,11 +19,8 @@ game.levels.level1 = {
     _platforms:[{_width:30,_height:500,X:-100,Y:250,_image:game.images.pltf1},
                 {_width:50,_height:50,X:400,Y:460,_type:'pushable',_typeParams:{_Xmin:400,_Xmax:1000,_Xfall:535,_Yfall:660,_fallSide:'right'}},
                 {_width:50,_height:50,X:100,Y:460,_type:'pushable',_typeParams:{_Xmin:-100,_Xmax:300,_Xfall:-35,_Yfall:660,_fallSide:'left'}},
-                //{_width:5000,_height:30,X:2500,Y:5015},
-                //{_width:30,_height:2500,X:4985,Y:3750,_image:game.images.pltf1},
                 {_width:500,_height:30,X:250,Y:500},
-                {_width:1400,_height:30,X:600,Y:700},
-                //{_width:500,_height:30,X:1750,Y:900}
+                {_width:1400,_height:30,X:600,Y:700}
               ],
     _player:{X:200,
              Y:0}

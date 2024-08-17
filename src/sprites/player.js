@@ -24,9 +24,9 @@ game.sprites.player.init = function() {
     this.hitBoxUp = {}
     this.hitBoxDown = {}
     // Movement settings
-    this.moveForce = 500
-    this.moveForceWhenNoTouching = 100
-    this.jumpForce = 1000
+    this.moveForce = 20000
+    this.moveForceWhenNoTouching = 5000
+    this.jumpForce = 80000
     this.maxVelocity = 5000
     this.frictionRate = 0.2 
     // Sprite movement values
@@ -64,15 +64,13 @@ game.sprites.player.update = function () {
     if (this.ControllerUp && lastCollidesDown) {this.accelerationY=-this.jumpForce}
     this.accelerationY+=game.const.gravity
 
-    // Update player velocity
-    this.velocityX+=this.accelerationX
+    // Update player X velocity
+    this.velocityX+=this.accelerationX*deltaTime
     this.velocityX=this.velocityX*(1-this.frictionRate)
     if (this.velocityX > 0 && this.velocityX>this.maxVelocity) {this.velocityX=this.maxVelocity}
     if (this.velocityX < 0 && this.velocityX<-this.maxVelocity) {this.velocityX=-this.maxVelocity}
-
-    this.velocityY+=this.accelerationY
-    if (this.velocityY > 0 && this.velocityY>this.maxVelocity) {this.velocityY=this.maxVelocity}
-    if (this.velocityY < 0 && this.velocityY<-this.maxVelocity) {this.velocityY=-this.maxVelocity}
+    // Update player Y velocity
+    this.velocityY+=this.accelerationY*deltaTime
     
     // Update player position
     this.X+=Math.round(this.velocityX*deltaTime)
