@@ -25,33 +25,28 @@ game.sprites.platform.drawFunction = function (ctx) {
     }
 }
 
-
 game.sprites.platform.checkPlayerCollision = function () {
-    let _p = game.sprites.player
     // Min and Max of current sprite
-    let _x1Min = this.X-this.width / 2
-    let _x1Max = this.X+this.width / 2
-    let _y1Min = this.Y-this.height / 2
-    let _y1Max = this.Y+this.height / 2
+    let _spriteBox = {xMin: this.X-this.width / 2,
+                      xMax: this.X+this.width / 2,
+                      yMin: this.Y-this.height / 2,
+                      yMax: this.Y+this.height / 2}
     // RIGHT hit box
-    if (game.sprites.platform.checkHitBoxCollision(_x1Min, _x1Max, _y1Min, _y1Max, game.sprites.player.hitBoxRight)) {
-        _p.collidesRight = true
+    if (game.utils.checkColisionBox(_spriteBox, game.sprites.player.hitBoxRight)) {
+        game.sprites.player.collidesRight = true
     } 
     // LEFT hit box
-    if (game.sprites.platform.checkHitBoxCollision(_x1Min, _x1Max, _y1Min, _y1Max, game.sprites.player.hitBoxLeft)) {
-        _p.collidesLeft = true
+    if (game.utils.checkColisionBox(_spriteBox, game.sprites.player.hitBoxLeft)) {
+        game.sprites.player.collidesLeft = true
     } 
     // UP hit box
-    if (game.sprites.platform.checkHitBoxCollision(_x1Min, _x1Max, _y1Min, _y1Max, game.sprites.player.hitBoxUp)) {
-        _p.collidesUp = true
+    if (game.utils.checkColisionBox(_spriteBox, game.sprites.player.hitBoxUp)) {
+        game.sprites.player.collidesUp = true
     } 
     // DOWN hit box
-    if (game.sprites.platform.checkHitBoxCollision(_x1Min, _x1Max, _y1Min, _y1Max, game.sprites.player.hitBoxDown)) {
-        _p.collidesDown = true
+    if (game.utils.checkColisionBox(_spriteBox, game.sprites.player.hitBoxDown)) {
+        game.sprites.player.collidesDown = true
     } 
 }
 
-game.sprites.platform.checkHitBoxCollision = function (_x1Min, _x1Max, _y1Min, _y1Max, _hitBox) {
-    if (!(_x1Min>_hitBox.Xmax || _hitBox.Xmin>_x1Max || _y1Min>_hitBox.Ymax || _hitBox.Ymin>_y1Max)) {return true} 
-}
 
