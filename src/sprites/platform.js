@@ -12,31 +12,27 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Image
     _clone._image = _pltfConfig._image || ''
     // Type of platform
-    _clone._type = _pltfConfig._type || ''
-    _clone._typeParams = _pltfConfig._typeParams || {}
+    _clone._pushable = _pltfConfig._pushable || ''
     _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
-        
+    // Return clone    
     return _clone
 }
 
 game.sprites.platform.update = function () {
-
-    // Calculate time since last frame
+   // Calculate time since last frame
     let _deltaTime = 1/mge.game.fps
-
     // Apply gravity on pushable platforms
-    if (this._type=='pushable') {
+    if (this._pushable!='') {
         // If platform has not fallen yet
-        if (this.Y < this._typeParams._Yfall) {
+        if (this.Y < this._pushable._Yfall) {
             // If platform is falling
-            if((this._typeParams._fallSide == 'right' && this.X >= this._typeParams._Xfall) || (this._typeParams._fallSide == 'left' && this.X <= this._typeParams._Xfall)) {
+            if((this._pushable._fallSide == 'right' && this.X >= this._pushable._Xfall) || (this._pushable._fallSide == 'left' && this.X <= this._pushable._Xfall)) {
                 this._accelerationY=game.const.gravity
                 this._velocityY+=this._accelerationY*_deltaTime
-                this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._typeParams._Yfall)
+                this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._pushable._Yfall)
             }
         }
     }
-
     // Scroll camera
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
@@ -62,12 +58,12 @@ game.sprites.platform.managePlatformCollisions = function () {
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxRight)) {
         _p.collidesRight = true
         // Pushable platform
-        if (this._type=='pushable' && _p.velocityX > 0) {
+        if (this._pushable!='' && _p.velocityX > 0) {
             this.X = _p.X+_p.width/2+this.width/2 + _p.HitBoxSize
             _p.collidesRight = false
             _p.velocityX = 0
-            if (this.X>=this._typeParams._Xmax) {
-                this.X = this._typeParams._Xmax
+            if (this.X>=this._pushable._Xmax) {
+                this.X = this._pushable._Xmax
                 _p.collidesRight = true
             }
         }
@@ -76,12 +72,12 @@ game.sprites.platform.managePlatformCollisions = function () {
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxLeft)) {
         _p.collidesLeft = true
         // Pushable platform
-        if (this._type=='pushable' && _p.velocityX < 0) {
+        if (this._pushable!='' && _p.velocityX < 0) {
             this.X = _p.X-_p.width/2-this.width/2 - _p.HitBoxSize
             _p.collidesLeft = false
             _p.velocityX = 0
-            if (this.X<=this._typeParams._Xmin) {
-                this.X = this._typeParams._Xmin
+            if (this.X<=this._pushable._Xmin) {
+                this.X = this._pushable._Xmin
                 _p.collidesRight = true
             }
         }
