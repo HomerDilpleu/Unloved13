@@ -2,8 +2,8 @@ game.sprites.player.init = function() {
     // Usual properties
     this.x = mge.game.width / 2
     this.y = mge.game.height / 2
-    this.width = 100
-    this.height = 50
+    this.width = 60
+    this.height = 70
     // Absolute coordonates
     this.X = 200
     this.Y = 0
@@ -117,9 +117,16 @@ game.sprites.player.update = function () {
 }
 
 game.sprites.player.drawFunction = function (ctx) {
-    ctx.fillStyle='green'
-    ctx.fillRect(0,0,this.width,this.height)
-
+    /*ctx.fillStyle='green'
+    ctx.fillRect(0,0,this.width,this.height)*/
+    game.images.playerBody.draw(ctx)
+    if (this.velocityX >0 ) {
+        game.images.playerRightEye.draw(ctx)
+    } else {
+        game.images.playerLeftEye.draw(ctx)
+    }
+    game.images.playerLegsIdle.draw(ctx)
+/*
     // Hitboxes debug
     ctx.strokeStyle = 'red'
     // Right
@@ -130,6 +137,6 @@ game.sprites.player.drawFunction = function (ctx) {
     ctx.strokeRect(this.HitBoxSize,-this.HitBoxSize,this.width-2*this.HitBoxSize,this.HitBoxSize)
     // Down
     ctx.strokeRect(this.HitBoxSize,this.height,this.width-2*this.HitBoxSize,this.HitBoxSize)
-
+*/
 }
 

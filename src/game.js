@@ -9,6 +9,10 @@ game = {
   images:{
     logoDilpleu: mge.image.create(),
     playButton: mge.image.create(),
+    playerBody: mge.image.create(),
+    playerLeftEye: mge.image.create(),
+    playerRightEye: mge.image.create(),
+    playerLegsIdle: mge.image.create(),
     pltf1: mge.image.create()
   },
   animations:{},
