@@ -19,26 +19,6 @@ game.sprites.platform.init = function (_pltfConfig) {
     return _clone
 }
 
-game.sprites.platform.update = function () {
-   // Calculate time since last frame
-    let _deltaTime = 1/mge.game.fps
-    // Apply gravity on pushable platforms
-    if (this._pushable!='') {
-        // If platform has not fallen yet
-        if (this.Y < this._pushable._Yfall) {
-            // If platform is falling
-            if((this._pushable._fallSide == 'right' && this.X >= this._pushable._Xfall) || (this._pushable._fallSide == 'left' && this.X <= this._pushable._Xfall)) {
-                this._accelerationY=game.const.gravity
-                this._velocityY+=this._accelerationY*_deltaTime
-                this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._pushable._Yfall)
-            }
-        }
-    }
-    // Scroll camera
-    this.x = this.X - game.variables.camX + mge.game.width / 2
-    this.y = this.Y - game.variables.camY + mge.game.height / 2
-}
-
 game.sprites.platform.drawFunction = function (ctx) {
     if (this._image!='') {
         this._image.draw(ctx)
@@ -49,12 +29,19 @@ game.sprites.platform.drawFunction = function (ctx) {
 }
 
 game.sprites.platform.managePlatformCollisions = function () {
+    // ******************************************************
+    // * INIT
+    // ******************************************************
     let _p = game.sprites.player
+    let _deltaTime = 1/mge.game.fps
     // Min and Max of current sprite
     let _spriteBox = {xMin: this.X-this.width / 2,
                       xMax: this.X+this.width / 2,
                       yMin: this.Y-this.height / 2,
                       yMax: this.Y+this.height / 2}
+    // ******************************************************
+    // * MANAGE COLISIONS WITH PLAYER
+    // ******************************************************
     // RIGHT hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxRight)) {
         _p.collidesRight = true
@@ -97,4 +84,24 @@ game.sprites.platform.managePlatformCollisions = function () {
             _p.collidesDown = false
         }
     } 
+    // ******************************************************
+    // * APPLY PLATFORM MOVEMENTS
+    // ******************************************************
+    // Apply gravity on pushable platforms
+    if (this._pushable!='') {
+        // If platform has not fallen yet
+        if (this.Y < this._pushable._Yfall) {
+            // If platform is falling
+            if((this._pushable._fallSide == 'right' && this.X >= this._pushable._Xfall) || (this._pushable._fallSide == 'left' && this.X <= this._pushable._Xfall)) {
+                this._accelerationY=game.const.gravity
+                this._velocityY+=this._accelerationY*_deltaTime
+                this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._pushable._Yfall)
+            }
+        }
+    }
+    // ******************************************************
+    // * APPLY PLATFORM MOVEMENTS
+    // ******************************************************
+    this.x = this.X - game.variables.camX + mge.game.width / 2
+    this.y = this.Y - game.variables.camY + mge.game.height / 2
 }

@@ -1,8 +1,5 @@
 game.levels.initLevel = function (_level) {
 
-    // Shortcuts
-    let _player = game.sprites.player
-    
     // Create platforms
     game.sprites.platform.cloneDeleteAll()
     for (let _pltf of _level._platforms) {
@@ -10,8 +7,12 @@ game.levels.initLevel = function (_level) {
       }
 
     // Initialise player  
-    _player.X = _level._player.X
-    _player.Y = _level._player.Y
+    game.sprites.player.X = _level._player.X
+    game.sprites.player.Y = _level._player.Y
+
+    // Initialise camera 
+    game.variables.camX = _level._camera.X
+    game.variables.camY = _level._camera.Y
 
 }
 
@@ -24,5 +25,7 @@ game.levels.level1 = {
                 {_width:50,_height:50,X:750,Y:665, _autoJumpForce:2000}
               ],
     _player:{X:200,
+             Y:0},
+    _camera:{X:200,
              Y:0}
 }

@@ -101,7 +101,7 @@ game.sprites.player.update = function () {
     this.collidesDown = false
     game.sprites.platform.cloneExecuteForEach('managePlatformCollisions')
     
-    // Manage collisions
+    // If player is collinding a platform
     if (this.collidesRight || this.collidesLeft) {
         this.X = lastX
         this.velocityX = 0
@@ -109,6 +109,10 @@ game.sprites.player.update = function () {
     if (this.collidesDown || this.collidesUp) {        
         this.Y = lastY
         this.velocityY = 0}
+
+    // Camera scroll
+    this.x = this.X - game.variables.camX + mge.game.width / 2
+    this.y = this.Y - game.variables.camY + mge.game.height / 2
  
 }
 

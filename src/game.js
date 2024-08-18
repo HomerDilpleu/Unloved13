@@ -20,7 +20,9 @@ game = {
   },
   variables:{
     camX:0,
-    camY:0
+    camY:0,
+    camMaxOffsetX:300,
+    camMaxOffsetY:100
   },
   const:{
     gravity:5000

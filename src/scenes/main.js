@@ -16,18 +16,23 @@ game.scenes.main.start = function() {
 //////////////////////
 game.scenes.main.update = function() {
 
-        // Update player
+        // Update player and platforms
         game.sprites.player.update()
 
-        // Update Camera position
-        game.variables.camX = game.sprites.player.X
-        game.variables.camY = game.sprites.player.Y
-
-        // Update platforms
-        game.sprites.platform.cloneExecuteForEach('update')
-
-
-
+        // Update camera X
+        if (game.variables.camX<game.sprites.player.X-game.variables.camMaxOffsetX) {
+                game.variables.camX=game.sprites.player.X-game.variables.camMaxOffsetX
+        }
+        if (game.variables.camX>game.sprites.player.X+game.variables.camMaxOffsetX) {
+                game.variables.camX=game.sprites.player.X+game.variables.camMaxOffsetX
+        }
+        // Update camera Y
+        if (game.variables.camY<game.sprites.player.Y-game.variables.camMaxOffsetY) {
+                game.variables.camY=game.sprites.player.Y-game.variables.camMaxOffsetY
+        }
+        if (game.variables.camY>game.sprites.player.Y+game.variables.camMaxOffsetY) {
+                game.variables.camY=game.sprites.player.Y+game.variables.camMaxOffsetY
+        }
 }
 
 //////////////////////
