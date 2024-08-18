@@ -2,8 +2,8 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Create a clone of himself
     let _clone = game.sprites.platform.cloneCreate()
     // Standard properties
-    _clone._width = _pltfConfig._width
-    _clone._height = _pltfConfig._height
+    _clone.width = _pltfConfig._width
+    _clone.height = _pltfConfig._height
     _clone.drawBoundaries = true
     // Physics
     _clone.X = _pltfConfig.X
@@ -51,10 +51,10 @@ game.sprites.platform.drawFunction = function (ctx) {
 game.sprites.platform.managePlatformCollisions = function () {
     let _p = game.sprites.player
     // Min and Max of current sprite
-    let _spriteBox = {xMin: this.X-this._width / 2,
-                      xMax: this.X+this._width / 2,
-                      yMin: this.Y-this._height / 2,
-                      yMax: this.Y+this._height / 2}
+    let _spriteBox = {xMin: this.X-this.width / 2,
+                      xMax: this.X+this.width / 2,
+                      yMin: this.Y-this.height / 2,
+                      yMax: this.Y+this.height / 2}
     // RIGHT hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxRight)) {
         _p.collidesRight = true
@@ -93,7 +93,7 @@ game.sprites.platform.managePlatformCollisions = function () {
         // Autojumb platform
         if (this._autoJumpForce != 0) {
             game.sprites.player.velocityY = -this._autoJumpForce
-            game.sprites.player.Y = this.Y - this._height/2 - game.sprites.player.height/2
+            game.sprites.player.Y = this.Y - this.height/2 - game.sprites.player.height/2
             _p.collidesDown = false
         }
     } 
