@@ -7,7 +7,7 @@ game.levels.initLevel = function (_level) {
       }
 
     // Delete platform message
-    game.variables.platformMessage=''
+    game.variables.platformMessage=[]
 
     // Initialise player  
     game.sprites.player.X = _level._player.X

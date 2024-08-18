@@ -107,6 +107,7 @@ game.sprites.platform.managePlatformCollisions = function () {
     // ******************************************************
     // * APPLY MESSAGES
     // ******************************************************
-    if(game.variables.platformMessage=='DESTROY:'+this._id) {this.cloneDelete()}
-
+    for (let _message of game.variables.platformMessage) {
+        if(_message=='DESTROY:'+this._id) {this.cloneDelete()}
+      }
 }
