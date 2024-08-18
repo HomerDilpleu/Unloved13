@@ -87,12 +87,12 @@ game.sprites.player.update = function () {
                         Ymax:this.Y + this.height/2 - this.HitBoxSize}
     this.hitBoxUp =    {Xmin:this.X - this.width/2 + this.HitBoxSize,
                         Xmax:this.X + this.width/2 - this.HitBoxSize,
-                        Ymin:this.Y - this.height/2 - this.HitBoxSize,
-                        Ymax:this.Y - this.height/2}
+                        Ymin:this.Y - this.height/2,
+                        Ymax:this.Y - this.height/2 + this.HitBoxSize}
     this.hitBoxDown =  {Xmin:this.X - this.width/2 + this.HitBoxSize,
                         Xmax:this.X + this.width/2 - this.HitBoxSize,
-                        Ymin:this.Y + this.height/2,
-                        Ymax:this.Y + this.height/2 + this.HitBoxSize}
+                        Ymin:this.Y + this.height/2 - this.HitBoxSize,
+                        Ymax:this.Y + this.height/2}
 
     // Manage collisions with platforms
     this.collidesRight = false
@@ -134,9 +134,9 @@ game.sprites.player.drawFunction = function (ctx) {
     // Left
     ctx.strokeRect(-this.HitBoxSize,this.HitBoxSize,this.HitBoxSize,this.height-2*this.HitBoxSize)
     // Up
-    ctx.strokeRect(this.HitBoxSize,-this.HitBoxSize,this.width-2*this.HitBoxSize,this.HitBoxSize)
+    ctx.strokeRect(this.HitBoxSize,0,this.width-2*this.HitBoxSize,this.HitBoxSize)
     // Down
-    ctx.strokeRect(this.HitBoxSize,this.height,this.width-2*this.HitBoxSize,this.HitBoxSize)
+    ctx.strokeRect(this.HitBoxSize,this.height,this.width-2*this.HitBoxSize,-this.HitBoxSize)
 */
 }
 
