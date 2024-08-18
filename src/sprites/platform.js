@@ -10,11 +10,13 @@ game.sprites.platform.init = function (_pltfConfig) {
     _clone.Y = _pltfConfig.Y
     _clone._accelerationY=0
     _clone._velocityY=0
+    _clone._isColliding=false
     // Other
     _clone._id = _pltfConfig._id || ''
     _clone._image = _pltfConfig._image || ''
     _clone._pushable = _pltfConfig._pushable || ''
     _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
+    _clone._actionable = _pltfConfig._actionable || ''
     // Return clone    
     return _clone
 }
@@ -34,6 +36,7 @@ game.sprites.platform.managePlatformCollisions = function () {
     // ******************************************************
     let _p = game.sprites.player
     let _deltaTime = 1/mge.game.fps
+    this._isColliding = false
     // Min and Max of current sprite
     let _spriteBox = {xMin: this.X-this.width / 2,
                       xMax: this.X+this.width / 2,
@@ -45,6 +48,7 @@ game.sprites.platform.managePlatformCollisions = function () {
     // RIGHT hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxRight)) {
         _p.collidesRight = true
+        this._isColliding = true
         // Pushable platform
         if (this._pushable!='' && _p.velocityX > 0) {
             this.X = _p.X+_p.width/2+this.width/2 + _p.HitBoxSize
@@ -59,6 +63,7 @@ game.sprites.platform.managePlatformCollisions = function () {
     // LEFT hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxLeft)) {
         _p.collidesLeft = true
+        this._isColliding = true
         // Pushable platform
         if (this._pushable!='' && _p.velocityX < 0) {
             this.X = _p.X-_p.width/2-this.width/2 - _p.HitBoxSize
@@ -73,10 +78,12 @@ game.sprites.platform.managePlatformCollisions = function () {
     // UP hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxUp)) {
         _p.collidesUp = true
+        this._isColliding = true
     } 
     // DOWN hit box
     if (game.utils.checkColisionBox(_spriteBox, _p.hitBoxDown)) {
         _p.collidesDown = true
+        this._isColliding = true
         // Autojumb platform
         if (this._autoJumpForce != 0) {
             game.sprites.player.velocityY = -this._autoJumpForce
@@ -104,6 +111,15 @@ game.sprites.platform.managePlatformCollisions = function () {
     // ******************************************************
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
+    
+    // ******************************************************
+    // * APPLY ACTION
+    // ******************************************************
+    if (this._actionable!=''&&this._isColliding) {
+        if (!game.variables.platformMessage.includes(this._actionable._message)) {
+            game.variables.platformMessage.push(this._actionable._message)
+        }
+    }
     // ******************************************************
     // * APPLY MESSAGES
     // ******************************************************
