@@ -22,7 +22,8 @@ game = {
     camX:0,
     camY:0,
     camMaxOffsetX:300,
-    camMaxOffsetY:100
+    camMaxOffsetY:100,
+    platformMessage:''
   },
   const:{
     gravity:5000

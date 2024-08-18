@@ -10,9 +10,9 @@ game.sprites.platform.init = function (_pltfConfig) {
     _clone.Y = _pltfConfig.Y
     _clone._accelerationY=0
     _clone._velocityY=0
-    // Image
+    // Other
+    _clone._id = _pltfConfig._id || ''
     _clone._image = _pltfConfig._image || ''
-    // Type of platform
     _clone._pushable = _pltfConfig._pushable || ''
     _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
     // Return clone    
@@ -104,4 +104,9 @@ game.sprites.platform.managePlatformCollisions = function () {
     // ******************************************************
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
+    // ******************************************************
+    // * APPLY MESSAGES
+    // ******************************************************
+    if(game.variables.platformMessage=='DESTROY:'+this._id) {this.cloneDelete()}
+
 }
