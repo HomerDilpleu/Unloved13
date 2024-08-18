@@ -26,8 +26,7 @@ game.levels.level1 = {
                 {_id:'4',_width:500,_height:30,X:250,Y:500},
                 {_id:'5',_width:1400,_height:30,X:600,Y:700},
                 {_id:'6',_width:50,_height:50,X:750,Y:660, _autoJumpForce:2000},
-                {_id:'7',_width:50,_height:50,X:900,Y:660,_actionable:{_message:'DESTROY:1'}}
-              ],
+                {_id:'7',_width:50,_height:50,X:900,Y:660,_actionable:{_message:'DESTROY:1'}}],
     _player:{X:200,
              Y:300},
     _camera:{X:200,
