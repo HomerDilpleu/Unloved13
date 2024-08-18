@@ -4,6 +4,7 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Standard properties
     _clone._width = _pltfConfig._width
     _clone._height = _pltfConfig._height
+    _clone.drawBoundaries = true
     // Physics
     _clone.X = _pltfConfig.X
     _clone.Y = _pltfConfig.Y
@@ -78,7 +79,7 @@ game.sprites.platform.managePlatformCollisions = function () {
             _p.velocityX = 0
             if (this.X<=this._pushable._Xmin) {
                 this.X = this._pushable._Xmin
-                _p.collidesRight = true
+                _p.collidesLeft = true
             }
         }
     } 

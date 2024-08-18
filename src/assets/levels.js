@@ -16,7 +16,7 @@ game.levels.initLevel = function (_level) {
 }
 
 game.levels.level1 = {
-    _platforms:[{_width:30,_height:500,X:-100,Y:250,_image:game.images.pltf1},
+    _platforms:[{_width:50,_height:1000,X:-120,Y:210,_image:game.images.pltf1},
                 {_width:50,_height:50,X:400,Y:460,_pushable:{_Xmin:400,_Xmax:1000,_Xfall:535,_Yfall:660,_fallSide:'right'}, _autoJumpForce:2000},
                 {_width:50,_height:50,X:100,Y:460,_pushable:{_Xmin:-100,_Xmax:300,_Xfall:-35,_Yfall:660,_fallSide:'left'}},
                 {_width:500,_height:30,X:250,Y:500},
