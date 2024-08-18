@@ -21,12 +21,12 @@ game.levels.initLevel = function (_level) {
 
 game.levels.level1 = {
     _platforms:[{_id:'1',_width:50,_height:1000,X:-120,Y:210,_image:game.images.pltf1},
-                {_id:'2',_width:50,_height:50,X:400,Y:460,_pushable:{_Xmin:400,_Xmax:1000,_Xfall:535,_Yfall:660,_fallSide:'right'}, _autoJumpForce:2000},
-                {_id:'3',_width:50,_height:50,X:100,Y:460,_pushable:{_Xmin:-100,_Xmax:300,_Xfall:-35,_Yfall:660,_fallSide:'left'}},
-                {_id:'4',_width:500,_height:30,X:250,Y:500},
-                {_id:'5',_width:1400,_height:30,X:600,Y:700},
-                {_id:'6',_width:50,_height:50,X:750,Y:660, _autoJumpForce:2000},
-                {_id:'7',_width:50,_height:50,X:900,Y:660,_actionable:{_message:'DESTROY:1'}}],
+                {_id:'2',_width:50,_height:50,X:400,Y:460,_fillStyle:'#F0C4B5',_pushable:{_Xmin:400,_Xmax:1000,_Xfall:535,_Yfall:660,_fallSide:'right'}, _autoJumpForce:2000},
+                {_id:'3',_width:50,_height:50,X:100,Y:460,_fillStyle:'#F0C4B5',_pushable:{_Xmin:-100,_Xmax:300,_Xfall:-35,_Yfall:660,_fallSide:'left'}},
+                {_id:'4',_width:500,_height:30,X:250,Y:500,_fillStyle:'#522617'},
+                {_id:'5',_width:1400,_height:30,X:600,Y:700,_fillStyle:'#522617'},
+                {_id:'6',_width:50,_height:50,X:750,Y:660,_fillStyle:'#F0C4B5', _autoJumpForce:2000},
+                {_id:'7',_width:50,_height:50,X:900,Y:660,_fillStyle:'#E4080A',_actionable:{_message:'DESTROY:1',_fillStyle:'#54E41C',_image:''}}],
     _player:{X:200,
              Y:300},
     _camera:{X:200,

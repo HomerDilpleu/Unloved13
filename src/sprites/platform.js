@@ -14,6 +14,7 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Other
     _clone._id = _pltfConfig._id || ''
     _clone._image = _pltfConfig._image || ''
+    _clone._fillStyle = _pltfConfig._fillStyle || ''
     _clone._pushable = _pltfConfig._pushable || ''
     _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
     _clone._actionable = _pltfConfig._actionable || ''
@@ -22,11 +23,12 @@ game.sprites.platform.init = function (_pltfConfig) {
 }
 
 game.sprites.platform.drawFunction = function (ctx) {
+    if (this._fillStyle!='') {
+        ctx.fillStyle=this._fillStyle
+        ctx.fillRect(0,0,this.width,this.height)
+    } 
     if (this._image!='') {
         this._image.draw(ctx)
-    } else {
-        ctx.fillStyle='white'
-        ctx.fillRect(0,0,this.width,this.height)
     }
 }
 
@@ -113,12 +115,14 @@ game.sprites.platform.managePlatformCollisions = function () {
     this.y = this.Y - game.variables.camY + mge.game.height / 2
     
     // ******************************************************
-    // * APPLY ACTION
+    // * SEND MESSAGE
     // ******************************************************
     if (this._actionable!=''&&this._isColliding) {
         if (!game.variables.platformMessage.includes(this._actionable._message)) {
             game.variables.platformMessage.push(this._actionable._message)
         }
+        if (this._actionable._fillStyle!='') {this._fillStyle=this._actionable._fillStyle}
+        if (this._actionable._image!='') {this._image=this._actionable._image}
     }
     // ******************************************************
     // * APPLY MESSAGES
