@@ -42,10 +42,9 @@ game.sprites.player.update = function () {
     // Calculate time since last frame
     let deltaTime = Math.min(1/mge.game.fps,0.04)
 
-    // Keep track of last state
+    // Keep track of last position
     let lastX = this.X
     let lastY = this.Y
-    let lastCollidesDown = this.collidesDown
 
     // Get Controlers
     if(mge.keyboard.isKeyPressed('ArrowRight') && !mge.keyboard.isKeyPressed('ArrowLeft')) {this.ControllerRight = true} else {this.ControllerRight = false}
@@ -53,15 +52,16 @@ game.sprites.player.update = function () {
     if(mge.keyboard.isKeyPressed('ArrowUp') && !mge.keyboard.isKeyPressed('ArrowDown')) {this.ControllerUp = true} else {this.ControllerUp = false}
     if(mge.keyboard.isKeyPressed('ArrowDown') && !mge.keyboard.isKeyPressed('ArrowUp')) {this.ControllerDown = true} else {this.ControllerDown = false}
 
-    // Update player acceleration
+    // Update player X acceleration
     this.accelerationX=0
-    if (this.ControllerLeft && lastCollidesDown) {this.accelerationX=-this.moveForce}
-    if (this.ControllerRight && lastCollidesDown) {this.accelerationX=this.moveForce}
-    if (this.ControllerLeft && !lastCollidesDown) {this.accelerationX=-this.moveForceWhenNoTouching}
-    if (this.ControllerRight && !lastCollidesDown) {this.accelerationX=this.moveForceWhenNoTouching}
+    if (this.ControllerLeft && this.collidesDown) {this.accelerationX=-this.moveForce}
+    if (this.ControllerRight && this.collidesDown) {this.accelerationX=this.moveForce}
+    if (this.ControllerLeft && !this.collidesDown) {this.accelerationX=-this.moveForceWhenNoTouching}
+    if (this.ControllerRight && !this.collidesDown) {this.accelerationX=this.moveForceWhenNoTouching}
     
+    // Update player Y acceleration
     this.accelerationY=0
-    if (this.ControllerUp && lastCollidesDown) {this.accelerationY=-this.jumpForce}
+    if (this.ControllerUp && this.collidesDown) {this.accelerationY=-this.jumpForce}
     this.accelerationY+=game.const.gravity
 
     // Update player X velocity
