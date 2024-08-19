@@ -37,6 +37,9 @@ game.sprites.player.init = function() {
     // Eye
     _eye = game.sprites.eye.cloneCreate()
     mge.animation.activateOwnCloneAnimation(_eye)
+    // Legs
+    _legs = game.sprites.legs.cloneCreate()
+    mge.animation.activateOwnCloneAnimation(_legs)
     
 }
 
@@ -138,7 +141,10 @@ game.sprites.player.drawFunction = function (ctx) {
     }
 
     // Legs
-    game.images.playerLegsIdle.draw(ctx)
+    _legs._curAnimation = 'idle'
+    _legs.x = this.x
+    _legs.y = this.y+29
+    _legs.scaleX = 1
 
 /*
     // Hitboxes debug

@@ -12,7 +12,7 @@ game = {
     playerBody: mge.image.create(),
     openEye: mge.image.create(),
     closeEye: mge.image.create(),
-    playerLegsIdle: mge.image.create(),
+    legsIdle: mge.image.create(),
     pltf1: mge.image.create()
   },
   animations:{},
@@ -21,7 +21,8 @@ game = {
     playButton: mge.game.createSprite(),
     platform: mge.game.createSprite(),
     player: mge.game.createSprite(),
-    eye: mge.game.createSprite()
+    eye: mge.game.createSprite(),
+    legs: mge.game.createSprite()
   },
   variables:{
     camX:0,

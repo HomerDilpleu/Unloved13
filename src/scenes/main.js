@@ -49,4 +49,7 @@ game.scenes.main.draw = function() {
         // Draw eyes
         game.sprites.eye.cloneExecuteForEach('draw')
 
+        // Draw legs
+        game.sprites.legs.cloneExecuteForEach('draw')
+
 }
