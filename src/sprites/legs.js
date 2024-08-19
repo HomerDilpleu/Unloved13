@@ -17,6 +17,9 @@ game.sprites.legs.drawFunction = function (ctx) {
         if(this._curAnimation == 'idle') {
             this.animation.frames = game.animations.legsIdle
         }
+        if(this._curAnimation == 'walk') {
+            this.animation.frames = game.animations.legsWalk
+        }
         this.animation.restart()
     }
     this._lastAnimation = this._curAnimation

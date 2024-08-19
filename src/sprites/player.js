@@ -141,10 +141,32 @@ game.sprites.player.drawFunction = function (ctx) {
     }
 
     // Legs
-    _legs._curAnimation = 'idle'
-    _legs.x = this.x
-    _legs.y = this.y+29
-    _legs.scaleX = 1
+    if (Math.abs(this.velocityX) < 1) {
+        _legs._curAnimation = 'idle'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = 1
+    }
+    if (this.velocityX <= -1) {
+        _legs._curAnimation = 'walk'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = -1
+    }
+    if (this.velocityX >= 1) {
+        _legs._curAnimation = 'walk'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = 1
+    }
+    if (Math.abs(this.velocityY > 0)) {
+        _legs._curAnimation = 'idle'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = 1
+    }
+
+
 
 /*
     // Hitboxes debug

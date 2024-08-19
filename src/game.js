@@ -13,6 +13,10 @@ game = {
     openEye: mge.image.create(),
     closeEye: mge.image.create(),
     legsIdle: mge.image.create(),
+    legsWalk1: mge.image.create(),
+    legsWalk2: mge.image.create(),
+    legsWalk3: mge.image.create(),
+    legsWalk4: mge.image.create(),
     pltf1: mge.image.create()
   },
   animations:{},
