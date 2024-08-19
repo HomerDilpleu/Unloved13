@@ -46,4 +46,7 @@ game.scenes.main.draw = function() {
         // Draw player
         game.sprites.player.draw()
 
+        // Draw eyes
+        game.sprites.eye.cloneExecuteForEach('draw')
+
 }

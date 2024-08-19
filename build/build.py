@@ -17,6 +17,7 @@ inputFiles = ['../src/lib/mge_V1.0.0.js',\
               '../src/sprites/logoDilpleu.js',\
               '../src/sprites/playButton.js',\
               '../src/sprites/platform.js',\
+              '../src/sprites/eye.js',\
               '../src/sprites/player.js'\
               ]
 

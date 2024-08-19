@@ -10,8 +10,8 @@ game = {
     logoDilpleu: mge.image.create(),
     playButton: mge.image.create(),
     playerBody: mge.image.create(),
-    playerLeftEye: mge.image.create(),
-    playerRightEye: mge.image.create(),
+    openEye: mge.image.create(),
+    closeEye: mge.image.create(),
     playerLegsIdle: mge.image.create(),
     pltf1: mge.image.create()
   },
@@ -20,7 +20,8 @@ game = {
     logoDilpleu: mge.game.createSprite(),
     playButton: mge.game.createSprite(),
     platform: mge.game.createSprite(),
-    player: mge.game.createSprite()
+    player: mge.game.createSprite(),
+    eye: mge.game.createSprite()
   },
   variables:{
     camX:0,

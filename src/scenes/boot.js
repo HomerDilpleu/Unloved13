@@ -14,6 +14,7 @@ game.scenes.boot.start = function() {
     // Init sprites
     game.sprites.logoDilpleu.init()
     game.sprites.playButton.init()
+    game.sprites.eye.init()
 
     // Change game state
     game.state = 'ready'

@@ -34,6 +34,9 @@ game.sprites.player.init = function() {
     this.accelerationY=0
     this.velocityX=0
     this.velocityY=0
+    // Eye
+    _eye = game.sprites.eye.cloneCreate()
+    mge.animation.activateOwnCloneAnimation(_eye)
     
 }
 
@@ -117,15 +120,26 @@ game.sprites.player.update = function () {
 }
 
 game.sprites.player.drawFunction = function (ctx) {
-    /*ctx.fillStyle='green'
-    ctx.fillRect(0,0,this.width,this.height)*/
+
+    // Body
     game.images.playerBody.draw(ctx)
-    if (this.velocityX >0 ) {
-        game.images.playerRightEye.draw(ctx)
+
+    // Eye
+    if (this.velocityX <=0 ) {
+        _eye._curAnimation = 'normal'
+        _eye.x = this.x-5
+        _eye.y = this.y-25
+        _eye.scaleX = 1
     } else {
-        game.images.playerLeftEye.draw(ctx)
+        _eye._curAnimation = 'normal'
+        _eye.x = this.x
+        _eye.y = this.y-25
+        _eye.scaleX = -1
     }
+
+    // Legs
     game.images.playerLegsIdle.draw(ctx)
+
 /*
     // Hitboxes debug
     ctx.strokeStyle = 'red'
