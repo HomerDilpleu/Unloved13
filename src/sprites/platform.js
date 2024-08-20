@@ -6,8 +6,8 @@ game.sprites.platform.init = function (_pltfConfig) {
     _clone.height = _pltfConfig._height
     //_clone.drawBoundaries = true
     // Physics
-    _clone.X = _pltfConfig.X
-    _clone.Y = _pltfConfig.Y
+    _clone.X = _pltfConfig.X+_pltfConfig._width/2
+    _clone.Y = _pltfConfig.Y+_pltfConfig._height/2
     _clone._accelerationY=0
     _clone._velocityY=0
     _clone._isColliding=false

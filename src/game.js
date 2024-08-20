@@ -17,7 +17,8 @@ game = {
     legsWalk2: mge.image.create(),
     legsWalk3: mge.image.create(),
     legsWalk4: mge.image.create(),
-    pltf1: mge.image.create()
+    level1BlockDiv: mge.image.create(),
+    level1BlockGreat: mge.image.create()
   },
   animations:{},
   patterns:{},

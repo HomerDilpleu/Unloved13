@@ -18,7 +18,8 @@ game.scenes.boot.start = function() {
     game.sprites.legs.init()
 
     // Create patterns
-    game.patterns.test = mge._canvas._renderContext.createPattern(game.images.openEye._bitmap, 'repeat')
+    game.patterns.level1BlockDiv = mge._canvas._renderContext.createPattern(game.images.level1BlockDiv._bitmap, 'repeat')
+    game.patterns.level1BlockGreat = mge._canvas._renderContext.createPattern(game.images.level1BlockGreat._bitmap, 'repeat')
 
     // Create levels
     game.levels.createLevels()
