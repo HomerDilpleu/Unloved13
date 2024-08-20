@@ -37,10 +37,8 @@ game = {
     camMaxOffsetY:100,
     numberWidth:60,
     numberHeight:70,
+    gravity:5000,
     platformMessage:[]
-  },
-  const:{
-    gravity:5000
   },
   instruments:{},
   songs:{

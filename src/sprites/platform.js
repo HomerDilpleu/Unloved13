@@ -103,7 +103,7 @@ game.sprites.platform.managePlatformCollisions = function () {
         if (this.Y < this._pushable._Yfall) {
             // If platform is falling
             if((this._pushable._fallSide == 'right' && this.X >= this._pushable._Xfall) || (this._pushable._fallSide == 'left' && this.X <= this._pushable._Xfall)) {
-                this._accelerationY=game.const.gravity
+                this._accelerationY=game.variables.gravity
                 this._velocityY+=this._accelerationY*_deltaTime
                 this.Y = Math.min(this.Y+this._velocityY*_deltaTime,this._pushable._Yfall)
             }

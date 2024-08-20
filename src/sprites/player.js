@@ -68,7 +68,7 @@ game.sprites.player.update = function () {
     // Update player Y acceleration
     this.accelerationY=0
     if (this.ControllerUp && this.collidesDown) {this.accelerationY=-this.jumpForce}
-    this.accelerationY+=game.const.gravity
+    this.accelerationY+=game.variables.gravity
 
     // Update player X velocity
     this.velocityX+=this.accelerationX*deltaTime
