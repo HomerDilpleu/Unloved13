@@ -34,7 +34,7 @@ game = {
   variables:{
     camX:0,
     camY:0,
-    camMaxOffsetX:300,
+    camMaxOffsetX:200,
     camMaxOffsetY:100,
     numberWidth:60,
     numberHeight:70,

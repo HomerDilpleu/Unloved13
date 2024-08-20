@@ -32,12 +32,13 @@ game.levels.createLevels = function () {
                 {_id:'2',_width:270,_height:2700,X:2430,Y:-2700,_fillStyle:game.patterns.level1BlockGreat},
                 {_id:'3',_width:1800,_height:90,X:0,Y:-90,_fillStyle:game.patterns.level1BlockGreat},
                 {_id:'4',_width:1440,_height:270,X:0,Y:-360,_fillStyle:game.patterns.level1BlockGreat},
-                {_id:'5',_width:240,_height:30,X:1900,Y:-210,_fillStyle:game.patterns.level1BlockDiv},
-                {_id:'6',_width:240,_height:30,X:1570,Y:-340,_fillStyle:game.patterns.level1BlockDiv}
+                {_id:'5',_width:240,_height:30,X:1900,Y:-220,_fillStyle:game.patterns.level1BlockDiv},
+                {_id:'6',_width:90,_height:30,X:1720,Y:-345,_fillStyle:game.patterns.level1BlockDiv},
+                {_id:'7',_width:150,_height:30,X:1600,Y:-345,_fillStyle:game.patterns.level1BlockDiv}
     ],
     _player:{X:2200,
              Y:-100},
-    _numbers:[{_id:'56',X:1300,Y:-396,_Xmin:1200,_Xmax:1400,_velocityX:-100}],
+    _numbers:[{_id:'56',X:1400,Y:-396,_Xmin:1200,_Xmax:1420,_velocityX:-100}],
     _camera:{X:2000,
              Y:-100}
   }

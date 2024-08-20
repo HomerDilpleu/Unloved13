@@ -108,10 +108,19 @@ game.sprites.player.update = function () {
     game.sprites.platform.cloneExecuteForEach('managePlatformCollisions')
     
     // If player is collinding a platform
-    if (this.collidesRight || this.collidesLeft) {
+/*    if (this.collidesRight || this.collidesLeft) {
+        this.X = lastX
+        this.velocityX = 0
+    }*/
+    if (this.collidesRight & !(this.ControllerLeft)) {
         this.X = lastX
         this.velocityX = 0
     }
+    if (this.collidesLeft & !(this.ControllerRight)) {
+        this.X = lastX
+        this.velocityX = 0
+    }
+
     if (this.collidesDown || this.collidesUp) {        
         this.Y = lastY
         this.velocityY = 0}
