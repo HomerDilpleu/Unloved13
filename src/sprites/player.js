@@ -24,10 +24,10 @@ game.sprites.player.init = function() {
     this.hitBoxUp = {}
     this.hitBoxDown = {}
     // Movement settings
-    this.moveForce = 15000
-    this.moveForceWhenNoTouching = 5000
-    this.jumpForce = 80000
-    this.maxVelocity = 5000
+    this.moveForce = 10000
+    this.moveForceWhenNoTouching = 8000
+    this.jumpForce = 70000
+    this.maxVelocity = 3000
     this.frictionRate = 0.3 
     // Sprite movement values
     this.accelerationX=0
