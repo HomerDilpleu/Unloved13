@@ -23,10 +23,11 @@ game.sprites.platform.init = function (_pltfConfig) {
 }
 
 game.sprites.platform.drawFunction = function (ctx) {
-    if (this._fillStyle!='') {
+//    if (this._fillStyle!='') {
+//console.log(this._fillStyle)
         ctx.fillStyle=this._fillStyle
         ctx.fillRect(0,0,this.width,this.height)
-    } 
+//    } 
     if (this._image!='') {
         this._image.draw(ctx)
     }

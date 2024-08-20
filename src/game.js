@@ -20,6 +20,7 @@ game = {
     pltf1: mge.image.create()
   },
   animations:{},
+  patterns:{},
   sprites:{
     logoDilpleu: mge.game.createSprite(),
     playButton: mge.game.createSprite(),

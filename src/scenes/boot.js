@@ -17,6 +17,12 @@ game.scenes.boot.start = function() {
     game.sprites.eye.init()
     game.sprites.legs.init()
 
+    // Create patterns
+    game.patterns.test = mge._canvas._renderContext.createPattern(game.images.openEye._bitmap, 'repeat')
+
+    // Create levels
+    game.levels.createLevels()
+
     // Change game state
     game.state = 'ready'
 
