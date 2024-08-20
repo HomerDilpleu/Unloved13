@@ -33,6 +33,9 @@ game.scenes.main.update = function() {
         if (game.variables.camY>game.sprites.player.Y+game.variables.camMaxOffsetY) {
                 game.variables.camY=game.sprites.player.Y+game.variables.camMaxOffsetY
         }
+
+        // Update numbers
+        game.sprites.numbers.cloneExecuteForEach('update')
 }
 
 //////////////////////
@@ -42,6 +45,9 @@ game.scenes.main.draw = function() {
 
         // Draw platforms
         game.sprites.platform.cloneExecuteForEach('draw')
+
+        // Draw numbers
+        game.sprites.numbers.cloneExecuteForEach('draw')
 
         // Draw player
         game.sprites.player.draw()

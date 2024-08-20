@@ -26,13 +26,16 @@ game = {
     platform: mge.game.createSprite(),
     player: mge.game.createSprite(),
     eye: mge.game.createSprite(),
-    legs: mge.game.createSprite()
+    legs: mge.game.createSprite(),
+    numbers: mge.game.createSprite()
   },
   variables:{
     camX:0,
     camY:0,
     camMaxOffsetX:300,
     camMaxOffsetY:100,
+    numberWidth:60,
+    numberHeight:70,
     platformMessage:[]
   },
   const:{

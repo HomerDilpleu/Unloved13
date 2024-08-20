@@ -1,50 +1,31 @@
-game.sprites.player.init = function() {
-    // Usual properties
-    this.x = mge.game.width / 2
-    this.y = mge.game.height / 2
-    this.width = game.variables.numberWidth
-    this.height = game.variables.numberHeight
-    // Absolute coordonates
-    this.X = 200
-    this.Y = 0
-    // Controllers
-    this.ControllerLeft = false
-    this.ControllerRight = false
-    this.ControllerUp = false
-    this.ControllerDown = false
-    // Colliders flags
-    this.collidesRight = false
-    this.collidesLeft = false
-    this.collidesUp = false
-    this.collidesDown = false
-    // HitBoxes
-    this.HitBoxSize = 5
-    this.hitBoxRight = {}
-    this.hitBoxLeft = {}
-    this.hitBoxUp = {}
-    this.hitBoxDown = {}
-    // Movement settings
-    this.moveForce = 15000
-    this.moveForceWhenNoTouching = 5000
-    this.jumpForce = 80000
-    this.maxVelocity = 5000
-    this.frictionRate = 0.3 
-    // Sprite movement values
-    this.accelerationX=0
-    this.accelerationY=0
-    this.velocityX=0
-    this.velocityY=0
+game.sprites.numbers.init = function (_numfConfig) {
+    // Create a clone of himself
+    let _clone = game.sprites.numbers.cloneCreate()
+    // Standard properties
+    _clone.width = game.variables.numberWidth
+    _clone.height = game.variables.numberHeight
+    _clone.drawBoundaries = true
+    // Physics
+    _clone.X = _numfConfig.X
+    _clone.Y = _numfConfig.Y
+    //_clone._accelerationY=0
+    //_clone._velocityY=0
+    //_clone._isColliding=false
+    // Other
+    _clone._id = _numfConfig._id || ''
     // Eye
-    this._eye = game.sprites.eye.cloneCreate()
-    mge.animation.activateOwnCloneAnimation(this._eye)
+    _clone._eye = game.sprites.eye.cloneCreate()
+    mge.animation.activateOwnCloneAnimation(_clone._eye)
     // Legs
-    this._legs = game.sprites.legs.cloneCreate()
-    mge.animation.activateOwnCloneAnimation(this._legs)
-    
+    _clone._legs = game.sprites.legs.cloneCreate()
+    mge.animation.activateOwnCloneAnimation(_clone._legs)
+    // Return clone    
+    return _clone
 }
 
-game.sprites.player.update = function () {
 
+game.sprites.numbers.update = function () {
+/*
     // Calculate time since last frame
     let deltaTime = Math.min(1/mge.game.fps,0.04)
 
@@ -115,70 +96,72 @@ game.sprites.player.update = function () {
     if (this.collidesDown || this.collidesUp) {        
         this.Y = lastY
         this.velocityY = 0}
+*/ 
 
     // Camera scroll
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
- 
+
 }
 
-game.sprites.player.drawFunction = function (ctx) {
+game.sprites.numbers.drawFunction = function (ctx) {
 
     // Body
-    game.images.playerBody.draw(ctx)
-
+    ctx.font = '50px serif'
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillStyle = 'yellow'
+    ctx.fillText(this._id, this._width/2, this._height/2+5)
+    
     // Eye
-    if (this.velocityX <=0 ) {
-        this._eye._curAnimation = 'normal'
-        this._eye.x = this.x-5
-        this._eye.y = this.y-25
-        this._eye.scaleX = 1
+    this._eye._curAnimation = 'normal'
+    this._eye.x = this.x-5
+    this._eye.y = this.y-25
+    this._eye.scaleX = 1
+    
+    /*if (this.velocityX <=0 ) {
+        _eye._curAnimation = 'normal'
+        _eye.x = this.x-5
+        _eye.y = this.y-25
+        _eye.scaleX = 1
     } else {
-        this._eye._curAnimation = 'normal'
-        this._eye.x = this.x
-        this._eye.y = this.y-25
-        this._eye.scaleX = -1
-    }
+        _eye._curAnimation = 'normal'
+        _eye.x = this.x
+        _eye.y = this.y-25
+        _eye.scaleX = -1
+    }*/
 
     // Legs
+    this._legs._curAnimation = 'idle'
+    this._legs.x = this.x
+    this._legs.y = this.y+29
+    this._legs.scaleX = 1
+
+    /*
     if (Math.abs(this.velocityX) < 1) {
-        this._legs._curAnimation = 'idle'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
+        _legs._curAnimation = 'idle'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = 1
     }
     if (this.velocityX <= -1) {
-        this._legs._curAnimation = 'walk'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = -1
+        _legs._curAnimation = 'walk'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = -1
     }
     if (this.velocityX >= 1) {
-        this._legs._curAnimation = 'walk'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
+        _legs._curAnimation = 'walk'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = 1
     }
     if (Math.abs(this.velocityY > 0)) {
-        this._legs._curAnimation = 'idle'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
+        _legs._curAnimation = 'idle'
+        _legs.x = this.x
+        _legs.y = this.y+29
+        _legs.scaleX = 1
+    }*/
 
-
-
-/*
-    // Hitboxes debug
-    ctx.strokeStyle = 'red'
-    // Right
-    ctx.strokeRect(this.width,this.HitBoxSize,this.HitBoxSize,this.height-2*this.HitBoxSize)
-    // Left
-    ctx.strokeRect(-this.HitBoxSize,this.HitBoxSize,this.HitBoxSize,this.height-2*this.HitBoxSize)
-    // Up
-    ctx.strokeRect(this.HitBoxSize,0,this.width-2*this.HitBoxSize,this.HitBoxSize)
-    // Down
-    ctx.strokeRect(this.HitBoxSize,this.height,this.width-2*this.HitBoxSize,-this.HitBoxSize)
-*/
 }
 

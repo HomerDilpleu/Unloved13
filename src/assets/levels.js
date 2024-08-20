@@ -13,6 +13,12 @@ game.levels.initLevel = function (_level) {
     game.sprites.player.X = _level._player.X
     game.sprites.player.Y = _level._player.Y
 
+    // Create numbers
+    game.sprites.numbers.cloneDeleteAll()
+    for (let _num of _level._numbers) {
+        game.sprites.numbers.init(_num)
+      }
+
     // Initialise camera 
     game.variables.camX = _level._camera.X
     game.variables.camY = _level._camera.Y
@@ -29,6 +35,8 @@ game.levels.level1 = {
                 {_id:'7',_width:50,_height:50,X:900,Y:660,_fillStyle:'#E4080A',_actionable:{_message:'DESTROY:1',_fillStyle:'#54E41C',_image:''}}],
     _player:{X:200,
              Y:300},
+    _numbers:[{_id:'5',X:200,Y:650},
+              {_id:'7',X:400,Y:650}],
     _camera:{X:200,
              Y:0}
 }
