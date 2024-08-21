@@ -23,13 +23,15 @@ game.sprites.platform.init = function (_pltfConfig) {
 }
 
 game.sprites.platform.drawFunction = function (ctx) {
-//    if (this._fillStyle!='') {
-//console.log(this._fillStyle)
-        ctx.fillStyle=this._fillStyle
-        ctx.fillRect(0,0,this.width,this.height)
-//    } 
-    if (this._image!='') {
-        this._image.draw(ctx)
+    // Draw only if platform in screen
+    if (game.utils.checkColisionBox({xMin:this.x-this.width/2,xMax:this.x+this.width*2,yMin:this.y-this.height/2,yMax:this.y+this.height/2},{xMin:0,xMax:mge.game.width,yMin:0,yMax:mge.game.height})) {
+        if (this._fillStyle!='') {
+            ctx.fillStyle=this._fillStyle
+            ctx.fillRect(0,0,this.width,this.height)
+        } 
+        if (this._image!='') {
+            this._image.draw(ctx)
+        }
     }
 }
 
