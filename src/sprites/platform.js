@@ -112,7 +112,7 @@ game.sprites.platform.managePlatformCollisions = function () {
         }
     }
     // ******************************************************
-    // * APPLY PLATFORM MOVEMENTS
+    // * CAMERA SCROLL
     // ******************************************************
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2

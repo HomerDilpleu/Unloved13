@@ -34,7 +34,8 @@ game.levels.createLevels = function () {
                 {_id:'4',_width:1440,_height:270,X:0,Y:-360,_fillStyle:game.patterns.level1BlockGreat},
                 {_id:'5',_width:240,_height:30,X:1900,Y:-220,_fillStyle:game.patterns.level1BlockDiv},
                 {_id:'6',_width:240,_height:30,X:1570,Y:-345,_fillStyle:game.patterns.level1BlockDiv},
-                {_id:'7',_width:150,_height:30,X:1600,Y:-345,_actionable:{_message:'PLTF_DESTROY:4'}}
+                //{_id:'7',_width:150,_height:30,X:1600,Y:-345,_actionable:{_message:'PLTF_DESTROY:4'}}
+                {_id:'7',_width:150,_height:30,X:1600,Y:-345,_actionable:{_message:'NUM_RUN:56/100/500'}}
     ],
     _player:{X:2200,
              Y:-100},

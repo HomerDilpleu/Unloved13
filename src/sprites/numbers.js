@@ -39,14 +39,24 @@ game.sprites.numbers.update = function () {
     this.Y+=Math.round(this._velocityY*deltaTime)
 
     // Check X range
-    if (this.X > this._Xmax || this.X < this._Xmin) {
-        this.X = lastX
+    if ((this.X > this._Xmax && this._velocityX > 0) || (this.X < this._Xmin && this._velocityX < 0)) {
         this._velocityX = this._velocityX * -1
     }
 
     // Camera scroll
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
+
+    // Apply messages
+    for (let _message of game.variables.messages) {
+        // RUN 
+        if(_message.split("/")[0]=='NUM_RUN:'+this._id) {
+            this._Xmin = Number(_message.split("/")[1])-10
+            this._Xmax = Number(_message.split("/")[1])+10
+            this._velocityX = Number(_message.split("/")[2])
+            game.variables.messages=game.variables.messages.filter(e => e !== _message)
+        }
+      }
 
 }
 
