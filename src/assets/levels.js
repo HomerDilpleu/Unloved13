@@ -32,9 +32,9 @@ game.levels.createLevels = function () {
                 {_id:'2',_width:270,_height:2700,X:2430,Y:-2700,_fillStyle:game.patterns.level1BlockGreat},
                 {_id:'3',_width:1800,_height:90,X:0,Y:-90,_fillStyle:game.patterns.level1BlockGreat},
                 {_id:'4',_width:1440,_height:180,X:0,Y:-270,_fillStyle:game.patterns.level1BlockGreat},
-                {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv},
-                {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.level1BlockDiv},
-                {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.level1BlockDiv},
+                {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
+                {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
+                {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
                 {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_DETECTED:56'}}
     ],
     _player:{X:2200,Y:-100},

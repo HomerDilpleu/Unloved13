@@ -15,6 +15,7 @@ game.sprites.platform.init = function (_pltfConfig) {
     _clone._id = _pltfConfig._id || ''
     _clone._image = _pltfConfig._image || ''
     _clone._fillStyle = _pltfConfig._fillStyle || ''
+    _clone._radiusStyle = _pltfConfig._radiusStyle || 0
     _clone._pushable = _pltfConfig._pushable || ''
     _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
     _clone._actionable = _pltfConfig._actionable || ''
@@ -27,7 +28,10 @@ game.sprites.platform.drawFunction = function (ctx) {
     if (game.utils.checkColisionBox({xMin:this.x-this.width/2,xMax:this.x+this.width*2,yMin:this.y-this.height/2,yMax:this.y+this.height/2},{xMin:0,xMax:mge.game.width,yMin:0,yMax:mge.game.height})) {
         if (this._fillStyle!='') {
             ctx.fillStyle=this._fillStyle
-            ctx.fillRect(0,0,this.width,this.height)
+            //ctx.fillRect(0,0,this.width,this.height)
+            ctx.beginPath()
+            ctx.roundRect(0,0,this.width,this.height,this._radiusStyle)
+            ctx.fill()
         } 
         if (this._image!='') {
             this._image.draw(ctx)
