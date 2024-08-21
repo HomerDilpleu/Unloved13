@@ -35,10 +35,16 @@ game.levels.createLevels = function () {
                 {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv},
                 {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.level1BlockDiv},
                 {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.level1BlockDiv},
-                {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_ESCAPE:56/100/400/HELP!!!'}}
+                {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_DETECTED:56'}}
     ],
     _player:{X:2200,Y:-100},
-    _numbers:[{_id:'56',X:1400,Y:-306,_Xmin:1200,_Xmax:1420,_velocityX:-100,_bodyFill:'#390052',_textFill:'red'}],
+    _numbers:[{_id:'56',X:1400,Y:-306,
+              _Xmin:1200,_Xmax:1420,_velocityX:100,
+              _Xescape:800,_velocityEscape:-400,
+              _Yfall:-100,_velocityFall:200,
+              _XminFallen:600,_XmaxFallen:1000, _velocityXFallen:100,
+              _textNormal:'',_textEscape:'FEAR!',_textFallen:'HELP',
+              _bodyFill:'#390052',_textFill:'#390052'}],
     _camera:{X:2000,Y:-100}
   }
 }
