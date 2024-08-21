@@ -36,6 +36,7 @@ game.scenes.main.update = function() {
 
         // Update numbers
         game.sprites.numbers.cloneExecuteForEach('update')
+
 }
 
 //////////////////////

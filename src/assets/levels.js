@@ -1,23 +1,23 @@
 game.levels.initLevel = function (_level) {
 
+    // Delete messages
+    game.variables.messages=[]
+
     // Create platforms
     game.sprites.platform.cloneDeleteAll()
     for (let _pltf of _level._platforms) {
         game.sprites.platform.init(_pltf)
       }
 
-    // Delete platform message
-    game.variables.platformMessage=[]
-
-    // Initialise player  
-    game.sprites.player.X = _level._player.X
-    game.sprites.player.Y = _level._player.Y
-
     // Create numbers
     game.sprites.numbers.cloneDeleteAll()
     for (let _num of _level._numbers) {
         game.sprites.numbers.init(_num)
       }
+
+    // Initialise player  
+    game.sprites.player.X = _level._player.X
+    game.sprites.player.Y = _level._player.Y
 
     // Initialise camera 
     game.variables.camX = _level._camera.X
@@ -35,13 +35,11 @@ game.levels.createLevels = function () {
                 {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv},
                 {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.level1BlockDiv},
                 {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.level1BlockDiv},
-                {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_RUN:56/100/500'}}
+                {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_ESCAPE:56/100/400/HELP!!!'}}
     ],
-    _player:{X:2200,
-             Y:-100},
-    _numbers:[{_id:'56',X:1400,Y:-306,_Xmin:1200,_Xmax:1420,_velocityX:-100}],
-    _camera:{X:2000,
-             Y:-100}
+    _player:{X:2200,Y:-100},
+    _numbers:[{_id:'56',X:1400,Y:-306,_Xmin:1200,_Xmax:1420,_velocityX:-100,_bodyFill:'#390052',_textFill:'red'}],
+    _camera:{X:2000,Y:-100}
   }
 }
 
