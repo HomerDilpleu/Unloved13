@@ -18,7 +18,7 @@ game.sprites.player.init = function() {
     this.collidesUp = false
     this.collidesDown = false
     // HitBoxes
-    this.HitBoxSize = 5
+    this.HitBoxSize = 10
     this.hitBoxRight = {}
     this.hitBoxLeft = {}
     this.hitBoxUp = {}
