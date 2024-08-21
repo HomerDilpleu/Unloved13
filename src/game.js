@@ -39,7 +39,7 @@ game = {
     numberWidth:60,
     numberHeight:70,
     gravity:5000,
-    platformMessage:[]
+    messages:[]
   },
   instruments:{},
   songs:{

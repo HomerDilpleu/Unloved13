@@ -118,19 +118,26 @@ game.sprites.platform.managePlatformCollisions = function () {
     this.y = this.Y - game.variables.camY + mge.game.height / 2
     
     // ******************************************************
-    // * SEND MESSAGE
+    // * ACTIONABLE PLATFORM
     // ******************************************************
     if (this._actionable!=''&&this._isColliding) {
-        if (!game.variables.platformMessage.includes(this._actionable._message)) {
-            game.variables.platformMessage.push(this._actionable._message)
+        // Send message
+        if (!game.variables.messages.includes(this._actionable._message)) {
+            game.variables.messages.push(this._actionable._message)
         }
-        if (this._actionable._fillStyle!='') {this._fillStyle=this._actionable._fillStyle}
-        if (this._actionable._image!='') {this._image=this._actionable._image}
+        // Apply new style
+        this._fillStyle=this._actionable._fillStyle||''
+        this._image=this._actionable._image||''
+        // Remove actionable property
+        this._actionable=''
     }
     // ******************************************************
     // * APPLY MESSAGES
     // ******************************************************
-    for (let _message of game.variables.platformMessage) {
-        if(_message=='DESTROY:'+this._id) {this.cloneDelete()}
+    for (let _message of game.variables.messages) {
+        if(_message=='PLTF_DESTROY:'+this._id) {
+            this.cloneDelete()
+            game.variables.messages=game.variables.messages.filter(e => e !== _message)
+        }
       }
 }
