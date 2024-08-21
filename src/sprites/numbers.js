@@ -51,8 +51,8 @@ game.sprites.numbers.update = function () {
     for (let _message of game.variables.messages) {
         // RUN 
         if(_message.split("/")[0]=='NUM_RUN:'+this._id) {
-            this._Xmin = Number(_message.split("/")[1])-10
-            this._Xmax = Number(_message.split("/")[1])+10
+            this._Xmin = Number(_message.split("/")[1])-5
+            this._Xmax = Number(_message.split("/")[1])+5
             this._velocityX = Number(_message.split("/")[2])
             game.variables.messages=game.variables.messages.filter(e => e !== _message)
         }
