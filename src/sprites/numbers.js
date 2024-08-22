@@ -150,9 +150,10 @@ game.sprites.numbers.drawFunction = function (ctx) {
     // text
     if (this._speakTxt !='') {
         ctx.fillStyle = 'white'
-        ctx.fillRect(-10,-45,80,35)
         ctx.strokeStyle = this._textFill
-        ctx.strokeRect(-10,-45,80,35)
+        ctx.beginPath()
+        ctx.roundRect(-10,-45,80,35,10)
+        ctx.fill()
         ctx.font = '24px serif'
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
