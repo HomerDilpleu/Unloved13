@@ -18,6 +18,7 @@ game.sprites.numbers.init = function (_numConfig) {
     _clone._velocityEscape = _numConfig._velocityEscape || 0
     _clone._Yfall = _numConfig._Yfall || 0
     _clone._velocityFall = _numConfig._velocityFall || 0
+    _clone._fallMessage = _numConfig._fallMessage || ''
     _clone._XminFallen = _numConfig._XminFallen || 0
     _clone._XmaxFallen = _numConfig._XmaxFallen || 0
     _clone._velocityXFallen = _numConfig._velocityXFallen || 0
@@ -68,7 +69,12 @@ game.sprites.numbers.update = function () {
             this._velocityX = 0
             this.X = this._Xescape
             this._velocityY = this._velocityFall
+            // text
             this._speakTxt = this._textEscape
+            // message
+            if (this._fallMessage != '' && !game.variables.messages.includes(this._fallMessage)) {
+                game.variables.messages.push(this._fallMessage)
+            }
         }
         // NUMBER FALLEN
         if (this.Y >= this._Yfall) {

@@ -19,6 +19,8 @@ game.sprites.platform.init = function (_pltfConfig) {
     _clone._pushable = _pltfConfig._pushable || ''
     _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
     _clone._actionable = _pltfConfig._actionable || ''
+    _clone._movesTo = _pltfConfig._movesTo || ''
+    _clone._isMoving = false
     // Return clone    
     return _clone
 }
@@ -115,6 +117,28 @@ game.sprites.platform.managePlatformCollisions = function () {
             }
         }
     }
+    // Apply movement on platform that moves automatically
+    if (this._movesTo!='' && this._isMoving) {
+
+        if (this._movesTo._velocityY<0) {
+            this.Y = Math.max(this.Y+this._movesTo._velocityY*_deltaTime,this._movesTo.Y+this._height/2)
+        } else {
+            this.Y = Math.min(this.Y+this._movesTo._velocityY*_deltaTime,this._movesTo.Y+this._height/2)
+        }
+        if (this._movesTo._velocityX<0) {
+            this.X = Math.max(this.X+this._movesTo._velocityX*_deltaTime,this._movesTo.X+this._width/2)
+        } else {
+            this.X = Math.min(this.X+this._movesTo._velocityX*_deltaTime,this._movesTo.X+this._width/2)
+        }
+
+/*        if (this._movesTo._velocityY > 0 && this.Y < this._movesTo.Y) {
+            this.Y = Math.min(this.Y+this._movesTo._velocityY*_deltaTime,this._movesTo._Y)
+        }
+*/
+        
+
+    }
+
     // ******************************************************
     // * CAMERA SCROLL
     // ******************************************************
@@ -139,8 +163,14 @@ game.sprites.platform.managePlatformCollisions = function () {
     // * APPLY MESSAGES
     // ******************************************************
     for (let _message of game.variables.messages) {
+        // DESTROY
         if(_message=='PLTF_DESTROY:'+this._id) {
             this.cloneDelete()
+            game.variables.messages=game.variables.messages.filter(e => e !== _message)
+        }
+        // MOVES
+        if(_message=='PLTF_MOVE:'+this._id) {
+            this._isMoving = true
             game.variables.messages=game.variables.messages.filter(e => e !== _message)
         }
       }
