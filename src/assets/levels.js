@@ -23,6 +23,10 @@ game.levels.initLevel = function (_level) {
     game.variables.camX = _level._camera.X
     game.variables.camY = _level._camera.Y
 
+    // Setup victory conditions
+    game.variables.victoryPtlfId = _level._victory._plt
+    game.variables.victoryNumId =  _level._victory._num
+
 }
 
 game.levels.createLevels = function () {
@@ -36,7 +40,8 @@ game.levels.createLevels = function () {
                 {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
                 {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
                 {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_DETECTED:56'}},
-                {_id:'9',_width:30,_height:160,X:850,Y:-270,_fillStyle:'#390052',_movesTo:{X:850,Y:-430,_velocityX:0,_velocityY:-1000}}],
+                {_id:'9',_width:30,_height:160,X:850,Y:-270,_fillStyle:'#390052',_movesTo:{X:850,Y:-430,_velocityX:0,_velocityY:-1000}},
+                {_id:'10',_width:30,_height:160,X:650,Y:-270,_fillStyle:'#390052'}],
     _player:{X:2200,Y:-100},
     _numbers:[{_id:'56',X:1400,Y:-306,
               _Xmin:1200,_Xmax:1420,_velocityX:100,
@@ -45,6 +50,7 @@ game.levels.createLevels = function () {
               _XminFallen:600,_XmaxFallen:1000, _velocityXFallen:100,
               _textNormal:'',_textEscape:'FEAR!',_textFallen:'HELP',
               _bodyFill:'#390052',_textFill:'#390052'}],
+    _victory:{_plt:'10',_num:'56'},
     _camera:{X:2000,Y:-100}
   }
 }

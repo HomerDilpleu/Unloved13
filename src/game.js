@@ -32,14 +32,20 @@ game = {
     numbers: mge.game.createSprite()
   },
   variables:{
-    camX:0,
-    camY:0,
+    // Settings
     camMaxOffsetX:200,
     camMaxOffsetY:100,
     numberWidth:60,
     numberHeight:70,
     gravity:5000,
-    messages:[]
+    // Initialisation
+    camX:0,
+    camY:0,
+    messages:[],
+    victoryPtlfId:'1',
+    victoryPtlfBox:{xMin:0,xMax:0,yMin:0,yMax:0},
+    victoryNumId:'1',
+    victoryNumBox:{xMin:10,xMax:10,yMin:10,yMax:10}
   },
   instruments:{},
   songs:{

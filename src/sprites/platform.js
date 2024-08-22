@@ -130,13 +130,6 @@ game.sprites.platform.managePlatformCollisions = function () {
         } else {
             this.X = Math.min(this.X+this._movesTo._velocityX*_deltaTime,this._movesTo.X+this._width/2)
         }
-
-/*        if (this._movesTo._velocityY > 0 && this.Y < this._movesTo.Y) {
-            this.Y = Math.min(this.Y+this._movesTo._velocityY*_deltaTime,this._movesTo._Y)
-        }
-*/
-        
-
     }
 
     // ******************************************************
@@ -144,6 +137,13 @@ game.sprites.platform.managePlatformCollisions = function () {
     // ******************************************************
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
+
+    // ******************************************************
+    // * UPDATE VICTORY CONDITIONS
+    // ******************************************************
+    if (this._id == game.variables.victoryPtlfId) {
+        game.variables.victoryPtlfBox={xMin:this.x-this.width/2,xMax:this.x+this.width/2,yMin:this.y-this.height/2,yMax:this.y+this.height/2}
+    }
     
     // ******************************************************
     // * ACTIONABLE PLATFORM

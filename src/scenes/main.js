@@ -9,6 +9,9 @@ game.scenes.main.start = function() {
         // Create level1
         game.levels.initLevel(game.levels.level1)
 
+        // Update state
+        game.state = 'running'
+
 }
 
 //////////////////////
@@ -36,6 +39,11 @@ game.scenes.main.update = function() {
 
         // Update numbers
         game.sprites.numbers.cloneExecuteForEach('update')
+
+        // Check victory condition
+        if (game.utils.checkColisionBox(game.variables.victoryPtlfBox,game.variables.victoryNumBox)) {
+                game.state = 'completed'
+        } 
 
 }
 

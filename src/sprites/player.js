@@ -83,22 +83,22 @@ game.sprites.player.update = function () {
     this.Y+=Math.round(this.velocityY*deltaTime)
 
     // Update hitboxes positions
-    this.hitBoxRight = {Xmin:this.X + this.width/2,
-                        Xmax:this.X + this.width/2 + this.HitBoxSize,
-                        Ymin:this.Y - this.height/2 + this.HitBoxSize,
-                        Ymax:this.Y + this.height/2 - this.HitBoxSize}
-    this.hitBoxLeft =  {Xmin:this.X - this.width/2 - this.HitBoxSize,
-                        Xmax:this.X - this.width/2,
-                        Ymin:this.Y - this.height/2 + this.HitBoxSize,
-                        Ymax:this.Y + this.height/2 - this.HitBoxSize}
-    this.hitBoxUp =    {Xmin:this.X - this.width/2 + this.HitBoxSize,
-                        Xmax:this.X + this.width/2 - this.HitBoxSize,
-                        Ymin:this.Y - this.height/2,
-                        Ymax:this.Y - this.height/2 + this.HitBoxSize}
-    this.hitBoxDown =  {Xmin:this.X - this.width/2 + this.HitBoxSize,
-                        Xmax:this.X + this.width/2 - this.HitBoxSize,
-                        Ymin:this.Y + this.height/2 - this.HitBoxSize,
-                        Ymax:this.Y + this.height/2}
+    this.hitBoxRight = {xMin:this.X + this.width/2,
+                        xMax:this.X + this.width/2 + this.HitBoxSize,
+                        yMin:this.Y - this.height/2 + this.HitBoxSize,
+                        yMax:this.Y + this.height/2 - this.HitBoxSize}
+    this.hitBoxLeft =  {xMin:this.X - this.width/2 - this.HitBoxSize,
+                        xMax:this.X - this.width/2,
+                        yMin:this.Y - this.height/2 + this.HitBoxSize,
+                        yMax:this.Y + this.height/2 - this.HitBoxSize}
+    this.hitBoxUp =    {xMin:this.X - this.width/2 + this.HitBoxSize,
+                        xMax:this.X + this.width/2 - this.HitBoxSize,
+                        yMin:this.Y - this.height/2,
+                        yMax:this.Y - this.height/2 + this.HitBoxSize}
+    this.hitBoxDown =  {xMin:this.X - this.width/2 + this.HitBoxSize,
+                        xMax:this.X + this.width/2 - this.HitBoxSize,
+                        yMin:this.Y + this.height/2 - this.HitBoxSize,
+                        yMax:this.Y + this.height/2}
 
     // Manage collisions with platforms
     this.collidesRight = false

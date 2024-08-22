@@ -92,6 +92,11 @@ game.sprites.numbers.update = function () {
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
 
+    // Update Victory conditions
+    if (this._id == game.variables.victoryNumId) {
+        game.variables.victoryNumBox={xMin:this.x-this.width/2,xMax:this.x+this.width/2,yMin:this.y-this.height/2,yMax:this.y+this.height/2}
+    }
+
     // Apply messages
     for (let _message of game.variables.messages) {
         if (_message='NUM_DETECTED:'+this._id) {
