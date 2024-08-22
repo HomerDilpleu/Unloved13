@@ -35,8 +35,7 @@ game.levels.createLevels = function () {
                 {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
                 {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
                 {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
-                {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_DETECTED:56'}}
-    ],
+                {_id:'8',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_DETECTED:56'}}],
     _player:{X:2200,Y:-100},
     _numbers:[{_id:'56',X:1400,Y:-306,
               _Xmin:1200,_Xmax:1420,_velocityX:100,
