@@ -4,7 +4,8 @@ game = {
   state: 'boot',
   scenes: {
     boot : {},
-    main : {}
+    main : {},
+    cinematic : {}
   },
   images:{
     logoDilpleu: mge.image.create(),
@@ -39,6 +40,7 @@ game = {
     numberHeight:70,
     gravity:5000,
     // Initialisation
+    curlevel:0,
     camX:0,
     camY:0,
     messages:[],
@@ -52,7 +54,7 @@ game = {
     mainSong: mge.song.create()
   },
   utils:{},
-  levels:{}
+  levels:[]
 
 }
 

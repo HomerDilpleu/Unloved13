@@ -127,7 +127,7 @@ game.sprites.player.update = function () {
 
     // Update Victory conditions
     if (game.variables.victoryNumId == 'Player') {
-        game.variables.victoryNumBox={xMin:this.x-this.width/2,xMax:this.x+this.width/2,yMin:this.y-this.height/2,yMax:this.y+this.height/2}
+        game.variables.victoryNumBox={xMin:this.x-this.width/2-10,xMax:this.x+this.width/2+10,yMin:this.y-this.height/2-10,yMax:this.y+this.height/2+10}
     }
     if (game.variables.victoryPtlfId == 'Player') {
         game.variables.victoryPtlfBox={xMin:this.x-this.width/2,xMax:this.x+this.width/2,yMin:this.y-this.height/2,yMax:this.y+this.height/2}

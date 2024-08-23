@@ -3,11 +3,15 @@
 //////////////////////
 game.scenes.main.start = function() {
 
+        // Delete eyes and legs
+        game.sprites.eye.cloneDeleteAll()
+        game.sprites.legs.cloneDeleteAll()
+
         // Create player
         game.sprites.player.init()
 
-        // Create level1
-        game.levels.initLevel(game.levels.level1)
+        // Create current level
+        game.levels.initLevel(game.levels[game.variables.curlevel])
 
         // Update state
         game.state = 'running'
@@ -43,6 +47,12 @@ game.scenes.main.update = function() {
         // Check victory condition
         if (game.utils.checkColisionBox(game.variables.victoryPtlfBox,game.variables.victoryNumBox)) {
                 game.state = 'completed'
+                if(game.variables.curlevel < game.levels.length-1) {
+                        game.variables.curlevel+=1
+                } else {
+                        game.variables.curlevel=0
+                }
+                mge.game.changeScene(game.scenes.cinematic)
         } 
 
 }
