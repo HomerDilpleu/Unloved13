@@ -51,7 +51,7 @@ game.levels.createLevels = function () {
               _textNormal:'',_textEscape:'FEAR!',_textFallen:'Bye!',
               _bodyFill:'#390052',_textFill:'#390052'}],
     _victory:{_plt:'10',_num:'56'},
-    _camera:{X:2000,Y:-100}
+_camera:{X:2000,Y:-100}
   }
 }
 
@@ -59,6 +59,7 @@ game.levels.createLevels = function () {
 
                 //{_id:'7',_width:150,_height:30,X:1600,Y:-345,_actionable:{_message:'PLTF_DESTROY:4'}}
 
+    _victory:{_plt:'Player',_num:'12'},
 
   game.levels.level1 = {
     _platforms:[{_id:'1',_width:50,_height:1000,X:-120,Y:210,_fillStyle:'#F0C4B5'},
