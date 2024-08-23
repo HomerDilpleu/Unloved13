@@ -10,12 +10,12 @@ game.sprites.textBox.init = function() {
 
 game.sprites.textBox.drawFunction = function (ctx) {
     if (this._text != '') {
-        ctx.fillStyle = '#ccafdf'
+        ctx.fillStyle = '#390052'
         ctx.fillRect(0,0,this.width,this.height)
         ctx.font = '24px serif'
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
-        ctx.fillStyle = '#390052'
+        ctx.fillStyle = '#ccafdf'
         ctx.fillText(this._text, this.width/2, this.height/2)
     }
 }

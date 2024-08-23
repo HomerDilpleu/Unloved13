@@ -14,7 +14,7 @@ game.scenes.cinematic.start = function() {
 game.scenes.cinematic.update = function() {
 
     // Check is playButton is clicked
-    if(Date.now()-this._startScene>2000) {
+    if(Date.now()-this._startScene>5000) {
         mge.game.changeScene(game.scenes.main)
     }
  
