@@ -52,8 +52,7 @@ game.levels.createLevels = function () {
                   _textNormal:'',_textEscape:'FEAR!',_textFallen:'Bye!',
                   _bodyFill:'#390052',_textFill:'#390052'}],
         _victory:{_plt:'10',_num:'56'},
-        _camera:{X:2000,Y:-100}
-        })
+        _camera:{X:2000,Y:-100}})
   // LEVLEL2
   game.levels.push({
     _platforms:[{_id:'11',_width:2700,_height:270,X:0,Y:0,_fillStyle:game.patterns.level1BlockGreat},
@@ -64,8 +63,7 @@ game.levels.createLevels = function () {
               _Xescape:800,
               _bodyFill:'#390052',_textFill:'#390052'}],
     _victory:{_plt:'5',_num:'Player'},
-    _camera:{X:2000,Y:-100}
-    })
+    _camera:{X:2000,Y:-100}})
   // LEVEL 3
   }
 
