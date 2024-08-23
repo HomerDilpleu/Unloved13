@@ -30,7 +30,6 @@ game.sprites.platform.drawFunction = function (ctx) {
     if (game.utils.checkColisionBox({xMin:this.x-this.width/2,xMax:this.x+this.width*2,yMin:this.y-this.height/2,yMax:this.y+this.height/2},{xMin:0,xMax:mge.game.width,yMin:0,yMax:mge.game.height})) {
         if (this._fillStyle!='') {
             ctx.fillStyle=this._fillStyle
-            //ctx.fillRect(0,0,this.width,this.height)
             ctx.beginPath()
             ctx.roundRect(0,0,this.width,this.height,this._radiusStyle)
             ctx.fill()

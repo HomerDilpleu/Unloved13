@@ -7,10 +7,6 @@ game.sprites.logoDilpleu.init = function() {
     this.y = 650
 }
 
-game.sprites.logoDilpleu.update = function () {
-
-}
-
 game.sprites.logoDilpleu.drawFunction = function (ctx) {
     game.images.logoDilpleu.draw(ctx)
 }
