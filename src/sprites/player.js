@@ -153,30 +153,30 @@ game.sprites.player.drawFunction = function (ctx) {
     }
 
     // Legs
-    if (Math.abs(this.velocityX) < 1) {
+    if (!(this.ControllerRight || this.ControllerLeft)) {
         this._legs._curAnimation = 'idle'
         this._legs.x = this.x
         this._legs.y = this.y+29
         this._legs.scaleX = 1
     }
-    if (this.velocityX <= -1) {
+    if (this.ControllerLeft) {
         this._legs._curAnimation = 'walk'
         this._legs.x = this.x
         this._legs.y = this.y+29
         this._legs.scaleX = -1
     }
-    if (this.velocityX >= 1) {
+    if (this.ControllerRight) {
         this._legs._curAnimation = 'walk'
         this._legs.x = this.x
         this._legs.y = this.y+29
         this._legs.scaleX = 1
     }
-    if (Math.abs(this.velocityY > 0)) {
-        this._legs._curAnimation = 'idle'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
+//    if (Math.abs(this.velocityY > 0)) {
+//        this._legs._curAnimation = 'idle'
+//        this._legs.x = this.x
+//        this._legs.y = this.y+29
+//        this._legs.scaleX = 1
+//    }
 
 
 
