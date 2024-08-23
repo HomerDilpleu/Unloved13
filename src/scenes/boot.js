@@ -16,6 +16,7 @@ game.scenes.boot.start = function() {
     game.sprites.playButton.init()
     game.sprites.eye.init()
     game.sprites.legs.init()
+    game.sprites.textBox.init()
 
     // Create patterns
     game.patterns.level1BlockDiv = mge._canvas._renderContext.createPattern(game.images.level1BlockDiv._bitmap, 'repeat')

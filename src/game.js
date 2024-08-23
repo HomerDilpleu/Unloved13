@@ -30,7 +30,8 @@ game = {
     player: mge.game.createSprite(),
     eye: mge.game.createSprite(),
     legs: mge.game.createSprite(),
-    numbers: mge.game.createSprite()
+    numbers: mge.game.createSprite(),
+    textBox: mge.game.createSprite()
   },
   variables:{
     // Settings

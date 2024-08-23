@@ -13,6 +13,9 @@ game.scenes.main.start = function() {
         // Create current level
         game.levels.initLevel(game.levels[game.variables.curlevel])
 
+        // Create textBox
+        game.sprites.textBox.init()
+
         // Update state
         game.state = 'running'
 
@@ -43,6 +46,15 @@ game.scenes.main.update = function() {
 
         // Update numbers
         game.sprites.numbers.cloneExecuteForEach('update')
+
+        // Get messages
+        for (let _message of game.variables.messages) {
+                // UPDATE TEXT BOX
+                if(_message.split(':')[0]=='TEXT_BOX') {
+                        game.sprites.textBox._text = _message.split(':')[1]
+                        game.variables.messages=game.variables.messages.filter(e => e !== _message)
+                }
+              }
 
         // Check victory condition
         if (game.utils.checkColisionBox(game.variables.victoryPtlfBox,game.variables.victoryNumBox)) {
@@ -76,5 +88,9 @@ game.scenes.main.draw = function() {
 
         // Draw legs
         game.sprites.legs.cloneExecuteForEach('draw')
+
+        // Draw text box
+        game.sprites.textBox.draw()
+
 
 }

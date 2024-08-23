@@ -25,9 +25,8 @@ game.scenes.cinematic.update = function() {
 //////////////////////
 game.scenes.cinematic.draw = function() {
 
-    // Draw sprites
-    game.sprites.player.x=mge.game.width/2
-    game.sprites.player.y=mge.game.height/2
-    game.sprites.player.draw()
+    // Draw message
+    game.sprites.textBox._text='LEVEL COMPLETED'
+    game.sprites.textBox.draw()
 
 }

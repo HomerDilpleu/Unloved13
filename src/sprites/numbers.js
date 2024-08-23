@@ -99,7 +99,7 @@ game.sprites.numbers.update = function () {
 
     // Apply messages
     for (let _message of game.variables.messages) {
-        if (_message='NUM_DETECTED:'+this._id) {
+        if (_message=='NUM_DETECTED:'+this._id) {
             this._isDetected= true
             game.variables.messages=game.variables.messages.filter(e => e !== _message)
         }
