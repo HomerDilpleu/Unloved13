@@ -224,6 +224,8 @@ stringsToUglify+=['_restart']
 stringsToUglify+=['game','state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
 stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','gravity','curlevel','camX','camY','messages','victoryPtlfId','victoryPtlfBox','victoryNumId','victoryNumBox']
 
+# Utlil.js
+stringsToUglify+=['checkColisionBox']
 
 
 
