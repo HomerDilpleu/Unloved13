@@ -227,8 +227,21 @@ stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','
 # Utlil.js
 stringsToUglify+=['checkColisionBox']
 
+# Images.js
+stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','legsIdle','legsWalk1','legsWalk2','legsWalk3','legsWalk4']
 
+# Animations.js
+stringsToUglify+=['legsIdle','legsWalk']
 
+# Instruments.js
+
+# Levels.js
+stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
+stringsToUglify+=['_id','_width','_height','_scrollRatio','_fillStyle','_actionable','_message','_movesTo','_velocityX','_velocityY']
+stringsToUglify+=['_pushable','_Xmin','_Xmax','_Xfall','_Yfall','_fallSide','_Xescape','_fallMessage','_XminFallen','_XmaxFallen','_velocityXFallen','_textNormal']
+stringsToUglify+=['_textEscape','_textFallen','_bodyFill','_textFill']
+
+# Songs.js
 
 
 outputFile='main.js'
