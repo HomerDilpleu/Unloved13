@@ -19,7 +19,10 @@ game = {
     legsWalk3: mge.image.create(),
     legsWalk4: mge.image.create(),
     level1BlockDiv: mge.image.create(),
-    level1BlockGreat: mge.image.create()
+    level1BlockGreat: mge.image.create(),
+    level1Background1: mge.image.create(),
+    level1Background2: mge.image.create(),
+    level1Background3: mge.image.create()
   },
   animations:{},
   patterns:{},
@@ -31,6 +34,7 @@ game = {
     eye: mge.game.createSprite(),
     legs: mge.game.createSprite(),
     numbers: mge.game.createSprite(),
+    background: mge.game.createSprite(),
     textBox: mge.game.createSprite()
   },
   variables:{

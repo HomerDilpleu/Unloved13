@@ -15,7 +15,7 @@ game.scenes.main.start = function() {
 
         // Create textBox
         game.sprites.textBox.init()
-
+      
         // Update state
         game.state = 'running'
 
@@ -47,6 +47,9 @@ game.scenes.main.update = function() {
         // Update numbers
         game.sprites.numbers.cloneExecuteForEach('update')
 
+        // Update backgrounds
+        game.sprites.background.cloneExecuteForEach('update')
+
         // Get messages
         for (let _message of game.variables.messages) {
                 // UPDATE TEXT BOX
@@ -73,6 +76,9 @@ game.scenes.main.update = function() {
 // Draw scene
 //////////////////////
 game.scenes.main.draw = function() {
+
+        // Draw backgrounds
+        game.sprites.background.cloneExecuteForEach('draw')
 
         // Draw platforms
         game.sprites.platform.cloneExecuteForEach('draw')

@@ -15,6 +15,12 @@ game.levels.initLevel = function (_level) {
         game.sprites.numbers.init(_num)
       }
 
+    // Create backgrounds
+    game.sprites.background.cloneDeleteAll()
+    for (let _bkg of _level._backgrounds) {
+        game.sprites.background.init(_bkg,_level._camera)
+      }
+
     // Initialise player  
     game.sprites.player.X = _level._player.X
     game.sprites.player.Y = _level._player.Y
@@ -33,6 +39,9 @@ game.levels.initLevel = function (_level) {
 game.levels.createLevels = function () {
   // LEVEL 1
   game.levels.push({
+        _backgrounds:[{_id:'1',_width:1300,_height:750,_scrollRatio:0,_fillStyle:game.patterns.level1Background1},
+                      {_id:'2',_width:5000,_height:750,_scrollRatio:0.5,_fillStyle:game.patterns.level1Background2},
+                      {_id:'3',_width:7000,_height:750,_scrollRatio:0.75,_fillStyle:game.patterns.level1Background3}],
         _platforms:[{_id:'1',_width:2700,_height:270,X:0,Y:0,_fillStyle:'#582970'},
                     {_id:'1bis',_width:600,_height:30,X:1830,Y:0,_actionable:{_message:'TEXT_BOX:HI 13, WELCOME TO NUMBERLAND!'}},
                     {_id:'2',_width:270,_height:2700,X:2430,Y:-2700,_fillStyle:'#582970'},
