@@ -7,23 +7,7 @@ game = {
     main : {},
     cinematic : {}
   },
-  images:{
-    logoDilpleu: mge.image.create(),
-    playButton: mge.image.create(),
-    playerBody: mge.image.create(),
-    openEye: mge.image.create(),
-    closeEye: mge.image.create(),
-    legsIdle: mge.image.create(),
-    legsWalk1: mge.image.create(),
-    legsWalk2: mge.image.create(),
-    legsWalk3: mge.image.create(),
-    legsWalk4: mge.image.create(),
-    level1BlockDiv: mge.image.create(),
-    level1BlockGreat: mge.image.create(),
-    level1Background1: mge.image.create(),
-    level1Background2: mge.image.create(),
-    level1Background3: mge.image.create()
-  },
+  images:{},
   animations:{},
   patterns:{},
   sprites:{

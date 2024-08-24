@@ -3,9 +3,11 @@
 //////////////////////
 game.scenes.boot.start = function() {
 
-    // Load images of the game
-    while (mge.image.loadNextImage() < 1) {
-    }
+    // Load images and patterns
+    game.images.init()
+
+    // Load animations
+    game.animations.init()
 
     // Load songs of the game
     while (mge.song.loadNextSong() < 1) {
@@ -17,13 +19,6 @@ game.scenes.boot.start = function() {
     game.sprites.eye.init()
     game.sprites.legs.init()
     game.sprites.textBox.init()
-
-    // Create patterns
-    game.patterns.level1BlockDiv = mge._canvas._renderContext.createPattern(game.images.level1BlockDiv._bitmap, 'repeat')
-    game.patterns.level1BlockGreat = mge._canvas._renderContext.createPattern(game.images.level1BlockGreat._bitmap, 'repeat')
-    game.patterns.level1Background1 = mge._canvas._renderContext.createPattern(game.images.level1Background1._bitmap, 'repeat')
-    game.patterns.level1Background2 = mge._canvas._renderContext.createPattern(game.images.level1Background2._bitmap, 'repeat')
-    game.patterns.level1Background3 = mge._canvas._renderContext.createPattern(game.images.level1Background3._bitmap, 'repeat')
 
     // Create levels
     game.levels.createLevels()
