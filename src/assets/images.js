@@ -1,5 +1,4 @@
-game.images.init = function ()
-{
+game.images.init = function () {
     /////////////////////////
     // CERATE AND LOAD IMAGES
     /////////////////////////
