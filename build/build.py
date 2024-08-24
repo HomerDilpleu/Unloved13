@@ -223,6 +223,7 @@ stringsToUglify+=['_restart']
 # game.js
 stringsToUglify+=['game','state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
 stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','gravity','curlevel','camX','camY','messages','victoryPtlfId','victoryPtlfBox','victoryNumId','victoryNumBox']
+stringsToUglify+=['boot','main','cinematic']
 
 # utils.js
 stringsToUglify+=['checkColisionBox']
@@ -234,6 +235,7 @@ stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','
 stringsToUglify+=['legsIdle','legsWalk']
 
 # instruments.js
+# A FAIRE
 
 # levels.js
 stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
@@ -245,7 +247,7 @@ stringsToUglify+=['_textEscape','_textFallen','_bodyFill','_textFill']
 
 # boot.js
 
-# cinamatic.js
+# cinematic.js
 stringsToUglify+=['_startScene']
 
 # background.js
