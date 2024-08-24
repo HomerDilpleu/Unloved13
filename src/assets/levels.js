@@ -39,9 +39,9 @@ game.levels.initLevel = function (_level) {
 game.levels.createLevels = function () {
   // LEVEL 1
   game.levels.push({
-        _backgrounds:[{_id:'1',_width:1300,_height:750,_scrollRatio:0,_fillStyle:game.patterns.level1Background1},
-                      {_id:'2',_width:5000,_height:750,_scrollRatio:0.5,_fillStyle:game.patterns.level1Background2},
-                      {_id:'3',_width:7000,_height:750,_scrollRatio:0.75,_fillStyle:game.patterns.level1Background3}],
+        _backgrounds:[{_id:'1',_width:1300,_height:750,X:2000,Y:-100,_scrollRatio:0,_fillStyle:game.patterns.level1Background1},
+                      {_id:'2',_width:5000,_height:750,X:2000,Y:-150,_scrollRatio:0.5,_fillStyle:game.patterns.level1Background2},
+                      {_id:'3',_width:7000,_height:750,X:2000,Y:-150,_scrollRatio:0.75,_fillStyle:game.patterns.level1Background3}],
         _platforms:[{_id:'1',_width:2700,_height:270,X:0,Y:0,_fillStyle:'#582970'},
                     {_id:'1bis',_width:600,_height:30,X:1830,Y:0,_actionable:{_message:'TEXT_BOX:HI 13, WELCOME TO NUMBERLAND!'}},
                     {_id:'2',_width:270,_height:2700,X:2430,Y:-2700,_fillStyle:'#582970'},
@@ -68,6 +68,7 @@ game.levels.createLevels = function () {
         _camera:{X:2000,Y:-100}})
   // LEVLEL2
   game.levels.push({
+    _backgrounds:[],
     _platforms:[{_id:'11',_width:2700,_height:270,X:0,Y:0,_fillStyle:game.patterns.level1BlockGreat},
                 {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10}],
     _player:{X:2200,Y:-100},
