@@ -220,28 +220,36 @@ stringsToUglify+=['_restart']
 #########################################
 # UNLOVED 13
 #########################################
-# Game.js
+# game.js
 stringsToUglify+=['game','state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
 stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','gravity','curlevel','camX','camY','messages','victoryPtlfId','victoryPtlfBox','victoryNumId','victoryNumBox']
 
-# Utlil.js
+# utils.js
 stringsToUglify+=['checkColisionBox']
 
-# Images.js
+# images.js
 stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','legsIdle','legsWalk1','legsWalk2','legsWalk3','legsWalk4']
 
-# Animations.js
+# animations.js
 stringsToUglify+=['legsIdle','legsWalk']
 
-# Instruments.js
+# instruments.js
 
-# Levels.js
+# levels.js
 stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
 stringsToUglify+=['_id','_width','_height','_scrollRatio','_fillStyle','_actionable','_message','_movesTo','_velocityX','_velocityY']
 stringsToUglify+=['_pushable','_Xmin','_Xmax','_Xfall','_Yfall','_fallSide','_Xescape','_fallMessage','_XminFallen','_XmaxFallen','_velocityXFallen','_textNormal']
 stringsToUglify+=['_textEscape','_textFallen','_bodyFill','_textFill']
 
-# Songs.js
+# songs.js
+
+# boot.js
+
+# cinamatic.js
+stringsToUglify+=['_startScene']
+
+# background.js
+stringsToUglify+=['_bkgConfig','_camConfig','_clone','_camXinit','_camYinit','_scrollRatio','_fillStyle','_deltaCamX','_scrolledCamX','_deltaCamY','_scrolledCamY']
 
 
 outputFile='main.js'
