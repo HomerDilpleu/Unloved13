@@ -265,6 +265,19 @@ stringsToUglify+=['_numConfig','_isDetected','_speakTxt','deltaTime','_message']
 # platforms.js
 stringsToUglify+=['_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message']
 
+# playButton.js
+
+# textBox.js
+stringsToUglify+=['_text']
+
+
+# player.js
+stringsToUglify+=['ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
+stringsToUglify+=['hitBoxRight','hitBoxLeft','hitBoxUp','hitBoxDown','moveForce','moveForceWhenNoTouching','jumpForce','maxVelocity','frictionRate']
+stringsToUglify+=['accelerationX','accelerationY','velocityX','velocityY','_eye','_legs','lastX','lastY']
+
+
+
 
 outputFile='main.js'
 

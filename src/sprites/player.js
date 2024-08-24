@@ -171,26 +171,6 @@ game.sprites.player.drawFunction = function (ctx) {
         this._legs.y = this.y+29
         this._legs.scaleX = 1
     }
-//    if (Math.abs(this.velocityY > 0)) {
-//        this._legs._curAnimation = 'idle'
-//        this._legs.x = this.x
-//        this._legs.y = this.y+29
-//        this._legs.scaleX = 1
-//    }
 
-
-
-/*
-    // Hitboxes debug
-    ctx.strokeStyle = 'red'
-    // Right
-    ctx.strokeRect(this.width,this.HitBoxSize,this.HitBoxSize,this.height-2*this.HitBoxSize)
-    // Left
-    ctx.strokeRect(-this.HitBoxSize,this.HitBoxSize,this.HitBoxSize,this.height-2*this.HitBoxSize)
-    // Up
-    ctx.strokeRect(this.HitBoxSize,0,this.width-2*this.HitBoxSize,this.HitBoxSize)
-    // Down
-    ctx.strokeRect(this.HitBoxSize,this.height,this.width-2*this.HitBoxSize,-this.HitBoxSize)
-*/
 }
 
