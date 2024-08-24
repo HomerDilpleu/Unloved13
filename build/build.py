@@ -220,6 +220,13 @@ stringsToUglify+=['_restart']
 #########################################
 # UNLOVED 13
 #########################################
+# Game.js
+stringsToUglify+=['game','state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
+stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','gravity','curlevel','camX','camY','messages','victoryPtlfId','victoryPtlfBox','victoryNumId','victoryNumBox']
+
+
+
+
 
 
 outputFile='main.js'
