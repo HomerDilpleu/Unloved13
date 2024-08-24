@@ -251,6 +251,20 @@ stringsToUglify+=['_startScene']
 # background.js
 stringsToUglify+=['_bkgConfig','_camConfig','_clone','_camXinit','_camYinit','_scrollRatio','_fillStyle','_deltaCamX','_scrolledCamX','_deltaCamY','_scrolledCamY']
 
+# eye.js
+stringsToUglify+=['_curAnimation','_lastAnimation']
+
+# legs.js
+stringsToUglify+=['_curAnimation','_lastAnimation']
+
+# logodilpleu.js
+
+# numbers.js
+stringsToUglify+=['_numConfig','_isDetected','_speakTxt','deltaTime','_message']
+
+# platforms.js
+stringsToUglify+=['_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message']
+
 
 outputFile='main.js'
 
