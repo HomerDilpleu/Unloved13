@@ -36,7 +36,6 @@ game.images.init = function () {
     game.images.pi.scale = 0.8
     game.images.pi.load()
 
-
     game.images.openEye = mge.image.create()
     game.images.openEye.config = {"_s":{"_w":130,"_h":140},"_p":[{"_fs":["C","#ffffff"],"_ss":["#000000","5","round","round"],"_gp":[],"_c":[["C","60","70","45"],["M","75","25"],["Q","80","16","102","11"],["M","85","32"],["Q","86","25","108","21"],["M","92","38"],["Q","100","33","114","34"]],"_t":[8,8,8,"","","","",""]},{"_fs":["C","#000000"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["C","45","80","15"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.openEye.scale = 0.2
@@ -71,7 +70,11 @@ game.images.init = function () {
     game.images.legsWalk4.config = {"_s":{"_w":130,"_h":80},"_p":[{"_fs":["N",""],"_ss":["#000000","20","round","round"],"_gp":[],"_c":[["M","35","0"],["Q","39","24","48","71"],["L","62","66"],["M","97","3"],["Q","93","31","89","59"],["L","103","69"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.legsWalk4.scale = 0.2
     game.images.legsWalk4.load()
-    
+
+    game.images.numberLand = mge.image.create()
+    game.images.numberLand.config = {"_s":{"_w":200,"_h":100},"_p":[{"_fs":["C","#9bae8f"],"_ss":["#417029","2","round","round"],"_gp":[],"_c":[["R","2","2","196","38"],["R","95","40","9","58"]],"_t":[8,8,8,"","","","",""]},{"_fs":["C","#417029"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["11","23","25","bold","Arial","left","middle","NUMBERLAND"]}]}
+    game.images.numberLand.load()
+
     /////////////////////////
     // BACKGROUNDS
     /////////////////////////

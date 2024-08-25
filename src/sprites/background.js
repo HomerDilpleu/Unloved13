@@ -12,7 +12,8 @@ game.sprites.background.init = function(_bkgConfig,_camConfig) {
     _clone._camYinit = _camConfig.Y
     _clone._scrollRatio = _bkgConfig._scrollRatio
     // Style
-    _clone._fillStyle = _bkgConfig._fillStyle
+    _clone._fillStyle = _bkgConfig._fillStyle || ''
+    _clone._image = _bkgConfig._image || ''
     // Return clone    
     return _clone
   
@@ -31,6 +32,13 @@ game.sprites.background.update = function () {
 
 
 game.sprites.background.drawFunction = function (ctx) {
-    ctx.fillStyle = this._fillStyle
-    ctx.fillRect(0,0,this.width,this.height)
+    if (this._fillStyle!='') {
+        ctx.fillStyle=this._fillStyle
+        ctx.beginPath()
+        ctx.fillRect(0,0,this.width,this.height)
+        ctx.fill()
+    } 
+    if (this._image!='') {
+        this._image.draw(ctx)
+    }
 }

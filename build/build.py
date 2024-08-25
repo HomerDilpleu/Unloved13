@@ -229,7 +229,7 @@ stringsToUglify+=['boot','main','cinematic']
 stringsToUglify+=['checkColisionBox']
 
 # images.js
-stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','legsIdle','legsWalk1','legsWalk2','legsWalk3','legsWalk4']
+stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','legsIdle','legsWalk1','legsWalk2','legsWalk3','legsWalk4','numberLand']
 stringsToUglify+=['_createColoredPattern','_config','_colour1','_colour2','_image','_configCopy',]
 stringsToUglify+=['_triangles','_rectangles','_circle','_losange','_diagonal','_inclinedBLock','_block','_beziers1','_beziers2']
 
