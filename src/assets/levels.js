@@ -39,15 +39,15 @@ game.levels.initLevel = function (_level) {
 game.levels.createLevels = function () {
   // LEVEL 1
   game.levels.push({
-        _backgrounds:[{_id:'1',_width:1300,_height:750,X:2000,Y:-100,_scrollRatio:0,_fillStyle:game.patterns.level1Background1},
-                      {_id:'2',_width:5000,_height:750,X:2000,Y:-150,_scrollRatio:0.5,_fillStyle:game.patterns.level1Background2},
-                      {_id:'3',_width:7000,_height:750,X:2000,Y:-150,_scrollRatio:0.75,_fillStyle:game.patterns.level1Background3},
-                      {_id:'4',_width:200,_height:100,X:2200,Y:-48,_scrollRatio:1,_image:game.images.numberLand}],
+        _backgrounds:[{_id:'1',_width:1300,_height:750,X:3000,Y:-100,_scrollRatio:0,_fillStyle:game.patterns.level1Background1},
+                      {_id:'2',_width:5000,_height:750,X:3000,Y:-150,_scrollRatio:0.5,_fillStyle:game.patterns.level1Background2},
+                      {_id:'3',_width:7000,_height:750,X:3000,Y:-150,_scrollRatio:0.75,_fillStyle:game.patterns.level1Background3},
+                      {_id:'4',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand}],
 //        _platforms:[{_id:'1',_width:2700,_height:300,X:0,Y:0,_fillStyle:'#582970'},
-        _platforms:[{_id:'1',_width:2700,_height:300,X:0,Y:0,_fillStyle:game.patterns.level1BlockGreat},
+        _platforms:[{_id:'1',_width:3900,_height:300,X:0,Y:0,_fillStyle:game.patterns.level1BlockGreat},
             {_id:'1bis',_width:600,_height:30,X:1830,Y:0,_actionable:{_message:'TEXT_BOX:HI 13, WELCOME TO NUMBERLAND!'}},
 //                    {_id:'1ter',_width:2700,_height:300,X:0,Y:30,_fillStyle:'#240335'},
-                    {_id:'2',_width:270,_height:2700,X:2430,Y:-2700,_fillStyle:game.patterns.level1BlockGreat},
+                    {_id:'2',_width:570,_height:2700,X:3300,Y:-2700,_fillStyle:game.patterns.level1BlockGreat},
 //                    {_id:'2bis',_width:500,_height:2700,X:2460,Y:-2670,_fillStyle:'#240335'},
                     {_id:'3',_width:1800,_height:90,X:0,Y:-90,_fillStyle:game.patterns.level1BlockGreat,_radiusStyle:[0,10]},
 //                    {_id:'3bi',_width:1800,_height:90,X:-30,Y:-60,_fillStyle:'#582970'},
@@ -61,7 +61,7 @@ game.levels.createLevels = function () {
                     {_id:'9',_width:30,_height:160,X:850,Y:-270,_fillStyle:'#582970',_movesTo:{X:850,Y:-430,_velocityX:0,_velocityY:-1000}},
                     {_id:'10',_width:40,_height:40,X:1350,Y:-460,_fillStyle:'#417029',_pushable:{_Xmin:900,_Xmax:1400,_Xfall:1300,_Yfall:-290,_fallSide:'left'}},
                     {_id:'11',_width:40,_height:40,X:600,Y:-310,_fillStyle:'#e67e22'}],
-        _player:{X:2200,Y:-100},
+        _player:{X:3000,Y:-100},
         _numbers:[{_id:'56',X:1400,Y:-306,
                   _Xmin:1200,_Xmax:1420,_velocityX:100,
                   _Xescape:800,_velocityEscape:-400,
@@ -70,7 +70,7 @@ game.levels.createLevels = function () {
                   _textNormal:'',_textEscape:'FEAR!',_textFallen:'FEAR!',
                   _bodyFill:'#390052',_textFill:'#390052'}],
         _victory:{_plt:'11',_num:'Player'},
-        _camera:{X:2000,Y:-100}})
+        _camera:{X:3000,Y:-100}})
   // LEVLEL2
   game.levels.push({
     _backgrounds:[],

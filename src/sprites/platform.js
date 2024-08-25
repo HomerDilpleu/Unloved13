@@ -4,6 +4,7 @@ game.sprites.platform.init = function (_pltfConfig) {
     // Standard properties
     _clone.width = _pltfConfig._width
     _clone.height = _pltfConfig._height
+    _clone.drawBoundaries = true
     //_clone.drawBoundaries = true
     // Physics
     _clone.X = _pltfConfig.X+_pltfConfig._width/2
