@@ -272,7 +272,7 @@ stringsToUglify+=['_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaT
 # playButton.js
 
 # textBox.js
-stringsToUglify+=['_text']
+stringsToUglify+=['_text','_lastText','_lastChangeTime']
 
 
 # player.js

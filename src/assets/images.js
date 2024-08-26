@@ -79,17 +79,17 @@ game.images.init = function () {
     // BACKGROUNDS
     /////////////////////////
     game.images.level1Background1 = mge.image.create()
-    game.images.level1Background1.config = {"_s":{"_w":1300,"_h":750},"_p":[{"_fs":["LG","0","0","0","750"],"_ss":["#000000","1","round","round"],"_gp":[[0,"#ccafdf"],[1,"#ffffff"]],"_c":[["R","0","0","1300","750"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.level1Background1.config = {"_s":{"_w":1300,"_h":750},"_p":[{"_fs":["LG","0","0","0","750"],"_ss":["#000000","0","round","round"],"_gp":[[0,"#ccafdf"],[1,"#ffffff"]],"_c":[["R","0","0","1300","750"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.level1Background1.load()
     game.patterns.level1Background1 = mge._canvas._renderContext.createPattern(game.images.level1Background1._bitmap, 'repeat')
 
     game.images.level1Background2 = mge.image.create()
-    game.images.level1Background2.config = {"_s":{"_w":1300,"_h":750},"_p":[{"_fs":["C","#c8a2e2"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","375"],["L","250","300"],["L","1000","450"],["L","1300","375"],["L","1300","750"],["L","0","750"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.level1Background2.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#c8a2e2"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1125"],["L","250","1050"],["L","1000","1200"],["L","1300","1125"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.level1Background2.load()
     game.patterns.level1Background2 = mge._canvas._renderContext.createPattern(game.images.level1Background2._bitmap, 'repeat')
 
     game.images.level1Background3 = mge.image.create()
-    game.images.level1Background3.config = {"_s":{"_w":1300,"_h":750},"_p":[{"_fs":["C","#a26ac8"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","500"],["L","131","600"],["L","1000","400"],["L","1300","500"],["L","1300","750"],["L","0","750"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.level1Background3.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#a26ac8"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1200"],["L","131","1300"],["L","1000","1100"],["L","1300","1200"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.level1Background3.load()
     game.patterns.level1Background3 = mge._canvas._renderContext.createPattern(game.images.level1Background3._bitmap, 'repeat')
 
