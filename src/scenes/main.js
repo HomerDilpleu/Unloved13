@@ -55,6 +55,8 @@ game.scenes.main.update = function() {
                 // UPDATE TEXT BOX
                 if(_message.split(':')[0]=='TEXT_BOX') {
                         game.sprites.textBox._text = _message.split(':')[1]
+                        game.sprites.textBox.x = _message.split(':')[2]
+                        game.sprites.textBox.y = _message.split(':')[3]
                         game.variables.messages=game.variables.messages.filter(e => e !== _message)
                 }
               }

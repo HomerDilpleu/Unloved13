@@ -6,10 +6,18 @@ game.sprites.textBox.init = function() {
     this.x = mge.game.width/2
     this.y = this.height/2 + 5
     this._text = ''
+    this._lastText = ''
+    this._lastChangeTime = Date.now()
 }
 
 game.sprites.textBox.drawFunction = function (ctx) {
-    if (this._text != '') {
+    // Update last change time
+    if (this._text != this._lastText) {
+        this._lastChangeTime = Date.now()
+        this._lastText = this._text
+    }
+    // Display text
+    if (this._text != '' && Date.now()-this._lastChangeTime<4000) {
         // Box
         ctx.fillStyle = 'white'
         ctx.strokeStyle = 'black'
