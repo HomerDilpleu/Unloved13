@@ -117,9 +117,14 @@ game.sprites.player.update = function () {
         this.velocityX = 0
     }
 
-    if (this.collidesDown || this.collidesUp) {        
+    if (this.collidesDown) {        
         this.Y = lastY
         this.velocityY = 0}
+
+    if (this.collidesUp) {        
+        this.Y = lastY+5
+        this.velocityY = 0}
+
 
     // Camera scroll
     this.x = this.X - game.variables.camX + mge.game.width / 2
