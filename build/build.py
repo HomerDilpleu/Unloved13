@@ -216,6 +216,14 @@ stringsToUglify+=['_setFrames','_frames']
 stringsToUglify+=['_create','_currentFrame','_lastFrameTime','_timeBetweenFrames']
 stringsToUglify+=['_restart']
 
+#########################################
+# RAMASSE MIETTES
+#########################################
+stringsToUglify+=['Sprite','board','isColliding','_method','_value','minValue','maxValue','pitchADSR','detuneADSR','filterFreqADSR']
+stringsToUglify+=['filterQADSR','GAME_RENDER_CANVAS','stopped','running','_nbBars','config','loadNextImage','NextImage','_activateOwnCloneAnimation']
+stringsToUglify+=['animation','loadExtention','Extension','activateOwnCloneAnimation','timeBetweenFrames','restart','loadNextSong']
+stringsToUglify+=['NextSong','_currentPart','_section','Length','_song']
+
 
 #########################################
 # UNLOVED 13
@@ -223,7 +231,7 @@ stringsToUglify+=['_restart']
 # game.js
 stringsToUglify+=['game','state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
 stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','gravity','curlevel','camX','camY','messages','victoryPtlfId','victoryPtlfBox','victoryNumId','victoryNumBox']
-stringsToUglify+=['boot','main','cinematic']
+stringsToUglify+=['boot','main','cinematic','ready','completed','update']
 
 # utils.js
 stringsToUglify+=['checkColisionBox']
@@ -232,6 +240,7 @@ stringsToUglify+=['checkColisionBox']
 stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','legsIdle','legsWalk1','legsWalk2','legsWalk3','legsWalk4','numberLand']
 stringsToUglify+=['_createColoredPattern','_config','_colour1','_colour2','_image','_configCopy',]
 stringsToUglify+=['_triangles','_rectangles','_circle','_losange','_diagonal','_inclinedBLock','_block','_beziers1','_beziers2']
+stringsToUglify+=['violetBlockLosangeBeziers','violetBlockCircle','violetBlock','blueBlockDiagonal']
 
 # animations.js
 stringsToUglify+=['legsIdle','legsWalk']
@@ -243,7 +252,8 @@ stringsToUglify+=['legsIdle','legsWalk']
 stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
 stringsToUglify+=['_id','_width','_height','_scrollRatio','_fillStyle','_actionable','_message','_movesTo','_velocityX','_velocityY']
 stringsToUglify+=['_pushable','_Xmin','_Xmax','_Xfall','_Yfall','_fallSide','_Xescape','_fallMessage','_XminFallen','_XmaxFallen','_velocityXFallen','_textNormal']
-stringsToUglify+=['_textEscape','_textFallen','_bodyFill','_textFill']
+stringsToUglify+=['_textEscape','_textFallen','_bodyFill','_textFill','_strokeStyle','TEXT_BOX','NUM_DETECTED','PLTF_DESTROY','PLTF_MOVE','Player','_velocityFall']
+stringsToUglify+=['_velocityEscape','_autoJumpForce','_radiusStyle']
 
 # songs.js
 
@@ -253,7 +263,7 @@ stringsToUglify+=['_textEscape','_textFallen','_bodyFill','_textFill']
 stringsToUglify+=['_startScene']
 
 # background.js
-stringsToUglify+=['_bkgConfig','_camConfig','_clone','_camXinit','_camYinit','_scrollRatio','_fillStyle','_deltaCamX','_scrolledCamX','_deltaCamY','_scrolledCamY']
+stringsToUglify+=['background','_bkgConfig','_camConfig','_clone','_camXinit','_camYinit','_scrollRatio','_fillStyle','_deltaCamX','_scrolledCamX','_deltaCamY','_scrolledCamY']
 
 # eye.js
 stringsToUglify+=['_curAnimation','_lastAnimation']
@@ -264,24 +274,20 @@ stringsToUglify+=['_curAnimation','_lastAnimation']
 # logodilpleu.js
 
 # numbers.js
-stringsToUglify+=['_numConfig','_isDetected','_speakTxt','deltaTime','_message']
+stringsToUglify+=['numbers','_numConfig','_isDetected','_speakTxt','deltaTime','_message']
 
 # platforms.js
-stringsToUglify+=['_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message']
+stringsToUglify+=['platform','_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message','managePlatformCollisions','WhenNoTouching']
 
 # playButton.js
 
 # textBox.js
-stringsToUglify+=['_text','_lastText','_lastChangeTime']
-
+stringsToUglify+=['textBox','_text','_lastText','_lastChangeTime']
 
 # player.js
-stringsToUglify+=['ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
+stringsToUglify+=['player','ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
 stringsToUglify+=['hitBoxRight','hitBoxLeft','hitBoxUp','hitBoxDown','moveForce','moveForceWhenNoTouching','jumpForce','maxVelocity','frictionRate']
 stringsToUglify+=['accelerationX','accelerationY','velocityX','velocityY','_eye','_legs','lastX','lastY']
-
-
-
 
 outputFile='main.js'
 
