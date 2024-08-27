@@ -6,7 +6,7 @@ game.sprites.particle.generator = function(_param) {
             size:game.utils.getRandomInteger(_param._sizeMin,_param._sizeMax),
             Vx:game.utils.getRandomInteger(_param._vxMin,_param._vxMax),
             Vy:game.utils.getRandomInteger(_param._vyMin,_param._vyMax),
-            fillStyle:_param._fillStyle,
+            fillStyle:game.utils.getRandomItem(_param._fillStyle),
             gravity:_param._gravity
         }
         game.sprites.particle.init(_config)

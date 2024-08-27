@@ -35,7 +35,7 @@ game.scenes.main.start = function() {
                 _vxMax:5,
                 _vyMin:-20,
                 _vyMax:0,
-                _fillStyle:'red',
+                _fillStyle:['red'],
                 _gravity: 1
         })
 

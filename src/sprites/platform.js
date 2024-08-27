@@ -171,6 +171,22 @@ game.sprites.platform.managePlatformCollisions = function () {
         // DESTROY
         if(_message=='PLTF_DESTROY:'+this._id) {
             this.cloneDelete()
+            // Create particles
+            game.sprites.particle.generator({
+            _nbParticles:10,
+            _xMin:this.x-10,
+            _xMax:this.x+10,
+            _yMin:this.y-10,
+            _yMax:this.y+10,
+            _sizeMin:5,
+            _sizeMax:10,
+            _vxMin:-5,
+            _vxMax:5,
+            _vyMin:-20,
+            _vyMax:0,
+            _fillStyle:[this._fillStyle],
+            _gravity: 1
+    })
             game.variables.messages=game.variables.messages.filter(e => e !== _message)
         }
         // MOVES

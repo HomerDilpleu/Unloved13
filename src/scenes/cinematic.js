@@ -22,7 +22,7 @@ game.scenes.cinematic.start = function() {
         _vxMax:5,
         _vyMin:-20,
         _vyMax:0,
-        _fillStyle:'#582970',
+        _fillStyle:['red','blue','yellow','green'],
         _gravity: 1
 })
 }

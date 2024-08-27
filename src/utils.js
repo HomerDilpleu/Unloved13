@@ -5,3 +5,7 @@ game.utils.checkColisionBox = function (_box1, _box2) {
 game.utils.getRandomInteger = function(min,max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
+
+game.utils.getRandomItem = function(array) {
+    return array[Math.floor(Math.random()*array.length)]
+}
