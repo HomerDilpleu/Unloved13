@@ -89,7 +89,7 @@ game.images.init = function () {
     game.patterns.violetBkg2 = mge._canvas._renderContext.createPattern(game.images.violetBkg2._bitmap, 'repeat')
 
     game.images.violetBkg3 = mge.image.create()
-    game.images.violetBkg3.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#a26ac8"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1200"],["L","131","1300"],["L","1000","1100"],["L","1300","1200"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.violetBkg3.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#a26ac8"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1200"],["L","131","1250"],["L","1000","1100"],["L","1300","1200"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.violetBkg3.load()
     game.patterns.violetBkg3 = mge._canvas._renderContext.createPattern(game.images.violetBkg3._bitmap, 'repeat')
 
