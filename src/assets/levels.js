@@ -43,7 +43,7 @@ game.levels.createLevels = function () {
                       {_id:'B',_width:5000,_height:1500,X:3000,Y:-550,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg2},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-500,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg3},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
-                      {_id:'E',_width:1000,_height:200,X:350,Y:-300,_scrollRatio:1,_fillStyle:game.patterns.blueBlockTriangles}],
+                      {_id:'E',_width:1000,_height:200,X:350,Y:-300,_scrollRatio:1,_fillStyle:game.patterns.blueBlockDiagonal}],
         _platforms:[{_id:'1',_width:3900,_height:300,X:0,Y:0,_fillStyle:game.patterns.violetBlockLosangeBeziers1},
                     {_id:'1bis',_width:600,_height:30,X:1830,Y:0,_actionable:{_message:'TEXT_BOX:HI 13, WELCOME TO NUMBERLAND!:640:550'}},
                     {_id:'2',_width:570,_height:2700,X:3300,Y:-2700,_fillStyle:game.patterns.violetBlockLosangeBeziers2},

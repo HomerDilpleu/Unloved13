@@ -111,7 +111,7 @@ game.images.init = function () {
     game.patterns.violetBlockCircle = game.images._createColoredPattern(_circle,'#582970','#c8a2e2')
     game.patterns.violetBlock = game.images._createColoredPattern(_block,'#c8a2e2','#582970')
 
-    game.patterns.blueBlockTriangles = game.images._createColoredPattern(_triangles,'#5a97c8','#7ab1db')
+    game.patterns.blueBlockDiagonal = game.images._createColoredPattern(_diagonal,'#5a97c8','#6aa4d2')
     
 }
 
