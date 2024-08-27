@@ -10,6 +10,9 @@ game.sprites.playButton.init = function() {
 game.sprites.playButton.update = function () {
     // If clicked, then change scene
     if (this.isClicked) {
+        // Play main song
+        game.songs.mainSong.playSongElectricPiano()
+        // Go to main scene
         mge.game.changeScene(game.scenes.main)
     }
 }

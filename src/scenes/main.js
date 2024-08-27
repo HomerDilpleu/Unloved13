@@ -16,8 +16,6 @@ game.scenes.main.start = function() {
         // Create textBox
         game.sprites.textBox.init()
       
-        game.songs.mainSong.playSongElectricPiano()
-
         // Update state
         game.state = 'running'
 
