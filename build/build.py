@@ -23,7 +23,7 @@ inputFiles = ['../src/lib/mge_V1.0.0.js',\
               '../src/sprites/numbers.js',\
               '../src/sprites/textBox.js',\
               '../src/sprites/background.js',\
-              '../src/sprites/particles.js',\
+              '../src/sprites/particle.js',\
               '../src/sprites/player.js'\
               ]
 

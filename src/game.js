@@ -19,7 +19,7 @@ game = {
     legs: mge.game.createSprite(),
     numbers: mge.game.createSprite(),
     background: mge.game.createSprite(),
-    particles: mge.game.createSprite(),
+    particle: mge.game.createSprite(),
     textBox: mge.game.createSprite()
   },
   variables:{

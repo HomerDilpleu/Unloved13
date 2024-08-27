@@ -8,7 +8,7 @@ game.scenes.main.start = function() {
         game.sprites.legs.cloneDeleteAll()
 
         // Delete particles
-        game.sprites.particles.cloneDeleteAll()
+        game.sprites.particle.cloneDeleteAll()
 
         // Create player
         game.sprites.player.init()
@@ -21,6 +21,23 @@ game.scenes.main.start = function() {
       
         // Update state
         game.state = 'running'
+
+        // Create particles
+        game.sprites.particle.generator({
+                _nbParticles:10,
+                _xMin:game.sprites.player.x-10,
+                _xMax:game.sprites.player.x+10,
+                _yMin:game.sprites.player.y-10,
+                _yMax:game.sprites.player.y+10,
+                _sizeMin:2,
+                _sizeMax:5,
+                _vxMin:-5,
+                _vxMax:5,
+                _vyMin:-20,
+                _vyMax:0,
+                _fillStyle:'red',
+                _gravity: 1
+        })
 
 }
 
@@ -54,7 +71,7 @@ game.scenes.main.update = function() {
         game.sprites.background.cloneExecuteForEach('update')
 
         // Update particles
-        game.sprites.particles.cloneExecuteForEach('update')
+        game.sprites.particle.cloneExecuteForEach('update')
 
         // Get messages
         for (let _message of game.variables.messages) {
@@ -104,7 +121,7 @@ game.scenes.main.draw = function() {
         game.sprites.legs.cloneExecuteForEach('draw')
 
         // Draw particles
-        game.sprites.particles.cloneExecuteForEach('draw')
+        game.sprites.particle.cloneExecuteForEach('draw')
 
         // Draw text box
         game.sprites.textBox.draw()
