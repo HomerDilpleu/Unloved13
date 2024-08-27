@@ -7,6 +7,9 @@ game.scenes.main.start = function() {
         game.sprites.eye.cloneDeleteAll()
         game.sprites.legs.cloneDeleteAll()
 
+        // Delete particles
+        game.sprites.particles.cloneDeleteAll()
+
         // Create player
         game.sprites.player.init()
 
@@ -49,6 +52,9 @@ game.scenes.main.update = function() {
 
         // Update backgrounds
         game.sprites.background.cloneExecuteForEach('update')
+
+        // Update particles
+        game.sprites.particles.cloneExecuteForEach('update')
 
         // Get messages
         for (let _message of game.variables.messages) {
@@ -96,6 +102,9 @@ game.scenes.main.draw = function() {
 
         // Draw legs
         game.sprites.legs.cloneExecuteForEach('draw')
+
+        // Draw particles
+        game.sprites.particles.cloneExecuteForEach('draw')
 
         // Draw text box
         game.sprites.textBox.draw()

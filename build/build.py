@@ -23,6 +23,7 @@ inputFiles = ['../src/lib/mge_V1.0.0.js',\
               '../src/sprites/numbers.js',\
               '../src/sprites/textBox.js',\
               '../src/sprites/background.js',\
+              '../src/sprites/particles.js',\
               '../src/sprites/player.js'\
               ]
 
@@ -246,7 +247,13 @@ stringsToUglify+=['violetBlockLosangeBeziers','violetBlockCircle','violetBlock',
 stringsToUglify+=['legsIdle','legsWalk']
 
 # instruments.js
+#############################
+#############################
+#############################
 # A FAIRE
+#############################
+#############################
+#############################
 
 # levels.js
 stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
@@ -280,9 +287,25 @@ stringsToUglify+=['numbers','_numConfig','_isDetected','_speakTxt','deltaTime','
 stringsToUglify+=['platform','_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message','managePlatformCollisions','WhenNoTouching']
 
 # playButton.js
+#############################
+#############################
+#############################
+# A FAIRE
+#############################
+#############################
+#############################
 
 # textBox.js
 stringsToUglify+=['textBox','_text','_lastText','_lastChangeTime']
+
+# particles.js
+#############################
+#############################
+#############################
+# A FAIRE
+#############################
+#############################
+#############################
 
 # player.js
 stringsToUglify+=['player','ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
