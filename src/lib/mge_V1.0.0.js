@@ -1,6 +1,6 @@
 const mge = {
-    TITLE:'Mini Game Engine',
-    VERSION:'V1.0.0',
+//    TITLE:'Mini Game Engine',
+//    VERSION:'V1.0.0',
 
     // Libraries
     _audio:{},
@@ -99,9 +99,9 @@ mge.game = {
         return mge._loop._fps
     },
     // Number of clones
-    get clonesNb() {
-        return mge._game._getClonesNb()
-    },
+//    get clonesNb() {
+//        return mge._game._getClonesNb()
+//    },
 
     ////////////////
     // Methods
@@ -123,9 +123,9 @@ mge.keyboard = {
     ////////////////
     // Properties
     ////////////////
-    get keysPressed() {
-        return mge._keyboard._keyPressed
-    },
+//    get keysPressed() {
+//        return mge._keyboard._keyPressed
+//    },
     
     ////////////////
     // Methods
@@ -144,13 +144,14 @@ mge.mouse = {
     ////////////////
     get isClicked () {
         return mge._mouse._isClicked
-    },
-    get x() {
-        return mge._mouse._x
-    },
-    get y() {
-        return mge._mouse._y
     }
+    //,
+//    get x() {
+//        return mge._mouse._x
+//    },
+//    get y() {
+//        return mge._mouse._y
+//    }
 
 }
 // API on sprite objects    
@@ -191,37 +192,37 @@ mge._sprite = {
         this._y = _value
     },
     // scaleX
-    get scaleX() {
-        return this._scaleX
-    },
+//    get scaleX() {
+//        return this._scaleX
+//    },
     set scaleX(_value) {
         this._scaleX = _value
     },
     // scaleY
-    get scaleY() {
-        return this._scaleY
-    },
-    set scaleY(_value) {
-        this._scaleY = _value
-    },
+//    get scaleY() {
+//        return this._scaleY
+//    },
+//    set scaleY(_value) {
+//        this._scaleY = _value
+//    },
     // isVisible
-    get isVisible() {
-        return this._isVisible
-    },
-    set isVisible(_value) {
-        this._isVisible = _value
-    },
+//    get isVisible() {
+//        return this._isVisible
+//    },
+//    set isVisible(_value) {
+//        this._isVisible = _value
+//    },
     // drawBoundaries
-    get drawBoundaries() {
-        return this._drawBoundaries
-    },
+//    get drawBoundaries() {
+//        return this._drawBoundaries
+//    },
     set drawBoundaries(_value) {
         this._drawBoundaries = _value
     },
      // is touched by mouse
-    get isTouched() {
-        return this._isTouched(mge._mouse._x, mge._mouse._y)
-    },   
+//    get isTouched() {
+//        return this._isTouched(mge._mouse._x, mge._mouse._y)
+//    },   
      // is clicked
      get isClicked() {
         return this._isClicked(mge._mouse._x, mge._mouse._y, mge._mouse._isClicked)
@@ -233,9 +234,9 @@ mge._sprite = {
     draw : function () {
         this._draw()
     },
-    isColliding : function(_spriteToCheck) {
-        return this._isColliding(_spriteToCheck)
-    },
+//    isColliding : function(_spriteToCheck) {
+//        return this._isColliding(_spriteToCheck)
+//    },
     cloneCreate : function() {
         return this._cloneCreate()
     },
@@ -247,10 +248,11 @@ mge._sprite = {
     },
     cloneExecuteForEach : function(_method) {
         return this._cloneExecuteForEach(_method)
-    },
-    listCollisionsWithClones : function(_sprite) {
-        return this._listCollisionsWithClones(_sprite)
     }
+    //,
+//    listCollisionsWithClones : function(_sprite) {
+//        return this._listCollisionsWithClones(_sprite)
+//    }
 }
 ///////////////////////////
 // Apply an ADSR envelopp
@@ -547,20 +549,20 @@ mge._game._createSprite = function () {
 // in the game
 ///////////////////////////
 
-mge._game._getClonesNb = function () {
+//mge._game._getClonesNb = function () {
     
     // Initialize the number of clones to 0
-    let _clonesNb = 0
+//    let _clonesNb = 0
 
     // For each sprite, count the number of clones and sum it
-    this._spritesList.forEach(_sprite => {
-        _clonesNb += _sprite._clonesList.length
-    })
+//    this._spritesList.forEach(_sprite => {
+//        _clonesNb += _sprite._clonesList.length
+//    })
 
     // Return the result
-    return _clonesNb
+//    return _clonesNb
 
-}
+//}
 ///////////////////////////
 // Change the scene
 ///////////////////////////
@@ -861,7 +863,7 @@ mge._sprite._create = function(_ctx) {
     this._y = 0
     this._scaleX = 1
     this._scaleY = 1
-    this._isVisible = true
+    //this._isVisible = true
     this._drawBoundaries = false
 
     // Clone properties
@@ -876,7 +878,7 @@ mge._sprite._create = function(_ctx) {
 mge._sprite._draw = function() {
 
     // Draw only if sprite is visible
-    if (this._isVisible) {
+    //if (this._isVisible) {
 
         // Shortcuts
         let _ctx = this._ctx
@@ -900,7 +902,7 @@ mge._sprite._draw = function() {
 
         // Restore context
         _ctx.restore()
-    }
+    //}
 }
 ///////////////////////////
 // Check if the sprite is
@@ -923,23 +925,23 @@ mge._sprite._isClicked = function(_xTouched, _yTouched, _click) {
 // is based on width and
 // height (box collision)
 ///////////////////////////
-mge._sprite._isColliding = function(_spriteToCheck) {
+//mge._sprite._isColliding = function(_spriteToCheck) {
 
     // Calculate min distance between sprites without collision
-    let _minXDistance = (this._width / 2) * this._scaleX + (_spriteToCheck._width / 2) * _spriteToCheck._scaleX
-    let _minYDistance = (this._height / 2) * this._scaleY + (_spriteToCheck._height / 2) * _spriteToCheck._scaleY
+//    let _minXDistance = (this._width / 2) * this._scaleX + (_spriteToCheck._width / 2) * _spriteToCheck._scaleX
+//    let _minYDistance = (this._height / 2) * this._scaleY + (_spriteToCheck._height / 2) * _spriteToCheck._scaleY
 
     // Calculate real distance between the 2 sprites
-    let _realXDistance = Math.abs(this._x - _spriteToCheck._x)
-    let _realYDistance = Math.abs(this._y - _spriteToCheck._y)
+//    let _realXDistance = Math.abs(this._x - _spriteToCheck._x)
+//    let _realYDistance = Math.abs(this._y - _spriteToCheck._y)
     
     // Check collision
-   if (_realXDistance < _minXDistance && _realYDistance < _minYDistance) {
-        return true
-    } else {
-        return false
-    }
-}
+//   if (_realXDistance < _minXDistance && _realYDistance < _minYDistance) {
+//        return true
+//    } else {
+//        return false
+//    }
+//}
 ///////////////////////////
 // Check if the sprite is
 // touch for given x and y
@@ -1040,7 +1042,7 @@ mge._sprite._cloneExecuteForEach = function(_method) {
 // clones colliding with
 // him
 ///////////////////////////
-mge._sprite._listCollisionsWithClones = function(_spriteToCheck) {
+/*mge._sprite._listCollisionsWithClones = function(_spriteToCheck) {
 
     // Create an empty array to store the touched clones
     let _touchedClones = []
@@ -1054,7 +1056,7 @@ mge._sprite._listCollisionsWithClones = function(_spriteToCheck) {
 
     // Return the list of clones touhced by the sprite
     return _touchedClones
-}
+}*/
 ///////////////////////////
 // Create the sequencer
 ///////////////////////////

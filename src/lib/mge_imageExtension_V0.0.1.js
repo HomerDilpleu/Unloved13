@@ -20,16 +20,16 @@ mge._extensionImage._imageObject= {
     set config(_value) {
         this._setConfig(_value)
     },
-    get config() {
-        return this._config
-    },
+//    get config() {
+//        return this._config
+//    },
     // Scale
     set scale(_value) {
         this._setScale(_value)
     },
-    get scale() {
-        return this._scale
-    },
+//    get scale() {
+//        return this._scale
+//    },
     // width and heigh 
     get width() {
         return this._config._s._w * this._scale
@@ -63,11 +63,12 @@ mge.image = {
     ////////////////
     create: function() {
         return mge._extensionImage._images._createImage()
-    },
-
-    loadNextImage: function () {
-        return mge._extensionImage._images._loadNextImage()
     }
+    //,
+
+//    loadNextImage: function () {
+//        return mge._extensionImage._images._loadNextImage()
+//    }
 
 }
 ///////////////////////////
@@ -161,9 +162,9 @@ mge._extensionImage._imageObject._load = function() {
                 _ctx.quadraticCurveTo(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,_cmd[4]*_scale)
             }
             // Beziers curve
-            else if (_cmd[0] == 'B') {
-                _ctx.bezierCurveTo(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,_cmd[4]*_scale,_cmd[5]*_scale,_cmd[6]*_scale)
-            }
+            //else if (_cmd[0] == 'B') {
+            //    _ctx.bezierCurveTo(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,_cmd[4]*_scale,_cmd[5]*_scale,_cmd[6]*_scale)
+            //}
             // Circle
             else if (_cmd[0] == 'C') {
                 _ctx.arc(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,0,2 * Math.PI)
@@ -173,9 +174,9 @@ mge._extensionImage._imageObject._load = function() {
                 _ctx.rect(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,_cmd[4]*_scale)
             }
             // Elipse
-            else if (_cmd[0] == 'E') {
-                _ctx.ellipse(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,_cmd[4]*_scale,_cmd[5],0,2 * Math.PI)
-            }
+            //else if (_cmd[0] == 'E') {
+            //    _ctx.ellipse(_cmd[1]*_scale,_cmd[2]*_scale,_cmd[3]*_scale,_cmd[4]*_scale,_cmd[5],0,2 * Math.PI)
+            //}
         })
 
         ////////////////////
@@ -252,30 +253,30 @@ mge._extensionImage._images._createImage = function () {
 // (nb images loaded / nb total images)
 ////////////////////////////////////////////////////////
 
-mge._extensionImage._images._loadNextImage = function () {
+//mge._extensionImage._images._loadNextImage = function () {
     
     // Shortcuts
-    let _lst = mge._extensionImage._images._list
+//    let _lst = mge._extensionImage._images._list
 
     // Variables
-    let _nbImagesLoaded = 0
-    let _hasLoadedOneImage = false
-    let _lstLength = _lst.length
+//    let _nbImagesLoaded = 0
+//    let _hasLoadedOneImage = false
+//    let _lstLength = _lst.length
 
     // If list is empty, do nothing and return 100%
-    if (_lst.length == 0) {
-        return 1
-    } else {
+//    if (_lst.length == 0) {
+//        return 1
+//    } else {
     // Else count loaded images and load first non loaded image
-        _lst.forEach(function (_img) {
-            if (_img._isLoaded) {_nbImagesLoaded+=1}
-            else if (!_hasLoadedOneImage) {
-                _img._load()
-                _nbImagesLoaded+=1
-                _hasLoadedOneImage=true
-            }
-        })
-        return _nbImagesLoaded / _lstLength
-    }
+//        _lst.forEach(function (_img) {
+//            if (_img._isLoaded) {_nbImagesLoaded+=1}
+//            else if (!_hasLoadedOneImage) {
+//                _img._load()
+//                _nbImagesLoaded+=1
+//                _hasLoadedOneImage=true
+//            }
+//        })
+//        return _nbImagesLoaded / _lstLength
+//    }
 
-}
+//}

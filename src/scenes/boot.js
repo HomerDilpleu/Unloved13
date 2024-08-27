@@ -9,9 +9,7 @@ game.scenes.boot.start = function() {
     // Load animations
     game.animations.init()
 
-    // Load songs of the game
-    while (mge.song.loadNextSong() < 1) {
-    }
+    // A FAIRE Ssongs load propre
     
     // Init sprites
     game.sprites.logoDilpleu.init()
