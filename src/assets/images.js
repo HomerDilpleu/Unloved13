@@ -106,9 +106,13 @@ game.images.init = function () {
     let _beziers1 = {"_s":{"_w":30,"_h":30},"_p":[{"_fs":["C","#582970"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["R","0","0","30","30"]],"_t":[8,8,8,"","","","",""]},{"_fs":["C","#5d2c77"],"_ss":["#5d2c77","0","round","round"],"_gp":[],"_c":[["M","0","10"],["B","20","-10","10","35","30","10"],["L","30","20"],["B","10","40","20","-5","0","20"]],"_t":[8,8,8,"","","","",""]}]}
     let _beziers2 = {"_s":{"_w":30,"_h":30},"_p":[{"_fs":["C","#582970"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["R","0","0","30","30"]],"_t":[8,8,8,"","","","",""]},{"_fs":["C","#5d2c77"],"_ss":["#5d2c77","0","round","round"],"_gp":[],"_c":[["M","0","12"],["B","20","-25","8","30","30","12"],["L","30","17"],["B","12","55","20","1","0","17"]],"_t":[8,8,8,"","","","",""]}]}
 
-    game.patterns.violetBlockLosange = game.images._createColoredPattern(_losange,'#582970','#5d2c77')
-    game.patterns.level1BlockGreat = game.images._createColoredPattern(_beziers2,'#582970','#5d2c77')
-   
+    game.patterns.violetBlockLosangeBeziers1 = game.images._createColoredPattern(_beziers1,'#5d2c77','#582970')
+    game.patterns.violetBlockLosangeBeziers2 = game.images._createColoredPattern(_beziers2,'#5d2c77','#582970')
+    game.patterns.violetBlockCircle = game.images._createColoredPattern(_circle,'#582970','#c8a2e2')
+    game.patterns.violetBlock = game.images._createColoredPattern(_block,'#c8a2e2','#582970')
+
+    game.patterns.blueBlockTriangles = game.images._createColoredPattern(_triangles,'#5a97c8','#7ab1db')
+    
 }
 
 // STYLE 1: 2 triangles
