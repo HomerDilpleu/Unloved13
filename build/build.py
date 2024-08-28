@@ -230,7 +230,7 @@ stringsToUglify+=['NextSong','_currentPart','_section','Length','_song']
 # UNLOVED 13
 #########################################
 # game.js
-stringsToUglify+=['game','state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
+stringsToUglify+=['state','scenes','images','animations','patterns','sprites','variables','instruments','songs','utils','levels']
 stringsToUglify+=['camMaxOffsetX','camMaxOffsetY','numberWidth','numberHeight','gravity','curlevel','camX','camY','messages','victoryPtlfId','victoryPtlfBox','victoryNumId','victoryNumBox']
 stringsToUglify+=['boot','main','cinematic','ready','completed','update']
 
@@ -241,7 +241,7 @@ stringsToUglify+=['checkColisionBox']
 stringsToUglify+=['logoDilpleu','playButton','playerBody','openEye','closeEye','legsIdle','legsWalk1','legsWalk2','legsWalk3','legsWalk4','numberLand']
 stringsToUglify+=['_createColoredPattern','_config','_colour1','_colour2','_image','_configCopy',]
 stringsToUglify+=['_triangles','_rectangles','_circle','_losange','_diagonal','_inclinedBLock','_block','_beziers1','_beziers2']
-stringsToUglify+=['violetBlockLosangeBeziers','violetBlockCircle','violetBlock','blueBlockDiagonal']
+stringsToUglify+=['violetBlockLosangeBeziers','violetBlockCircle','violetBlock','blueBlockDiagonal','violetBkg1','violetBkg2']
 
 # animations.js
 stringsToUglify+=['legsIdle','legsWalk']
