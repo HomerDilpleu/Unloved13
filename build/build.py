@@ -305,7 +305,7 @@ stringsToUglify+=['generator','_param','_nbParticles','_size','_fillStyle','_con
 # player.js
 stringsToUglify+=['player','ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
 stringsToUglify+=['hitBoxRight','hitBoxLeft','hitBoxUp','hitBoxDown','moveForce','moveForceWhenNoTouching','jumpForce','maxVelocity','frictionRate']
-stringsToUglify+=['accelerationX','accelerationY','velocityX','velocityY','_eye','_legs','lastX','lastY']
+stringsToUglify+=['accelerationX','accelerationY','velocityX','velocityY','_eye','_legs','lastX','lastY','lastJump']
 
 outputFile='main.js'
 
