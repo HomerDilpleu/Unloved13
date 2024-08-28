@@ -27,11 +27,6 @@ game.sprites.numbers.init = function (_numConfig) {
     // Appearence
     c._bodyFill = _numConfig._bodyFill || 'black'
     c._textFill = _numConfig._textFill || 'black'
-    // Text
-    c._textNormal = _numConfig._textNormal || ''
-    c._textEscape = _numConfig._textEscape || ''
-    c._textFallen = _numConfig._textFallen || ''
-    c._speakTxt = ''
     // Eye
     c._eye = game.sprites.eye.cloneCreate()
     mge.animation.activateOwnCloneAnimation(c._eye)
@@ -56,21 +51,17 @@ game.sprites.numbers.update = function () {
     if (!this._isDetected) {
         if ((this.X > this._Xmax && this._velocityX > 0) || (this.X < this._Xmin && this._velocityX < 0)) {
             this._velocityX = this._velocityX * -1
-            this._speakTxt = this._textNormal
         }
     } else {
         // NUMBER DETECTED BUT STILL NOT FALLING
         if ((this._velocityEscape < 0 && this.X > this._Xescape && this.Y < this._Yfall) || (this._velocityEscape > 0 && this.X < this._Xescape && this.Y < this._Yfall)) {
             this._velocityX = this._velocityEscape
-            this._speakTxt = this._textEscape
         }
         // NUMBER FALLING
         if ((this._velocityEscape < 0 && this.X <= this._Xescape && this.Y < this._Yfall) || (this._velocityEscape > 0 && this.X >= this._Xescape && this.Y < this._Yfall)) {
             this._velocityX = 0
             this.X = this._Xescape
             this._velocityY = this._velocityFall
-            // text
-            this._speakTxt = this._textEscape
             // message
             if (this._fallMessage != '' && !game.variables.messages.includes(this._fallMessage)) {
                 game.variables.messages.push(this._fallMessage)
@@ -80,7 +71,6 @@ game.sprites.numbers.update = function () {
         if (this.Y >= this._Yfall) {
             this._velocityY = 0
             this.Y = this._Yfall
-            this._speakTxt = this._textFallen
             if(this._velocityX == 0) {this._velocityX=this._velocityXFallen}
             if ((this.X > this._XmaxFallen && this._velocityX > 0) || (this.X < this._XminFallen && this._velocityX < 0)) {
                 this._velocityX = this._velocityX * -1
@@ -120,58 +110,18 @@ game.sprites.numbers.drawFunction = function (ctx) {
     this._eye.x = this.x-5
     this._eye.y = this.y-25
     this._eye.scaleX = 1
-    if (this._velocityX <=0 ) {
-        this._eye._curAnimation = 'normal'
-        this._eye.x = this.x-5
-        this._eye.y = this.y-25
-        this._eye.scaleX = 1
-    } else {
-        this._eye._curAnimation = 'normal'
-        this._eye.x = this.x
-        this._eye.y = this.y-25
-        this._eye.scaleX = -1
-    }
-
+    if (this._velocityX>0) {this._eye.scaleX = -1}
+    
     // Legs
-    if (Math.abs(this._velocityX) < 1) {
-        this._legs._curAnimation = 'idle'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
+    this._legs.x = this.x
+    this._legs.y = this.y+29
+    this._legs._curAnimation = 'idle' 
+    this._legs.scaleX = 1
     if (this._velocityX <= -1) {
         this._legs._curAnimation = 'walk'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
         this._legs.scaleX = -1
     }
-    if (this._velocityX >= 1) {
-        this._legs._curAnimation = 'walk'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
-    if (Math.abs(this._velocityY > 0)) {
-        this._legs._curAnimation = 'idle'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
-
-    // text
-    if (this._speakTxt !='') {
-        ctx.fillStyle = 'white'
-        ctx.strokeStyle = this._textFill
-        ctx.beginPath()
-        ctx.roundRect(-10,-45,80,35,10)
-        ctx.fill()
-        ctx.font = '24px serif'
-        ctx.textAlign = 'center'
-        ctx.textBaseline = 'middle'
-        ctx.fillStyle = this._textFill
-        ctx.fillText(this._speakTxt, this.width/2, -25)
-    }
-
+    if (this._velocityX >= 1) {this._legs._curAnimation = 'walk'}
 
 }
 

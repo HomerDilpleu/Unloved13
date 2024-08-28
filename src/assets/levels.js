@@ -66,7 +66,6 @@ game.levels.createLevels = function () {
                   _Xescape:800,_velocityEscape:-400,
                   _Yfall:-305,_velocityFall:200,_fallMessage:'PLTF_MOVE:8',
                   _XminFallen:300,_XmaxFallen:600, _velocityXFallen:50,
-                  _textNormal:'',_textEscape:'FEAR!',_textFallen:'',
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
         _camera:{X:3000,Y:-100}})
