@@ -1,8 +1,8 @@
 game.sprites.playButton.init = function() {
     
     // Init sprite properties
-    this.width = 500
-    this.height = 100
+    this.width = mge.game.width
+    this.height = mge.game.height
     this.x = mge.game.width/2
     this.y = mge.game.height/2
     this._text = 'PLAY'
@@ -19,16 +19,33 @@ game.sprites.playButton.update = function () {
 }
 
 game.sprites.playButton.drawFunction = function (ctx) {
-    // Box
-    ctx.strokeStyle = '#582970'
-    ctx.lineWidth = 6
-    ctx.strokeRect(0,0,this.width,this.height)
-    // Text
-    ctx.font = '60px serif'
+
+    ctx.fillStyle='#582970'
+
+    // Boot screen
+    if(game.state == 'ready') {
+        // TITLE
+        ctx.fillStyle='#582970'
+        ctx.font = '100px serif'
+        ctx.textAlign = 'center'
+        ctx.fillText('UNLOVED   ', mge.game.width/2, 150)
+        // REF TO JS13K
+        ctx.font = '24px serif'
+        ctx.fillText('A game created for JS13K 2024', mge.game.width/2, 200)
+        // Number 13
+        game.sprites.player.x =  900
+        game.sprites.player.y = 113
+        game.sprites.player.draw()
+        game.sprites.eye.cloneExecuteForEach('draw')
+        game.sprites.legs.cloneExecuteForEach('draw')
+    }
+
+    // Play button
+    ctx.fillRect(465,300,350,70)
+    ctx.font = '40px serif'
     ctx.textAlign = 'center'
-    ctx.textBaseline = 'middle'
-    ctx.fillStyle = '#582970'
+    ctx.fillStyle = '#ffffff'
     if (game.state == 'ready') {this._text = 'PLAY'} else {this._text = 'CLICK OR JUMP'}
-    ctx.fillText(this._text, this.width/2, this.height/2)
+    ctx.fillText(this._text, this.width/2, 350)
 
 }

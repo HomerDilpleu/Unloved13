@@ -68,7 +68,7 @@ game.sprites.player.update = function () {
     
     // Update player Y acceleration
     this.accelerationY=0
-    if (this.ControllerUp && this.collidesDown && Date.now() - this.lastJump > 200) {
+    if (this.ControllerUp && this.collidesDown && Date.now() - this.lastJump > 500) {
         this.accelerationY=-this.jumpForce
         this.lastJump=Date.now()
     }

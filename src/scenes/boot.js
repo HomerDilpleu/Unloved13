@@ -17,6 +17,7 @@ game.scenes.boot.start = function() {
     game.sprites.eye.init()
     game.sprites.legs.init()
     game.sprites.textBox.init()
+    game.sprites.player.init()
 
     // Create levels
     game.levels.createLevels()
