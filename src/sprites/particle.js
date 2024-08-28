@@ -7,13 +7,10 @@ game.sprites.particle.generator = function(_param) {
             Vx:game.utils.getRandomInteger(_param._vX*-1,_param._vX),
             Vy:game.utils.getRandomInteger(-10,0),
             fillStyle:game.utils.getRandomItem(_param._fillStyle)
-            //,
-            //gravity:_param._gravity
         }
         game.sprites.particle.init(_config)
       }
 }
-
 
 game.sprites.particle.init = function(_config) {
     let _clone = game.sprites.particle.cloneCreate()
@@ -24,11 +21,9 @@ game.sprites.particle.init = function(_config) {
     _clone.Vx=_config.Vx
     _clone.Vy=_config.Vy
     _clone.fillStyle=_config.fillStyle
-//    return _clone
 }
 
 game.sprites.particle.update = function() {
-//    this.Vy+=this.gravity
     this.Vy+=1
     this.x+=this.Vx
     this.y+=this.Vy

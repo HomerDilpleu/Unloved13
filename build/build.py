@@ -298,14 +298,9 @@ stringsToUglify+=['platform','_pltfConfig','_velocityY','_isColliding','_isMovin
 # textBox.js
 stringsToUglify+=['textBox','_text','_lastText','_lastChangeTime']
 
-# particles.js
-#############################
-#############################
-#############################
-# A FAIRE
-#############################
-#############################
-#############################
+# particle.js
+stringsToUglify+=['generator','_param','_nbParticles','_size','_fillStyle','_config']
+
 
 # player.js
 stringsToUglify+=['player','ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
