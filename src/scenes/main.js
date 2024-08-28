@@ -21,24 +21,6 @@ game.scenes.main.start = function() {
       
         // Update state
         game.state = 'running'
-
-        // Create particles
-        game.sprites.particle.generator({
-                _nbParticles:10,
-                _xMin:game.sprites.player.x-10,
-                _xMax:game.sprites.player.x+10,
-                _yMin:game.sprites.player.y-10,
-                _yMax:game.sprites.player.y+10,
-                _sizeMin:2,
-                _sizeMax:5,
-                _vxMin:-5,
-                _vxMax:5,
-                _vyMin:-20,
-                _vyMax:0,
-                _fillStyle:['red'],
-                _gravity: 1
-        })
-
 }
 
 //////////////////////

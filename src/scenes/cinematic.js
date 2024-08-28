@@ -12,19 +12,11 @@ game.scenes.cinematic.start = function() {
     // Create particles
     game.sprites.particle.generator({
         _nbParticles:100,
-        _xMin:100,
-        _xMax:1000,
-        _yMin:200,
-        _yMax:250,
-        _sizeMin:5,
-        _sizeMax:15,
-        _vxMin:-5,
-        _vxMax:5,
-        _vyMin:-20,
-        _vyMax:0,
-        _fillStyle:['red','blue','yellow','green'],
-        _gravity: 1
-})
+        _x:mge.game.width/2,
+        _y:200,
+        _vX:20,
+        _size:10,
+        _fillStyle:['#582970','#a26ac8','white']})
 }
 
 //////////////////////
@@ -39,7 +31,6 @@ game.scenes.cinematic.update = function() {
     if(Date.now()-this._startScene>1000) {
         game.sprites.playButton.update()
     }
- 
 }
 
 //////////////////////

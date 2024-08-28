@@ -1,13 +1,14 @@
 game.sprites.particle.generator = function(_param) {
     for (let i=0; i < _param._nbParticles; i++) {
         let _config = {
-            x:game.utils.getRandomInteger(_param._xMin,_param._xMax),
-            y:game.utils.getRandomInteger(_param._yMin,_param._yMax),
-            size:game.utils.getRandomInteger(_param._sizeMin,_param._sizeMax),
-            Vx:game.utils.getRandomInteger(_param._vxMin,_param._vxMax),
-            Vy:game.utils.getRandomInteger(_param._vyMin,_param._vyMax),
-            fillStyle:game.utils.getRandomItem(_param._fillStyle),
-            gravity:_param._gravity
+            x:game.utils.getRandomInteger(_param._x*0.9,_param._x*1.1),
+            y:game.utils.getRandomInteger(_param._y*0.9,_param._y*1.1),
+            size:game.utils.getRandomInteger(_param._size*0.9,_param._size*1.1),
+            Vx:game.utils.getRandomInteger(_param._vX*-1,_param._vX),
+            Vy:game.utils.getRandomInteger(-10,0),
+            fillStyle:game.utils.getRandomItem(_param._fillStyle)
+            //,
+            //gravity:_param._gravity
         }
         game.sprites.particle.init(_config)
       }
@@ -23,12 +24,12 @@ game.sprites.particle.init = function(_config) {
     _clone.Vx=_config.Vx
     _clone.Vy=_config.Vy
     _clone.fillStyle=_config.fillStyle
-    _clone.gravity=_config.gravity
-    return _clone
+//    return _clone
 }
 
 game.sprites.particle.update = function() {
-    this.Vy+=this.gravity
+//    this.Vy+=this.gravity
+    this.Vy+=1
     this.x+=this.Vx
     this.y+=this.Vy
 }
