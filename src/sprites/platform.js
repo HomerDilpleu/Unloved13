@@ -1,29 +1,29 @@
 game.sprites.platform.init = function (_pltfConfig) {
     // Create a clone of himself
-    let _clone = game.sprites.platform.cloneCreate()
+    let c = game.sprites.platform.cloneCreate()
     // Standard properties
-    _clone.width = _pltfConfig._width
-    _clone.height = _pltfConfig._height
-    //_clone.drawBoundaries = true
+    c.width = _pltfConfig._width
+    c.height = _pltfConfig._height
+    //c.drawBoundaries = true
     // Physics
-    _clone.X = _pltfConfig.X+_pltfConfig._width/2
-    _clone.Y = _pltfConfig.Y+_pltfConfig._height/2
-    _clone._accelerationY=0
-    _clone._velocityY=0
-    _clone._isColliding=false
+    c.X = _pltfConfig.X+_pltfConfig._width/2
+    c.Y = _pltfConfig.Y+_pltfConfig._height/2
+    c._accelerationY=0
+    c._velocityY=0
+    c._isColliding=false
     // Other
-    _clone._id = _pltfConfig._id || ''
-    _clone._image = _pltfConfig._image || ''
-    _clone._fillStyle = _pltfConfig._fillStyle || ''
-    _clone._strokeStyle = _pltfConfig._strokeStyle || ''
-    _clone._radiusStyle = _pltfConfig._radiusStyle || 0
-    _clone._pushable = _pltfConfig._pushable || ''
-    _clone._autoJumpForce = _pltfConfig._autoJumpForce || 0
-    _clone._actionable = _pltfConfig._actionable || ''
-    _clone._movesTo = _pltfConfig._movesTo || ''
-    _clone._isMoving = false
+    c._id = _pltfConfig._id || ''
+    c._image = _pltfConfig._image || ''
+    c._fillStyle = _pltfConfig._fillStyle || ''
+    c._strokeStyle = _pltfConfig._strokeStyle || ''
+    c._radiusStyle = _pltfConfig._radiusStyle || 0
+    c._pushable = _pltfConfig._pushable || ''
+    c._autoJumpForce = _pltfConfig._autoJumpForce || 0
+    c._actionable = _pltfConfig._actionable || ''
+    c._movesTo = _pltfConfig._movesTo || ''
+    c._isMoving = false
     // Return clone    
-    return _clone
+    return c
 }
 
 game.sprites.platform.drawFunction = function (ctx) {

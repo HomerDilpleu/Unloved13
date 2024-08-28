@@ -13,14 +13,14 @@ game.sprites.particle.generator = function(_param) {
 }
 
 game.sprites.particle.init = function(_config) {
-    let _clone = game.sprites.particle.cloneCreate()
-    _clone.x=_config.x
-    _clone.y=_config.y
-    _clone.width=_config.size
-    _clone.height=_config.size
-    _clone.Vx=_config.Vx
-    _clone.Vy=_config.Vy
-    _clone.fillStyle=_config.fillStyle
+    let c = game.sprites.particle.cloneCreate()
+    c.x=_config.x
+    c.y=_config.y
+    c.width=_config.size
+    c.height=_config.size
+    c.Vx=_config.Vx
+    c.Vy=_config.Vy
+    c.fillStyle=_config.fillStyle
 }
 
 game.sprites.particle.update = function() {

@@ -1,45 +1,45 @@
 game.sprites.numbers.init = function (_numConfig) {
     // Create a clone of himself
-    let _clone = game.sprites.numbers.cloneCreate()
+    let c = game.sprites.numbers.cloneCreate()
     // Standard properties
-    _clone.width = game.variables.numberWidth
-    _clone.height = game.variables.numberHeight
-    //_clone.drawBoundaries = true
+    c.width = game.variables.numberWidth
+    c.height = game.variables.numberHeight
+    //c.drawBoundaries = true
     // Positioning
-    _clone._id = _numConfig._id || ''
-    _clone.X = _numConfig.X
-    _clone.Y = _numConfig.Y
+    c._id = _numConfig._id || ''
+    c.X = _numConfig.X
+    c.Y = _numConfig.Y
     // Settings 
-    _clone._Xmin = _numConfig._Xmin || 0
-    _clone._Xmax = _numConfig._Xmax || 0
-    _clone._velocityX = _numConfig._velocityX || 200
-    _clone._velocityY = 0
-    _clone._Xescape = _numConfig._Xescape || 0
-    _clone._velocityEscape = _numConfig._velocityEscape || 0
-    _clone._Yfall = _numConfig._Yfall || 0
-    _clone._velocityFall = _numConfig._velocityFall || 0
-    _clone._fallMessage = _numConfig._fallMessage || ''
-    _clone._XminFallen = _numConfig._XminFallen || 0
-    _clone._XmaxFallen = _numConfig._XmaxFallen || 0
-    _clone._velocityXFallen = _numConfig._velocityXFallen || 0
+    c._Xmin = _numConfig._Xmin || 0
+    c._Xmax = _numConfig._Xmax || 0
+    c._velocityX = _numConfig._velocityX || 200
+    c._velocityY = 0
+    c._Xescape = _numConfig._Xescape || 0
+    c._velocityEscape = _numConfig._velocityEscape || 0
+    c._Yfall = _numConfig._Yfall || 0
+    c._velocityFall = _numConfig._velocityFall || 0
+    c._fallMessage = _numConfig._fallMessage || ''
+    c._XminFallen = _numConfig._XminFallen || 0
+    c._XmaxFallen = _numConfig._XmaxFallen || 0
+    c._velocityXFallen = _numConfig._velocityXFallen || 0
     // Detection
-    _clone._isDetected = false
+    c._isDetected = false
     // Appearence
-    _clone._bodyFill = _numConfig._bodyFill || 'black'
-    _clone._textFill = _numConfig._textFill || 'black'
+    c._bodyFill = _numConfig._bodyFill || 'black'
+    c._textFill = _numConfig._textFill || 'black'
     // Text
-    _clone._textNormal = _numConfig._textNormal || ''
-    _clone._textEscape = _numConfig._textEscape || ''
-    _clone._textFallen = _numConfig._textFallen || ''
-    _clone._speakTxt = ''
+    c._textNormal = _numConfig._textNormal || ''
+    c._textEscape = _numConfig._textEscape || ''
+    c._textFallen = _numConfig._textFallen || ''
+    c._speakTxt = ''
     // Eye
-    _clone._eye = game.sprites.eye.cloneCreate()
-    mge.animation.activateOwnCloneAnimation(_clone._eye)
+    c._eye = game.sprites.eye.cloneCreate()
+    mge.animation.activateOwnCloneAnimation(c._eye)
     // Legs
-    _clone._legs = game.sprites.legs.cloneCreate()
-    mge.animation.activateOwnCloneAnimation(_clone._legs)
+    c._legs = game.sprites.legs.cloneCreate()
+    mge.animation.activateOwnCloneAnimation(c._legs)
     // Return clone    
-    return _clone
+    return c
 }
 
 

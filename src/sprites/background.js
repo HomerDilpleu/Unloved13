@@ -1,21 +1,21 @@
 game.sprites.background.init = function(_bkgConfig,_camConfig) {
 
     // Create a clone of himself
-    let _clone = game.sprites.background.cloneCreate()
+    let c = game.sprites.background.cloneCreate()
     // Standard properties
-    _clone.width = _bkgConfig._width || mge.game.width
-    _clone.height = _bkgConfig._height || mge.game.height
+    c.width = _bkgConfig._width || mge.game.width
+    c.height = _bkgConfig._height || mge.game.height
     // Positionning
-    _clone.X = _bkgConfig.X + mge.game.width / 2
-    _clone.Y = _bkgConfig.Y + mge.game.height / 2
-    _clone._camXinit = _camConfig.X
-    _clone._camYinit = _camConfig.Y
-    _clone._scrollRatio = _bkgConfig._scrollRatio
+    c.X = _bkgConfig.X + mge.game.width / 2
+    c.Y = _bkgConfig.Y + mge.game.height / 2
+    c._camXinit = _camConfig.X
+    c._camYinit = _camConfig.Y
+    c._scrollRatio = _bkgConfig._scrollRatio
     // Style
-    _clone._fillStyle = _bkgConfig._fillStyle || ''
-    _clone._image = _bkgConfig._image || ''
+    c._fillStyle = _bkgConfig._fillStyle || ''
+    c._image = _bkgConfig._image || ''
     // Return clone    
-    return _clone
+    return c
   
 }
 
