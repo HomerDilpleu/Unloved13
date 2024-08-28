@@ -22,7 +22,7 @@ game.sprites.textBox.drawFunction = function (ctx) {
     // Display text
     if (this._text != '') {
         // Box
-        ctx.fillStyle = 'white'
+        ctx.fillStyle = '#e9ddf1'
         ctx.strokeStyle = 'black'
         ctx.lineWidth = 2
         ctx.fillRect(0,0,this.width,this.height)
