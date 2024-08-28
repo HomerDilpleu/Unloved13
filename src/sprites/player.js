@@ -150,37 +150,18 @@ game.sprites.player.drawFunction = function (ctx) {
     game.images.playerBody.draw(ctx)
 
     // Eye
-    if (this.velocityX <=0 ) {
-        this._eye._curAnimation = 'normal'
-        this._eye.x = this.x-5
-        this._eye.y = this.y-25
-        this._eye.scaleX = 1
-    } else {
-        this._eye._curAnimation = 'normal'
-        this._eye.x = this.x
-        this._eye.y = this.y-25
-        this._eye.scaleX = -1
-    }
+    this._eye._curAnimation = 'normal'
+    this._eye.x = this.x-5
+    this._eye.y = this.y-25
+    this._eye.scaleX = 1
+    if (this._velocityX>0) {this._eye.scaleX = -1}
 
     // Legs
-    if (!(this.ControllerRight || this.ControllerLeft)) {
-        this._legs._curAnimation = 'idle'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
-    if (this.ControllerLeft) {
-        this._legs._curAnimation = 'walk'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = -1
-    }
-    if (this.ControllerRight) {
-        this._legs._curAnimation = 'walk'
-        this._legs.x = this.x
-        this._legs.y = this.y+29
-        this._legs.scaleX = 1
-    }
-
+    this._legs._curAnimation = 'walk'
+    this._legs.x = this.x
+    this._legs.y = this.y+29
+    this._legs.scaleX = 1
+    if (!(this.ControllerRight || this.ControllerLeft)) {this._legs._curAnimation = 'idle'}
+    if (this.ControllerLeft) {this._legs.scaleX = -1}
 }
 
