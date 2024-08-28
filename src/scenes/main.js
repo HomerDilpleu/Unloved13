@@ -55,6 +55,9 @@ game.scenes.main.update = function() {
         // Update particles
         game.sprites.particle.cloneExecuteForEach('update')
 
+        // Update textbox
+        game.sprites.textBox.update()
+
         // Get messages
         for (let _message of game.variables.messages) {
                 // UPDATE TEXT BOX

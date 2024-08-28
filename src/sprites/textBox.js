@@ -10,14 +10,17 @@ game.sprites.textBox.init = function() {
     this._lastChangeTime = Date.now()
 }
 
-game.sprites.textBox.drawFunction = function (ctx) {
-    // Update last change time
+game.sprites.textBox.update = function (ctx) {
     if (this._text != this._lastText) {
         this._lastChangeTime = Date.now()
         this._lastText = this._text
     }
+    if (Date.now()-this._lastChangeTime>4000) {this._text=''}
+}
+
+game.sprites.textBox.drawFunction = function (ctx) {
     // Display text
-    if (this._text != '' && Date.now()-this._lastChangeTime<4000) {
+    if (this._text != '') {
         // Box
         ctx.fillStyle = 'white'
         ctx.strokeStyle = 'black'
