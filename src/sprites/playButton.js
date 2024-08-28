@@ -21,13 +21,12 @@ game.sprites.playButton.update = function () {
 game.sprites.playButton.drawFunction = function (ctx) {
 
     ctx.fillStyle='#582970'
+    ctx.textAlign = 'center'
 
     // Boot screen
     if(game.state == 'ready') {
         // TITLE
-        ctx.fillStyle='#582970'
         ctx.font = '100px serif'
-        ctx.textAlign = 'center'
         ctx.fillText('UNLOVED   ', mge.game.width/2, 150)
         // REF TO JS13K
         ctx.font = '24px serif'
@@ -43,7 +42,6 @@ game.sprites.playButton.drawFunction = function (ctx) {
     // Play button
     ctx.fillRect(465,300,350,70)
     ctx.font = '40px serif'
-    ctx.textAlign = 'center'
     ctx.fillStyle = '#ffffff'
     if (game.state == 'ready') {this._text = 'PLAY'} else {this._text = 'CLICK OR JUMP'}
     ctx.fillText(this._text, this.width/2, 350)

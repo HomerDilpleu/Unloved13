@@ -16,8 +16,8 @@ game.sprites.particle.init = function(_config) {
     let c = game.sprites.particle.cloneCreate()
     c.x=_config.x
     c.y=_config.y
-    c.width=_config.size
-    c.height=_config.size
+    c.w=_config.size
+    c.h=_config.size
     c.Vx=_config.Vx
     c.Vy=_config.Vy
     c.fillStyle=_config.fillStyle
@@ -31,5 +31,5 @@ game.sprites.particle.update = function() {
 
 game.sprites.particle.drawFunction = function (ctx) {
     ctx.fillStyle = this.fillStyle
-    ctx.fillRect(0,0,this.width,this.height)
+    ctx.fillRect(0,0,this.w,this.h)
 }
