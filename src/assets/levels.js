@@ -39,9 +39,8 @@ game.levels.initLevel = function (_level) {
 game.levels.createLevels = function () {
   // LEVEL 1
   game.levels.push({
-        _backgrounds:[{_id:'A',_width:1300,_height:750,X:3000,Y:-100,_scrollRatio:0,_fillStyle:game.patterns.violetBkg1},
-                      {_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg2},
-                      {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg3},
+        _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
+                      {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
                       {_id:'E',_width:1000,_height:200,X:330,Y:-320,_scrollRatio:1,_fillStyle:'#a26ac8'}],
         _platforms:[{_id:'1',_width:3900,_height:300,X:0,Y:0,_fillStyle:'#582970'},

@@ -75,19 +75,14 @@ game.images.init = function () {
     // BACKGROUNDS
     /////////////////////////
     game.images.violetBkg1 = mge.image.create()
-    game.images.violetBkg1.config = {"_s":{"_w":1300,"_h":750},"_p":[{"_fs":["LG","0","0","0","750"],"_ss":["#000000","0","round","round"],"_gp":[[0,"#ccafdf"],[1,"#ffffff"]],"_c":[["R","0","0","1300","750"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.violetBkg1.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#c8a2e2"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1125"],["L","250","1050"],["L","1000","1200"],["L","1300","1125"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.violetBkg1.load()
     game.patterns.violetBkg1 = mge._canvas._renderContext.createPattern(game.images.violetBkg1._bitmap, 'repeat')
 
     game.images.violetBkg2 = mge.image.create()
-    game.images.violetBkg2.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#c8a2e2"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1125"],["L","250","1050"],["L","1000","1200"],["L","1300","1125"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.violetBkg2.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#a26ac8"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1200"],["L","131","1250"],["L","1000","1100"],["L","1300","1200"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.violetBkg2.load()
     game.patterns.violetBkg2 = mge._canvas._renderContext.createPattern(game.images.violetBkg2._bitmap, 'repeat')
-
-    game.images.violetBkg3 = mge.image.create()
-    game.images.violetBkg3.config = {"_s":{"_w":1300,"_h":1500},"_p":[{"_fs":["C","#a26ac8"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","1200"],["L","131","1250"],["L","1000","1100"],["L","1300","1200"],["L","1300","1500"],["L","0","1500"]],"_t":[8,8,8,"","","","",""]}]}
-    game.images.violetBkg3.load()
-    game.patterns.violetBkg3 = mge._canvas._renderContext.createPattern(game.images.violetBkg3._bitmap, 'repeat')
 
     /////////////////////////
     // TILES
