@@ -34,7 +34,7 @@ stringsToUglify=[]
 # MGE _Audio
 #########################################
 # _applyADSR.js
-stringsToUglify+=['_applyADSR','_envelop','_audioParam', '_startTime', '_duration', '_minValue', '_maxValue']
+stringsToUglify+=['_applyADSR','_envelop','_audioParam', '_startTime', '_duration', '_minValue', '_maxValue','minValue','maxValue']
 # _create.js
 stringsToUglify+=['_create','_audioContext','_audioGain']
 # _playSound.js
@@ -247,13 +247,7 @@ stringsToUglify+=['violetBlockLosangeBeziers','violetBlockCircle','violetBlock',
 stringsToUglify+=['legsIdle','legsWalk']
 
 # instruments.js
-#############################
-#############################
-#############################
-# A FAIRE
-#############################
-#############################
-#############################
+stringsToUglify+=['instruments','kick','snare','brass','piano']
 
 # levels.js
 stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
@@ -287,20 +281,13 @@ stringsToUglify+=['numbers','_numConfig','_isDetected','_speakTxt','deltaTime','
 stringsToUglify+=['platform','_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message','managePlatformCollisions','WhenNoTouching']
 
 # playButton.js
-#############################
-#############################
-#############################
-# A FAIRE
-#############################
-#############################
-#############################
+stringsToUglify+=['playButton']
 
 # textBox.js
 stringsToUglify+=['textBox','_text','_lastText','_lastChangeTime']
 
 # particle.js
 stringsToUglify+=['generator','_param','_nbParticles','_size','_fillStyle','_config']
-
 
 # player.js
 stringsToUglify+=['player','ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']

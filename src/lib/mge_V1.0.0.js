@@ -332,7 +332,7 @@ mge._audio._playSound = function (_synthConfig,_outputNode,_frequency,_startTime
     let _pitchADSR = _synthConfig.pitchADSR || {a:0, d:0, s:1, r:0, minValue:_frequency, maxValue: _frequency}
     let _detuneADSR = _synthConfig.detuneADSR || {a:0, d:0, s:1, r:0, minValue:0, maxValue: 0}
     let _filterFreqADSR = _synthConfig.filterFreqADSR || {a:0, d:0, s:1, r:0, minValue:20000, maxValue: 20000}
-    let _filterQADSR = _synthConfig.filterQADSR || {a:0, d:0, s:1, r:0, minValue:1, maxValue: 1}
+//    let _filterQADSR = _synthConfig.filterQADSR || {a:0, d:0, s:1, r:0, minValue:1, maxValue: 1}
 
     // Osc
     let _osc = ''
@@ -365,7 +365,7 @@ mge._audio._playSound = function (_synthConfig,_outputNode,_frequency,_startTime
     let _filter = _context.createBiquadFilter()
     _filter.type = _filterType
     _applyADSR(_filterFreqADSR, _filter.frequency, _startTime, _duration)
-    _applyADSR(_filterQADSR, _filter.Q, _startTime, _duration)
+//    _applyADSR(_filterQADSR, _filter.Q, _startTime, _duration)
 
     // Connections
     _osc.connect(_filter)

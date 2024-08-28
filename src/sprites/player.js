@@ -34,7 +34,6 @@ game.sprites.player.init = function() {
     this.accelerationY=0
     this.velocityX=0
     this.velocityY=0
-    this.lastJump=Date.now()
     // Eye
     this._eye = game.sprites.eye.cloneCreate()
     mge.animation.activateOwnCloneAnimation(this._eye)
@@ -70,7 +69,7 @@ game.sprites.player.update = function () {
     
     // Update player Y acceleration
     this.accelerationY=0
-    if (this.ControllerUp && this.collidesDown && Date.now() - this.lastJump > 500) {
+    if (this.ControllerUp && this.collidesDown) {
         this.accelerationY=-this.jumpForce
         this.lastJump=Date.now()
     }
