@@ -10,7 +10,7 @@ game.sprites.playButton.init = function() {
 
 game.sprites.playButton.update = function () {
     // If clicked, then change scene
-    if (this.isClicked || mge.keyboard.isKeyPressed('ArrowUp')) {
+    if (this.isClicked||mge.keyboard.isKeyPressed('ArrowUp')||mge.keyboard.isKeyPressed('z')||mge.keyboard.isKeyPressed('Z')||mge.keyboard.isKeyPressed('w')||mge.keyboard.isKeyPressed('W')) {
         // Play main song
         if (game.state == 'ready') {game.songs.mainSong.playSong()}
         // Go to main scene

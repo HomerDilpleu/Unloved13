@@ -54,10 +54,12 @@ game.sprites.player.update = function () {
     let lastY = this.Y
 
     // Get Controlers
-    if(mge.keyboard.isKeyPressed('ArrowRight') && !mge.keyboard.isKeyPressed('ArrowLeft')) {this.ControllerRight = true} else {this.ControllerRight = false}
-    if(mge.keyboard.isKeyPressed('ArrowLeft') && !mge.keyboard.isKeyPressed('ArrowRight')) {this.ControllerLeft = true} else {this.ControllerLeft = false}
-    if(mge.keyboard.isKeyPressed('ArrowUp') && !mge.keyboard.isKeyPressed('ArrowDown')) {this.ControllerUp = true} else {this.ControllerUp = false}
-    if(mge.keyboard.isKeyPressed('ArrowDown') && !mge.keyboard.isKeyPressed('ArrowUp')) {this.ControllerDown = true} else {this.ControllerDown = false}
+    let r = mge.keyboard.isKeyPressed('ArrowRight')||mge.keyboard.isKeyPressed('d')||mge.keyboard.isKeyPressed('D')
+    let l = mge.keyboard.isKeyPressed('ArrowLeft')||mge.keyboard.isKeyPressed('a')||mge.keyboard.isKeyPressed('A')||mge.keyboard.isKeyPressed('q')||mge.keyboard.isKeyPressed('Q')
+    let u = mge.keyboard.isKeyPressed('ArrowUp')||mge.keyboard.isKeyPressed('z')||mge.keyboard.isKeyPressed('Z')||mge.keyboard.isKeyPressed('w')||mge.keyboard.isKeyPressed('W')
+    if(r && !l) {this.ControllerRight = true} else {this.ControllerRight = false}
+    if(l && !r) {this.ControllerLeft = true} else {this.ControllerLeft = false}
+    if(u) {this.ControllerUp = true} else {this.ControllerUp = false}
 
     // Update player X acceleration
     this.accelerationX=0
