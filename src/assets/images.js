@@ -71,6 +71,10 @@ game.images.init = function () {
     game.images.numberLand.config = {"_s":{"_w":200,"_h":100},"_p":[{"_fs":["C","#9bae8f"],"_ss":["#417029","2","round","round"],"_gp":[],"_c":[["R","2","2","196","38"],["R","95","40","9","58"]],"_t":[8,8,8,"","","","",""]},{"_fs":["C","#417029"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["11","23","25","bold","Arial","left","middle","NUMBERLAND"]}]}
     game.images.numberLand.load()
 
+    game.images.cake = mge.image.create()
+    game.images.cake.config = {"_s":{"_w":40,"_h":40},"_p":[{"_fs":["C","#ff0000"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["20","40","35","normal","Arial","center","bottom","🧁"]}]}
+    game.images.cake.load()
+
     /////////////////////////
     // BACKGROUNDS
     /////////////////////////

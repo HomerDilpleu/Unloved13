@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  game.levels.push({
+  /*game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -67,19 +67,30 @@ game.levels.createLevels = function () {
                   _newXmin:500, _newXmax:750, _newVelocityX:50,
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
-        _camera:{X:3000,Y:-100}})
+        _camera:{X:3000,Y:-100}})*/
         
   // LEVLEL2
   game.levels.push({
     _backgrounds:[],
-    _platforms:[{_id:'11',_width:2700,_height:270,X:0,Y:0,_fillStyle:game.patterns.level1BlockGreat},
-                {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.level1BlockDiv,_radiusStyle:10},
-                {_id:'10',_width:40,_height:40,X:1350,Y:-460,_fillStyle:'#417029',_pushable:{_Xmin:900,_Xmax:1400,_Xfall:1300,_Yfall:-290,_fallSide:'left'}}],
-    _player:{X:2200,Y:-100},
-    _numbers:[{_id:'56',X:1400,Y:-306,
-              _Xmin:1200,_Xmax:1420,_velocityX:100,
-              _bodyFill:'#390052',_textFill:'#390052'}],
-    _victory:{_plt:'5',_num:'Player'},
-    _camera:{X:2000,Y:-100}})
+    _platforms:[{_id:'1',_width:500,_height:1000,X:800,Y:100,_fillStyle:'#582970'},
+                {_id:'2',_width:450,_height:30,X:-50,Y:-100,_fillStyle:'#582970'},
+                {_id:'3',_width:30,_height:1000,X:440,Y:-100,_fillStyle:'#582970'},
+                {_id:'4',_width:500,_height:800,X:-60,Y:100,_fillStyle:'#582970'},
+                {_id:'5',_width:40,_height:40,X:300,Y:-139,_image:game.images.cake,_pushable:{_Xmin:80,_Xmax:500,_Xfall:418,_Yfall:81,_fallSide:'right'}},
+                {_id:'6',_width:1350,_height:300,X:-50,Y:1300,_fillStyle:'#582970'},
+                {_id:'7',_width:150,_height:3000,X:1300,Y:-600,_fillStyle:'#582970'},
+                {_id:'8',_width:30,_height:400,X:440,Y:900,_fillStyle:'#582970'},
+                {_id:'9',_width:150,_height:10,X:970,Y:1100,_fillStyle:'red',_actionable:{_message:'PLTF_DESTROY:8'},_radiusStyle:[0,0,10,10]},
+                {_id:'10',_width:30,_height:3000,X:-60,Y:-600,_fillStyle:'#582970'},
+                {_id:'11',_width:50,_height:50,X:150,Y:1250,_fillStyle:'red',_pushable:{_Xmin:80,_Xmax:1200,_Xfall:1300,_Yfall:1250,_fallSide:'right'},_autoJumpForce:3800}
+              ],
+    _player:{X:1000,Y:0},
+//    _player:{X:200,Y:-1000},
+//    _player:{X:700,Y:-200},
+_numbers:[{_id:'37',X:300,Y:65,
+               _Xmin:200,_Xmax:410,_velocityX:50,
+               _bodyFill:'#582970',_textFill:'#582970'}],
+    _victory:{_plt:'5',_num:'37'},
+    _camera:{X:800,Y:300}})
   // LEVEL 3
   }
