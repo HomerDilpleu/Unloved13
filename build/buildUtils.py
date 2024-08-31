@@ -35,7 +35,8 @@ def clean (inputLines):
                         .replace(' ,',',').replace(', ',',')\
                         .replace(' .','.').replace('. ','.')\
                         .replace(' ;',';').replace('; ',';')\
-                        .replace(' ||','||').replace('|| ','||')
+                        .replace(' ||','||').replace('|| ','||')\
+                        .replace(',"_t":[8,8,8,"","","","",""]','')
             cleanLines.append(cleanLine) 
     return cleanLines
 
