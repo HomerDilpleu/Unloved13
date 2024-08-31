@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  /*game.levels.push({
+  game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -67,7 +67,7 @@ game.levels.createLevels = function () {
                   _newXmin:500, _newXmax:750, _newVelocityX:50,
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
-        _camera:{X:3000,Y:-100}})*/
+        _camera:{X:3000,Y:-100}})
         
   // LEVLEL2
   game.levels.push({
@@ -85,7 +85,7 @@ game.levels.createLevels = function () {
                 {_id:'7bis',_width:5,_height:710,X:1287,Y:-610,_fillStyle:'#582970'},
                 {_id:'7ter',_width:5,_height:210,X:1287,Y:1090,_fillStyle:'#582970'},
                 {_id:'8',_width:30,_height:404,X:435,Y:896,_fillStyle:'#582970'},
-                {_id:'9',_width:150,_height:15,X:970,Y:1091,_fillStyle:'red',_actionable:{_message:'PLTF_DESTROY:8'},_radiusStyle:[0,0,10,10]},
+                {_id:'9',_width:150,_height:15,X:970,Y:1091,_fillStyle:'#d10c0c',_actionable:{_message:'PLTF_DESTROY:8'},_radiusStyle:[0,0,10,10]},
                 {_id:'10',_width:600,_height:3000,X:-630,Y:-605,_fillStyle:game.patterns.violetBlock},
                 {_id:'11',_width:50,_height:50,X:150,Y:1250,_image:game.images.jump,_pushable:{_Xmin:80,_Xmax:1200,_Xfall:1300,_Yfall:1250,_fallSide:'right'},_autoJumpForce:4000},
                 {_id:'12',_width:5,_height:992,X:800,Y:99,_fillStyle:'#582970'},
@@ -94,7 +94,7 @@ game.levels.createLevels = function () {
                 {_id:'15',_width:120,_height:60,X:660,Y:775,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10},
                 {_id:'16',_width:120,_height:60,X:570,Y:975,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10}],
     _player:{X:900,Y:0},
-_numbers:[{_id:'37',X:300,Y:65,
+    _numbers:[{_id:'37',X:300,Y:65,
                _Xmin:250,_Xmax:410,_velocityX:50,
                _bodyFill:'#582970',_textFill:'#582970'}],
     _victory:{_plt:'5',_num:'37'},
