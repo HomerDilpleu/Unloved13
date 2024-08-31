@@ -46,7 +46,7 @@ game.sprites.player.init = function() {
 game.sprites.player.update = function () {
 
     // Calculate time since last frame
-    let deltaTime = Math.min(1/mge.game.fps,0.04)
+    let deltaTime = Math.min(1/mge.game.fps,0.02)
 
     // Keep track of last position
     let lastX = this.X
