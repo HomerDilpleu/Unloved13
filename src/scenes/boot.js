@@ -10,6 +10,10 @@ game.scenes.boot.start = function() {
     game.animations.init()
 
     // A FAIRE Ssongs load propre
+
+    // Delete eyes and legs
+    game.sprites.eye.cloneDeleteAll()
+    game.sprites.legs.cloneDeleteAll()
     
     // Init sprites
     game.sprites.logoDilpleu.init()

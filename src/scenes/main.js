@@ -71,10 +71,11 @@ game.scenes.main.update = function() {
 
         // Check victory condition
         if (game.utils.checkColisionBox(game.variables.victoryPtlfBox,game.variables.victoryNumBox)) {
-                game.state = 'completed'
                 if(game.variables.curlevel < game.levels.length-1) {
+                        game.state = 'completed'
                         game.variables.curlevel+=1
                 } else {
+                        game.state = 'ended'
                         game.variables.curlevel=0
                 }
                 mge.game.changeScene(game.scenes.cinematic)

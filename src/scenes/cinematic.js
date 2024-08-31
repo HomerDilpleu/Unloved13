@@ -40,6 +40,9 @@ game.scenes.cinematic.draw = function() {
 
     // Text box
     game.sprites.textBox._text='LEVEL COMPLETED'
+    if (game.state == 'ended') {
+        game.sprites.textBox._text='MORE LEVELS TO COME...'
+    }
     game.sprites.textBox.x=mge.game.width/2
     game.sprites.textBox.y=100
     game.sprites.textBox.draw()

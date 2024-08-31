@@ -9,12 +9,22 @@ game.sprites.playButton.init = function() {
 }
 
 game.sprites.playButton.update = function () {
-    // If clicked, then change scene
-    if (this.isClicked||mge.keyboard.isKeyPressed('ArrowUp')||mge.keyboard.isKeyPressed('z')||mge.keyboard.isKeyPressed('Z')||mge.keyboard.isKeyPressed('w')||mge.keyboard.isKeyPressed('W')) {
-        // Play main song
-        if (game.state == 'ready') {game.songs.mainSong.playSong()}
-        // Go to main scene
-        mge.game.changeScene(game.scenes.main)
+    // Main menu, click
+    if (game.state == 'ready') {
+        if (this.isClicked) {
+            game.songs.mainSong.playSong()
+            mge.game.changeScene(game.scenes.main)
+        }
+    // Other scenes, jump
+    } else {
+        if (mge.keyboard.isKeyPressed('ArrowUp')||mge.keyboard.isKeyPressed('z')||mge.keyboard.isKeyPressed('Z')||mge.keyboard.isKeyPressed('w')||mge.keyboard.isKeyPressed('W')) {
+            if(game.state == 'ended') {
+                mge.sequencer.stop()
+                mge.game.changeScene(game.scenes.boot)
+            } else {
+                mge.game.changeScene(game.scenes.main)
+            }
+        }
     }
 }
 
@@ -43,7 +53,7 @@ game.sprites.playButton.drawFunction = function (ctx) {
     ctx.fillRect(465,300,350,70)
     ctx.font = '40px serif'
     ctx.fillStyle = '#ffffff'
-    if (game.state == 'ready') {this._text = 'PLAY'} else {this._text = 'CLICK OR JUMP'}
+    if (game.state == 'ready') {this._text = 'PLAY'} else {this._text = 'JUMP'}
     ctx.fillText(this._text, this.width/2, 350)
 
 }
