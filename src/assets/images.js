@@ -75,6 +75,10 @@ game.images.init = function () {
     game.images.cake.config = {"_s":{"_w":40,"_h":40},"_p":[{"_fs":["C","#ff0000"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["20","40","35","normal","Arial","center","bottom","🧁"]}]}
     game.images.cake.load()
 
+    game.images.jump = mge.image.create()
+    game.images.jump.config = {"_s":{"_w":50,"_h":50},"_p":[{"_fs":["C","#582970"],"_ss":["#c8a2e2","6","round","round"],"_gp":[],"_c":[["R","0","0","50","50"],["M","5","25"],["L","25","6"],["L","45","25"],["M","5","40"],["L","25","20"],["L","45","40"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.jump.load()
+
     /////////////////////////
     // BACKGROUNDS
     /////////////////////////
