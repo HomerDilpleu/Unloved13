@@ -72,8 +72,7 @@ game.levels.createLevels = function () {
   // LEVLEL2
   game.levels.push({
     _backgrounds:[{_id:'A',_width:5000,_height:7500,X:0,Y:0,_scrollRatio:1,_fillStyle:'#a26ac8'}],
-    _platforms:[
-                {_id:'1bis',_width:500,_height:30,X:800,Y:100,_actionable:{_message:'TEXT_BOX:OFFER THIS CUPCAKE TO 37 TO BECOME FRIENDS:640:50'}},       
+    _platforms:[{_id:'1bis',_width:500,_height:30,X:800,Y:100,_actionable:{_message:'TEXT_BOX:OFFER THIS CUPCAKE TO 37 TO BECOME FRIENDS:640:50'}},       
                 {_id:'10bis',_width:605,_height:3000,X:-630,Y:-605,_fillStyle:'#582970'},
                 {_id:'1',_width:500,_height:990,X:800,Y:100,_fillStyle:game.patterns.violetBlock,_strokeStyle:'#582970'},
                 {_id:'2',_width:450,_height:30,X:-50,Y:-100,_fillStyle:'#582970'},

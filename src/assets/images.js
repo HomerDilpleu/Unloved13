@@ -72,7 +72,7 @@ game.images.init = function () {
     game.images.numberLand.load()
 
     game.images.cake = mge.image.create()
-    game.images.cake.config = {"_s":{"_w":40,"_h":40},"_p":[{"_fs":["C","#ff0000"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["20","40","35","normal","Arial","center","bottom","🧁"]}]}
+    game.images.cake.config = {"_s":{"_w":40,"_h":40},"_p":[{"_fs":["C","#ff0000"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["M","0","0"]],"_t":["20","40","35","normal","Arial","center","bottom","CAKEXXXXX"]}]}
     game.images.cake.load()
 
     game.images.jump = mge.image.create()
