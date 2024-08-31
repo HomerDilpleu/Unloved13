@@ -275,7 +275,8 @@ stringsToUglify+=['_curAnimation','_lastAnimation']
 # logodilpleu.js
 
 # numbers.js
-stringsToUglify+=['numbers','_numConfig','_isDetected','_speakTxt','deltaTime','_message']
+stringsToUglify+=['numbers','_numConfig','_Xmin','_Xmax','_velocityX','_runX','_runVX','_message','_newXmin','_newXmax','_newVelocityX']
+stringsToUglify+=['_behaviour','PATROL','_bodyFill','_eye','_legs','deltaTime','_runVX','_message','_newXmin','_newXmax','_newVelocityX']
 
 # platforms.js
 stringsToUglify+=['platform','_pltfConfig','_velocityY','_isColliding','_isMoving','_deltaTime','_message','managePlatformCollisions','WhenNoTouching']

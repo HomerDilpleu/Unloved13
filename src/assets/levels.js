@@ -52,7 +52,7 @@ game.levels.createLevels = function () {
                     {_id:'5',_width:180,_height:30,X:1900,Y:-200,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10},
                     {_id:'6',_width:180,_height:30,X:1620,Y:-310,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10},
                     {_id:'7',_width:210,_height:30,X:1310,Y:-420,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10},
-                    {_id:'7bis',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_DETECTED:56'}},
+                    {_id:'7bis',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'NUM_RUN:56'}},
                     {_id:'7ter',_width:150,_height:25,X:1310,Y:-420,_actionable:{_message:'TEXT_BOX:IT SEEMS NUMBERS ARE AFRAID WHEN THEY SEE YOU:640:150'}},
                     {_id:'8',_width:30,_height:160,X:820,Y:-270,_fillStyle:'#582970',_movesTo:{X:820,Y:-400,_velocityX:0,_velocityY:-1000}},
                     {_id:'9',_width:1000,_height:30,X:-145,Y:-430,_fillStyle:game.patterns.violetBlockCircle,_strokeStyle:'#582970',_radiusStyle:[0,10,10,0]},
@@ -63,9 +63,8 @@ game.levels.createLevels = function () {
         _player:{X:3000,Y:-100},
         _numbers:[{_id:'56',X:1400,Y:-306,
                   _Xmin:1300,_Xmax:1420,_velocityX:50,
-                  _Xescape:800,_velocityEscape:-400,
-                  _Yfall:-305,_velocityFall:200,_fallMessage:'PLTF_MOVE:8',
-                  _XminFallen:300,_XmaxFallen:600, _velocityXFallen:50,
+                  _runX:800, _runVX:-400, _message:'PLTF_MOVE:8',
+                  _newXmin:500, _newXmax:750, _newVelocityX:50,
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
         _camera:{X:3000,Y:-100}})
@@ -79,7 +78,6 @@ game.levels.createLevels = function () {
     _player:{X:2200,Y:-100},
     _numbers:[{_id:'56',X:1400,Y:-306,
               _Xmin:1200,_Xmax:1420,_velocityX:100,
-              _Xescape:800,
               _bodyFill:'#390052',_textFill:'#390052'}],
     _victory:{_plt:'5',_num:'Player'},
     _camera:{X:2000,Y:-100}})

@@ -4,7 +4,6 @@ game.sprites.numbers.init = function (_numConfig) {
     // Standard properties
     c.width = game.variables.numberWidth
     c.height = game.variables.numberHeight
-    //c.drawBoundaries = true
     // Positioning
     c._id = _numConfig._id || ''
     c.X = _numConfig.X
@@ -13,20 +12,16 @@ game.sprites.numbers.init = function (_numConfig) {
     c._Xmin = _numConfig._Xmin || 0
     c._Xmax = _numConfig._Xmax || 0
     c._velocityX = _numConfig._velocityX || 200
-    c._velocityY = 0
-    c._Xescape = _numConfig._Xescape || 0
-    c._velocityEscape = _numConfig._velocityEscape || 0
-    c._Yfall = _numConfig._Yfall || 0
-    c._velocityFall = _numConfig._velocityFall || 0
-    c._fallMessage = _numConfig._fallMessage || ''
-    c._XminFallen = _numConfig._XminFallen || 0
-    c._XmaxFallen = _numConfig._XmaxFallen || 0
-    c._velocityXFallen = _numConfig._velocityXFallen || 0
-    // Detection
-    c._isDetected = false
+    c._runX = _numConfig._runX || 200
+    c._runVX = _numConfig._runVX || 200
+    c._message = _numConfig._message || ''
+    c._newXmin = _numConfig._newXmin || 0
+    c._newXmax = _numConfig._newXmax || 0
+    c._newVelocityX = _numConfig._newVelocityX || 0
+    // Current behaviour
+    c._behaviour = 'PATROL'
     // Appearence
     c._bodyFill = _numConfig._bodyFill || 'black'
-    c._textFill = _numConfig._textFill || 'black'
     // Eye
     c._eye = game.sprites.eye.cloneCreate()
     mge.animation.activateOwnCloneAnimation(c._eye)
@@ -43,39 +38,27 @@ game.sprites.numbers.update = function () {
     // Calculate time since last frame
     let deltaTime = Math.min(1/mge.game.fps,0.04)
 
-    // Update number position
-    this.X+=Math.round(this._velocityX*deltaTime)
-    this.Y+=Math.round(this._velocityY*deltaTime)
-
-    // NUMBER NOT DETECTED, then patrol between xmin and xmax
-    if (!this._isDetected) {
+    // UPDATE X VELOCITY
+        // Patrol behaviour
+    if (this._behaviour == 'PATROL') {
         if ((this.X > this._Xmax && this._velocityX > 0) || (this.X < this._Xmin && this._velocityX < 0)) {
             this._velocityX = this._velocityX * -1
         }
     } else {
-        // NUMBER DETECTED BUT STILL NOT FALLING
-        if ((this._velocityEscape < 0 && this.X > this._Xescape && this.Y < this._Yfall) || (this._velocityEscape > 0 && this.X < this._Xescape && this.Y < this._Yfall)) {
-            this._velocityX = this._velocityEscape
-        }
-        // NUMBER FALLING
-        if ((this._velocityEscape < 0 && this.X <= this._Xescape && this.Y < this._Yfall) || (this._velocityEscape > 0 && this.X >= this._Xescape && this.Y < this._Yfall)) {
-            this._velocityX = 0
-            this.X = this._Xescape
-            this._velocityY = this._velocityFall
-            // message
-            if (this._fallMessage != '' && !game.variables.messages.includes(this._fallMessage)) {
-                game.variables.messages.push(this._fallMessage)
-            }
-        }
-        // NUMBER FALLEN
-        if (this.Y >= this._Yfall) {
-            this._velocityY = 0
-            this.Y = this._Yfall
-            if(this._velocityX == 0) {this._velocityX=this._velocityXFallen}
-            if ((this.X > this._XmaxFallen && this._velocityX > 0) || (this.X < this._XminFallen && this._velocityX < 0)) {
-                this._velocityX = this._velocityX * -1
-            }
-        }       
+        // Run behaviour
+        this._velocityX = this._runVX
+    }
+
+    // UPDATE X
+    this.X+=Math.round(this._velocityX*deltaTime)
+
+    // CHECK RUN IS ENEDED
+    if (this._behaviour == 'RUN' && ((this._runVX < 0 && this.X < this. _runX) || (this._runVX > 0 && this.X > this. _runX) )) {
+        this._behaviour = 'PATROL'
+        this._Xmin = this._newXmin
+        this._Xmax = this._newXmax
+        this._velocityX = this._newVelocityX
+        game.variables.messages.push(this._message)
     }
 
     // Camera scroll
@@ -89,29 +72,26 @@ game.sprites.numbers.update = function () {
 
     // Apply messages
     for (let _message of game.variables.messages) {
-        if (_message=='NUM_DETECTED:'+this._id) {
-            this._isDetected= true
+        if (_message =='NUM_RUN:'+this._id) {
+            this._behaviour = 'RUN'
             game.variables.messages=game.variables.messages.filter(e => e !== _message)
         }
     }
 }
 
 game.sprites.numbers.drawFunction = function (ctx) {
-
     // Body
     ctx.font = 'bold 50px serif'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = this._bodyFill
     ctx.fillText(this._id, this._width/2, this._height/2+7)
-    
     // Eye
     this._eye._curAnimation = 'normal'
     this._eye.x = this.x-5
     this._eye.y = this.y-25
     this._eye.scaleX = 1
     if (this._velocityX>0) {this._eye.scaleX = -1}
-    
     // Legs
     this._legs.x = this.x
     this._legs.y = this.y+29
@@ -122,6 +102,5 @@ game.sprites.numbers.drawFunction = function (ctx) {
         this._legs.scaleX = -1
     }
     if (this._velocityX >= 1) {this._legs._curAnimation = 'walk'}
-
 }
 
