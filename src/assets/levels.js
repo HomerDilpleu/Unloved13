@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  /*game.levels.push({
+  game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -63,11 +63,11 @@ game.levels.createLevels = function () {
         _player:{X:3000,Y:-100},
         _numbers:[{_id:'56',X:1400,Y:-306,
                   _Xmin:1300,_Xmax:1400,_velocityX:50,
-                  _runX:820, _runVX:-400, _message:'PLTF_MOVE:8',
+                  _runX:820, _runVX:-500, _message:'PLTF_MOVE:8',
                   _newXmin:500, _newXmax:750, _newVelocityX:50,
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
-        _camera:{X:3000,Y:-100}})*/
+        _camera:{X:3000,Y:-100}})
         
   // LEVLEL2
   game.levels.push({
@@ -82,8 +82,7 @@ game.levels.createLevels = function () {
                 {_id:'8',_width:30,_height:400,X:440,Y:900,_fillStyle:'#582970'},
                 {_id:'9',_width:150,_height:10,X:970,Y:1100,_fillStyle:'red',_actionable:{_message:'PLTF_DESTROY:8'},_radiusStyle:[0,0,10,10]},
                 {_id:'10',_width:30,_height:3000,X:-60,Y:-600,_fillStyle:'#582970'},
-                {_id:'11',_width:50,_height:50,X:150,Y:1250,_fillStyle:'red',_pushable:{_Xmin:80,_Xmax:1200,_Xfall:1300,_Yfall:1250,_fallSide:'right'},_autoJumpForce:3800}
-              ],
+                {_id:'11',_width:50,_height:50,X:150,Y:1250,_fillStyle:'red',_pushable:{_Xmin:80,_Xmax:1200,_Xfall:1300,_Yfall:1250,_fallSide:'right'},_autoJumpForce:3800}],
     _player:{X:1000,Y:0},
 //    _player:{X:200,Y:-1000},
 //    _player:{X:700,Y:-200},
