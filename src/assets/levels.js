@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  game.levels.push({
+  /*game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -67,29 +67,33 @@ game.levels.createLevels = function () {
                   _newXmin:500, _newXmax:750, _newVelocityX:50,
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
-        _camera:{X:3000,Y:-100}})
+        _camera:{X:3000,Y:-100}})*/
         
   // LEVLEL2
   game.levels.push({
-    _backgrounds:[],
-    _platforms:[{_id:'1',_width:500,_height:1000,X:800,Y:100,_fillStyle:'#582970'},
+    _backgrounds:[{_id:'A',_width:5000,_height:7500,X:0,Y:0,_scrollRatio:1,_fillStyle:'#a26ac8'}],
+    _platforms:[
+                {_id:'1bis',_width:500,_height:30,X:800,Y:100,_actionable:{_message:'TEXT_BOX:OFFER THIS CUPCAKE TO 37 TO BECOME FRIENDS:640:50'}},       
+                {_id:'10bis',_width:605,_height:3000,X:-630,Y:-605,_fillStyle:'#582970'},
+                {_id:'1',_width:500,_height:990,X:800,Y:100,_fillStyle:game.patterns.violetBlock,_strokeStyle:'#582970'},
                 {_id:'2',_width:450,_height:30,X:-50,Y:-100,_fillStyle:'#582970'},
-                {_id:'3',_width:30,_height:1000,X:440,Y:-100,_fillStyle:'#582970'},
-                {_id:'4',_width:500,_height:800,X:-60,Y:100,_fillStyle:'#582970'},
+                {_id:'3',_width:30,_height:1146,X:435,Y:-250,_fillStyle:'#582970'},
+                {_id:'4',_width:495,_height:795,X:-60,Y:100,_fillStyle:'#582970',_fillStyle:game.patterns.violetBlock,_strokeStyle:'#582970'},
                 {_id:'5',_width:40,_height:40,X:300,Y:-139,_image:game.images.cake,_pushable:{_Xmin:80,_Xmax:500,_Xfall:418,_Yfall:81,_fallSide:'right'}},
-                {_id:'6',_width:1350,_height:300,X:-50,Y:1300,_fillStyle:'#582970'},
-                {_id:'7',_width:150,_height:3000,X:1300,Y:-600,_fillStyle:'#582970'},
-                {_id:'8',_width:30,_height:400,X:440,Y:900,_fillStyle:'#582970'},
-                {_id:'9',_width:150,_height:10,X:970,Y:1100,_fillStyle:'red',_actionable:{_message:'PLTF_DESTROY:8'},_radiusStyle:[0,0,10,10]},
-                {_id:'10',_width:30,_height:3000,X:-60,Y:-600,_fillStyle:'#582970'},
-                {_id:'11',_width:50,_height:50,X:150,Y:1250,_fillStyle:'red',_pushable:{_Xmin:80,_Xmax:1200,_Xfall:1300,_Yfall:1250,_fallSide:'right'},_autoJumpForce:3800}],
-    _player:{X:1000,Y:0},
-//    _player:{X:200,Y:-1000},
-//    _player:{X:700,Y:-200},
+                {_id:'6',_width:1350,_height:300,X:-45,Y:1300,_fillStyle:game.patterns.violetBlock},
+                {_id:'7',_width:500,_height:3000,X:1290,Y:-605,_fillStyle:game.patterns.violetBlock},
+                {_id:'7bis',_width:5,_height:710,X:1287,Y:-610,_fillStyle:'#582970'},
+                {_id:'7ter',_width:5,_height:210,X:1287,Y:1090,_fillStyle:'#582970'},
+                {_id:'8',_width:30,_height:404,X:435,Y:896,_fillStyle:'#582970'},
+                {_id:'9',_width:150,_height:15,X:970,Y:1091,_fillStyle:'red',_actionable:{_message:'PLTF_DESTROY:8'},_radiusStyle:[0,0,10,10]},
+                {_id:'10',_width:600,_height:3000,X:-630,Y:-605,_fillStyle:game.patterns.violetBlock},
+                {_id:'11',_width:50,_height:50,X:150,Y:1250,_fillStyle:'red',_pushable:{_Xmin:80,_Xmax:1200,_Xfall:1300,_Yfall:1250,_fallSide:'right'},_autoJumpForce:4000},
+                {_id:'12',_width:5,_height:992,X:800,Y:99,_fillStyle:'#582970'}],
+    _player:{X:900,Y:0},
 _numbers:[{_id:'37',X:300,Y:65,
-               _Xmin:200,_Xmax:410,_velocityX:50,
+               _Xmin:250,_Xmax:410,_velocityX:50,
                _bodyFill:'#582970',_textFill:'#582970'}],
     _victory:{_plt:'5',_num:'37'},
-    _camera:{X:800,Y:300}})
+    _camera:{X:700,Y:300}})
   // LEVEL 3
   }
