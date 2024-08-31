@@ -36,7 +36,7 @@ game.sprites.numbers.init = function (_numConfig) {
 game.sprites.numbers.update = function () {
 
     // Calculate time since last frame
-    let deltaTime = Math.min(1/mge.game.fps,0.04)
+    let deltaTime = Math.min(1/mge.game.fps,0.02)
 
     // UPDATE X VELOCITY
         // Patrol behaviour
