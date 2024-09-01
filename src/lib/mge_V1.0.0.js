@@ -7,7 +7,7 @@ const mge = {
     _canvas:{},
     _game:{},
     _loop:{},
-    _mouse:{},
+//    _mouse:{},
     _keyboard:{},
     _sequencer:{}
 }
@@ -137,14 +137,14 @@ mge.keyboard = {
 ///////////////////////////
 // Mouse API
 ///////////////////////////
-mge.mouse = {
+//mge.mouse = {
 
     ////////////////
     // Properties
     ////////////////
-    get isClicked () {
-        return mge._mouse._isClicked
-    }
+//    get isClicked () {
+//        return mge._mouse._isClicked
+//    }
     //,
 //    get x() {
 //        return mge._mouse._x
@@ -153,7 +153,7 @@ mge.mouse = {
 //        return mge._mouse._y
 //    }
 
-}
+//}
 // API on sprite objects    
 mge._sprite = {
     ////////////////
@@ -224,9 +224,9 @@ mge._sprite = {
 //        return this._isTouched(mge._mouse._x, mge._mouse._y)
 //    },   
      // is clicked
-     get isClicked() {
-        return this._isClicked(mge._mouse._x, mge._mouse._y, mge._mouse._isClicked)
-    },  
+//     get isClicked() {
+//        return this._isClicked(mge._mouse._x, mge._mouse._y, mge._mouse._isClicked)
+//    },  
     
     ////////////////
     // Methods
@@ -500,7 +500,7 @@ mge._game._create = function (_width, _height) {
     let _canvas = mge._canvas
     let _audio = mge._audio
     let _loop = mge._loop
-    let _mouse = mge._mouse
+//    let _mouse = mge._mouse
     let _keyboard = mge._keyboard
     let _sequencer = mge._sequencer
 
@@ -508,7 +508,7 @@ mge._game._create = function (_width, _height) {
     _canvas._create(_width,_height,'GAME_RENDER_CANVAS')
 
     // Create mouse
-    _mouse._create(_canvas._renderCanvas)
+//    _mouse._create(_canvas._renderCanvas)
 
     // Create keyboard
     _keyboard._create()
@@ -718,7 +718,7 @@ mge._loop._tick = function () {
     // Dependencies
     let _canvas = mge._canvas
     let _game = mge._game
-    let _mouse = mge._mouse
+//    let _mouse = mge._mouse
     let _keyboard = mge._keyboard
     let _sequencer = mge._sequencer
 
@@ -734,14 +734,14 @@ mge._loop._tick = function () {
     _loop._fps = 1 / (_loop._elapsedTick / 1000)
 
     // Get mouse & keyboard information
-    _mouse._update() 
+//    _mouse._update() 
     _keyboard._update() 
 
     // Check if the scene must change
     if (_game._curScene != _game._nextScene) {
         // Update curScene, reset controls and launch the start function of the new scene
         _game._curScene = _game._nextScene
-        _mouse._reset()
+//        _mouse._reset()
         _keyboard._reset()
         _game._curScene.start()
     }
@@ -778,77 +778,77 @@ mge._loop._tick = function () {
 ///////////////////////////
 // Event handler onmouseclick
 ///////////////////////////
-mge._mouse._onClick = function(e) {
-    this._clickDetected = true
-    this._xDetected = e.offsetX
-    this._yDetected = e.offsetY
-}
+//mge._mouse._onClick = function(e) {
+//    this._clickDetected = true
+//    this._xDetected = e.offsetX
+//    this._yDetected = e.offsetY
+//}
 ///////////////////////////
 // Event handler onmousemouve
 ///////////////////////////
-mge._mouse._onMove = function(e) {
-    this._xDetected = e.offsetX
-    this._yDetected = e.offsetY
-}
+//mge._mouse._onMove = function(e) {
+//    this._xDetected = e.offsetX
+//    this._yDetected = e.offsetY
+//}
 ///////////////////////////
 // Event handler onmouseout
 ///////////////////////////
-mge._mouse._onOut = function(e) {
-    this._xDetected = ''
-    this._yDetected = ''
-}
+//mge._mouse._onOut = function(e) {
+//    this._xDetected = ''
+//    this._yDetected = ''
+//}
 ///////////////////////////
 // Reset mouse information
 ///////////////////////////
-mge._mouse._reset = function() {
-    this._x = 0
-    this._y = 0
-    this._isClicked = false
-    this._xDetected = 0
-    this._yDetected = 0
-    this._clickDetected = false
-}
+//mge._mouse._reset = function() {
+//    this._x = 0
+//    this._y = 0
+//    this._isClicked = false
+//    this._xDetected = 0
+//    this._yDetected = 0
+//    this._clickDetected = false
+//}
 ///////////////////////////
 // Update mouse properties
 ///////////////////////////
-mge._mouse._update = function() {
+//mge._mouse._update = function() {
 
     // Set the new mouse coordinates
-    this._x = this._xDetected
-    this._y = this._yDetected
+//    this._x = this._xDetected
+//    this._y = this._yDetected
 
     // Take into account click
-    this._isClicked = this._clickDetected
-    this._clickDetected = false
+//    this._isClicked = this._clickDetected
+//    this._clickDetected = false
 
-}
+//}
 ///////////////////////////
 // Create the mouse
 ///////////////////////////
-mge._mouse._create = function(_HtmlCanvas) {
+//mge._mouse._create = function(_HtmlCanvas) {
 
     // Properties
-    this._x = 0
-    this._y = 0
-    this._isClicked = false
-    this._xDetected = 0
-    this._yDetected = 0
-    this._clickDetected = false
+//    this._x = 0
+//    this._y = 0
+//    this._isClicked = false
+//    this._xDetected = 0
+//    this._yDetected = 0
+//    this._clickDetected = false
 
     // Create listeners
-    _HtmlCanvas.onclick = function(e) {
-        mge._mouse._onClick(e)
-    }
+//    _HtmlCanvas.onclick = function(e) {
+//        mge._mouse._onClick(e)
+//    }
 
-    _HtmlCanvas.onmousemove = function(e) {
-        mge._mouse._onMove(e)
-    }
+//    _HtmlCanvas.onmousemove = function(e) {
+//        mge._mouse._onMove(e)
+//    }
     
-    _HtmlCanvas.onmouseout = function(e) {
-        mge._mouse._onOut(e)
-    }
+//    _HtmlCanvas.onmouseout = function(e) {
+//        mge._mouse._onOut(e)
+//    }
 
-}
+//}
 ///////////////////////////
 // Create the sprite
 ///////////////////////////

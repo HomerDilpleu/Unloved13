@@ -9,22 +9,12 @@ game.sprites.playButton.init = function() {
 }
 
 game.sprites.playButton.update = function () {
-    // Main menu, click
-    if (game.state == 'ready') {
-        if (this.isClicked) {
+
+    if (mge.keyboard.isKeyPressed('ArrowUp')||mge.keyboard.isKeyPressed('z')||mge.keyboard.isKeyPressed('Z')||mge.keyboard.isKeyPressed('w')||mge.keyboard.isKeyPressed('W')) {
+        if (game.state == 'ready') {
             game.songs.mainSong.playSong()
-            mge.game.changeScene(game.scenes.main)
-        }
-    // Other scenes, jump
-    } else {
-        if (mge.keyboard.isKeyPressed('ArrowUp')||mge.keyboard.isKeyPressed('z')||mge.keyboard.isKeyPressed('Z')||mge.keyboard.isKeyPressed('w')||mge.keyboard.isKeyPressed('W')) {
-            if(game.state == 'ended') {
-                mge.sequencer.stop()
-                mge.game.changeScene(game.scenes.boot)
-            } else {
-                mge.game.changeScene(game.scenes.main)
-            }
-        }
+        } 
+        mge.game.changeScene(game.scenes.main)
     }
 }
 
@@ -41,6 +31,8 @@ game.sprites.playButton.drawFunction = function (ctx) {
         // REF TO JS13K
         ctx.font = '24px serif'
         ctx.fillText('A game created for JS13K 2024', mge.game.width/2, 200)
+        // Exaplanations
+        ctx.fillText('UP arrow or W or Z', mge.game.width/2, 420)
         // Number 13
         game.sprites.player.x =  900
         game.sprites.player.y = 113
@@ -49,11 +41,11 @@ game.sprites.playButton.drawFunction = function (ctx) {
         game.sprites.legs.cloneExecuteForEach('draw')
     }
 
-    // Play button
+    // JUMP button
     ctx.fillRect(465,300,350,70)
     ctx.font = '40px serif'
     ctx.fillStyle = '#ffffff'
-    if (game.state == 'ready') {this._text = 'PLAY'} else {this._text = 'JUMP'}
+    this._text = 'JUMP TO START'
     ctx.fillText(this._text, this.width/2, 350)
 
 }
