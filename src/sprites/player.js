@@ -153,7 +153,7 @@ game.sprites.player.drawFunction = function (ctx) {
     this._eye.x = this.x-5
     this._eye.y = this.y-25
     this._eye.scaleX = 1
-    if (this.velocityX>0) {this._eye.scaleX = -1}
+    if (this.ControllerRight) {this._eye.scaleX = -1}
 
     // Legs
     this._legs._curAnimation = 'walk'

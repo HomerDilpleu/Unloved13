@@ -3,6 +3,12 @@
 //////////////////////
 game.scenes.main.start = function() {
 
+        // Request full screen
+        let g = document.getElementById('unloved13')
+        if (g.requestFullscreen) {
+            g.requestFullscreen()
+        }
+
         // Delete eyes and legs
         game.sprites.eye.cloneDeleteAll()
         game.sprites.legs.cloneDeleteAll()
