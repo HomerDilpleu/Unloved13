@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  game.levels.push({
+ /* game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -64,15 +64,15 @@ game.levels.createLevels = function () {
         _numbers:[{_id:'56',X:1400,Y:-306,
                   _Xmin:1300,_Xmax:1400,_velocityX:50,
                   _runX:820, _runVX:-500, _message:'PLTF_MOVE:8',
-                  _newXmin:500, _newXmax:750, _newVelocityX:50,
+                  _newXmin:-400, _newXmax:-380, _newVelocityX:70,
                   _bodyFill:'#582970',_textFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
-        _camera:{X:3000,Y:-100}})
+        _camera:{X:3000,Y:-100}})*/
         
   // LEVLEL2
   game.levels.push({
     _backgrounds:[{_id:'A',_width:5000,_height:7500,X:0,Y:0,_scrollRatio:1,_fillStyle:'#a26ac8'}],
-    _platforms:[{_id:'1bis',_width:500,_height:30,X:800,Y:100,_actionable:{_message:'TEXT_BOX:OFFER THIS CUPCAKE TO 37 TO BECOME FRIENDS:640:50'}},       
+    _platforms:[{_id:'1bis',_width:500,_height:30,X:800,Y:100,_actionable:{_message:'TEXT_BOX:OFFER THIS CUPCAKE TO 56 TO BECOME FRIENDS:640:50'}},       
                 {_id:'10bis',_width:605,_height:3000,X:-630,Y:-605,_fillStyle:'#582970'},
                 {_id:'1',_width:500,_height:990,X:800,Y:100,_fillStyle:game.patterns.violetBlock,_strokeStyle:'#582970'},
                 {_id:'2',_width:450,_height:30,X:-50,Y:-100,_fillStyle:'#582970'},
@@ -93,10 +93,10 @@ game.levels.createLevels = function () {
                 {_id:'15',_width:120,_height:60,X:660,Y:775,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10},
                 {_id:'16',_width:120,_height:60,X:570,Y:975,_fillStyle:game.patterns.violetBlockCircle,_radiusStyle:10}],
     _player:{X:900,Y:0},
-    _numbers:[{_id:'37',X:300,Y:65,
+    _numbers:[{_id:'56',X:300,Y:65,
                _Xmin:250,_Xmax:410,_velocityX:50,
                _bodyFill:'#582970',_textFill:'#582970'}],
-    _victory:{_plt:'5',_num:'37'},
+    _victory:{_plt:'5',_num:'56'},
     _camera:{X:700,Y:300}})
   // LEVEL 3
   }

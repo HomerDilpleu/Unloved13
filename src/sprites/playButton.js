@@ -32,7 +32,7 @@ game.sprites.playButton.drawFunction = function (ctx) {
         ctx.font = '24px serif'
         ctx.fillText('A game created for JS13K 2024', mge.game.width/2, 200)
         // Exaplanations
-        ctx.fillText('UP arrow or W or Z', mge.game.width/2, 420)
+        ctx.fillText('UP arrow - W - Z', mge.game.width/2, 420)
         // Number 13
         game.sprites.player.x =  900
         game.sprites.player.y = 113
