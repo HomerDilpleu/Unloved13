@@ -4,9 +4,13 @@
 game.scenes.main.start = function() {
 
         // Request full screen
-        let g = document.getElementById('unloved13')
-        if (g.requestFullscreen) {
-            g.requestFullscreen()
+        if (game.state == 'ready') {
+                try {
+                  let g = document.getElementById('unloved13')
+                  if (g.requestFullscreen) {
+                        g.requestFullscreen()
+                  }
+                } catch(e) {}
         }
 
         // Delete eyes and legs

@@ -52,6 +52,8 @@ game.sprites.player.update = function () {
     let lastX = this.X
     let lastY = this.Y
 
+
+
     // Get Controlers
     let r = mge.keyboard.isKeyPressed('ArrowRight')||mge.keyboard.isKeyPressed('d')||mge.keyboard.isKeyPressed('D')
     let l = mge.keyboard.isKeyPressed('ArrowLeft')||mge.keyboard.isKeyPressed('a')||mge.keyboard.isKeyPressed('A')||mge.keyboard.isKeyPressed('q')||mge.keyboard.isKeyPressed('Q')
