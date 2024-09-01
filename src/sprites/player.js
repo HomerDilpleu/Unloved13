@@ -34,6 +34,8 @@ game.sprites.player.init = function() {
     this.accelerationY=0
     this.velocityX=0
     this.velocityY=0
+    // FPS management
+    this.lastFrame = Date.now()
     // Eye
     this._eye = game.sprites.eye.cloneCreate()
     mge.animation.activateOwnCloneAnimation(this._eye)
@@ -43,16 +45,12 @@ game.sprites.player.init = function() {
     
 }
 
-game.sprites.player.update = function () {
 
-    // Calculate time since last frame
-    let deltaTime = Math.min(1/mge.game.fps,0.02)
+game.sprites.player.updatePhysics = function (deltaTime) {
 
     // Keep track of last position
     let lastX = this.X
     let lastY = this.Y
-
-
 
     // Get Controlers
     let r = mge.keyboard.isKeyPressed('ArrowRight')||mge.keyboard.isKeyPressed('d')||mge.keyboard.isKeyPressed('D')
@@ -68,7 +66,7 @@ game.sprites.player.update = function () {
     if (this.ControllerRight && this.collidesDown) {this.accelerationX=this.moveForce}
     if (this.ControllerLeft && !this.collidesDown) {this.accelerationX=-this.moveForceWhenNoTouching}
     if (this.ControllerRight && !this.collidesDown) {this.accelerationX=this.moveForceWhenNoTouching}
-    
+        
     // Update player Y acceleration
     this.accelerationY=0
     if (this.ControllerUp && this.collidesDown) {
@@ -83,7 +81,7 @@ game.sprites.player.update = function () {
     if (this.velocityX < 0 && this.velocityX<-this.maxVelocity) {this.velocityX=-this.maxVelocity}
     // Update player Y velocity
     this.velocityY+=this.accelerationY*deltaTime
-    
+        
     // Update player position
     this.X+=Math.round(this.velocityX*deltaTime)
     this.Y+=Math.round(this.velocityY*deltaTime)
@@ -112,7 +110,7 @@ game.sprites.player.update = function () {
     this.collidesUp = false
     this.collidesDown = false
     game.sprites.platform.cloneExecuteForEach('managePlatformCollisions')
-    
+        
     // If player is collinding a platform
     if (this.collidesRight & !(this.ControllerLeft)) {
         this.X = lastX
@@ -131,7 +129,6 @@ game.sprites.player.update = function () {
         this.Y = lastY+5
         this.velocityY = 0}
 
-
     // Camera scroll
     this.x = this.X - game.variables.camX + mge.game.width / 2
     this.y = this.Y - game.variables.camY + mge.game.height / 2
@@ -142,6 +139,23 @@ game.sprites.player.update = function () {
     }
     if (game.variables.victoryPtlfId == 'Player') {
         game.variables.victoryPtlfBox={xMin:this.x-this.width/2,xMax:this.x+this.width/2,yMin:this.y-this.height/2,yMax:this.y+this.height/2}
+    }
+}
+
+game.sprites.player.update = function () {
+    // Elapsed time
+    let elapsedTime = Date.now()-this.lastFrame
+    // Nb updates to calculate if FPS is very low
+    let nbUpdates = Math.round(elapsedTime/17)
+
+    // If elapsed time > 17ms (equivalent to 60 fps)
+    if (elapsedTime>=0.017) {
+        // Reset lastFrame time
+        this.lastFrame = Date.now()
+        // Update pyhiscs for 17ms
+        for (let i = 0; i < nbUpdates; i++) {
+            this.updatePhysics(0.017)
+        }
     }
 }
 
