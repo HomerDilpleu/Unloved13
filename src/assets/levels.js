@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  game.levels.push({
+  /*game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -65,7 +65,7 @@ game.levels.createLevels = function () {
                   _Xmin:1300,_Xmax:1400,_velocityX:50,
                   _runX:820, _runVX:-500, _message:'PLTF_MOVE:8',
                   _newXmin:-400, _newXmax:-380, _newVelocityX:70,
-                  _bodyFill:'#582970',_textFill:'#582970'}],
+                  _bodyFill:'#582970'}],
         _victory:{_plt:'4bis',_num:'Player'},
         _camera:{X:2800,Y:-300}})
         
@@ -95,8 +95,24 @@ game.levels.createLevels = function () {
     _player:{X:900,Y:0},
     _numbers:[{_id:'56',X:300,Y:65,
                _Xmin:250,_Xmax:410,_velocityX:50,
-               _bodyFill:'#582970',_textFill:'#582970'}],
+               _bodyFill:'#582970'}],
     _victory:{_plt:'5',_num:'56'},
-    _camera:{X:700,Y:300}})
+    _camera:{X:700,Y:300}})*/
+
   // LEVEL 3
+  game.levels.push({
+    _backgrounds:[],
+    _platforms:[{_id:'1',_width:210,_height:30,X:2000,Y:3000,_fillStyle:'#582970'},
+                {_id:'2',_width:480,_height:30,X:2300,Y:2900,_fillStyle:'#582970'},
+                {_id:'3',_width:30,_height:1300,X:2500,Y:1800,_fillStyle:'#582970'},
+                {_id:'4',_width:600,_height:30,X:2300,Y:3100,_fillStyle:'#582970'},
+                {_id:'5',_width:60,_height:60,X:2700,Y:3050,_fillStyle:'red'},
+                {_id:'6',_width:210,_height:30,X:2000,Y:3200,_fillStyle:'#582970'},
+                {_id:'7',_width:210,_height:30,X:2300,Y:3300,_fillStyle:'#582970'}],
+    _player:{X:2100,Y:2930},
+    _numbers:[{_id:'45',X:2600,Y:3065,
+      _Xmin:2595,_Xmax:2605,_velocityX:60,
+      _bodyFill:'#582970'}],
+    _victory:{_plt:'5',_num:'Player'},
+    _camera:{X:2300,Y:3200}})
   }
