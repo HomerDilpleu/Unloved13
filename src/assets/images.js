@@ -79,6 +79,11 @@ game.images.init = function () {
     game.images.jump.config = {"_s":{"_w":50,"_h":50},"_p":[{"_fs":["C","#582970"],"_ss":["#c8a2e2","6","round","round"],"_gp":[],"_c":[["R","0","0","50","50"],["M","5","25"],["L","25","6"],["L","45","25"],["M","5","40"],["L","25","20"],["L","45","40"]],"_t":[8,8,8,"","","","",""]}]}
     game.images.jump.load()
 
+    game.images.spider = mge.image.create()
+    game.images.spider.config = {"_s":{"_w":90,"_h":180},"_p":[{"_fs":["N",""],"_ss":["#582970","4","round","round"],"_gp":[],"_c":[["M","45","0"],["L","45","140"],["L","38","135"],["L","30","140"],["M","45","140"],["L","50","135"],["L","60","140"],["M","45","140"],["L","40","142"],["L","38","145"],["M","45","140"],["L","52","142"],["L","54","145"]],"_t":[8,8,8,"","","","",""]}]}
+    game.images.spider.load()
+
+
     /////////////////////////
     // BACKGROUNDS
     /////////////////////////
@@ -106,9 +111,10 @@ game.images.init = function () {
     //let _beziers2 = {"_s":{"_w":30,"_h":30},"_p":[{"_fs":["C","#582970"],"_ss":["#000000","0","round","round"],"_gp":[],"_c":[["R","0","0","30","30"]],"_t":[8,8,8,"","","","",""]},{"_fs":["C","#5d2c77"],"_ss":["#5d2c77","0","round","round"],"_gp":[],"_c":[["M","0","12"],["B","20","-25","8","30","30","12"],["L","30","17"],["B","12","55","20","1","0","17"]],"_t":[8,8,8,"","","","",""]}]}
 
     //game.patterns.violetBlockLosangeBeziers1 = game.images._createColoredPattern(_beziers1,'#5d2c77','#582970')
-    //game.patterns.violetBlockBeziers2 = game.images._createColoredPattern(_beziers2,'#5d2c77','#582970')
+    //game.patterns.violetBlockDiagonal = game.images._createColoredPattern(_diagonal,'#c8a2e2','#582970')
     game.patterns.violetBlockCircle = game.images._createColoredPattern(_circle,'#582970','#c8a2e2')
     game.patterns.violetBlock = game.images._createColoredPattern(_block,'#c8a2e2','#582970')
+    game.patterns.violetBlockBright = game.images._createColoredPattern(_block,'#c8a2e2','#caa8e2')
 
     //game.patterns.blueBlockDiagonal = game.images._createColoredPattern(_diagonal,'#5a97c8','#6aa4d2')
     

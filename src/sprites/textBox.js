@@ -36,4 +36,5 @@ game.sprites.textBox.drawFunction = function (ctx) {
         // Pi
         game.images.pi.draw(ctx)
     }
+
 }
