@@ -39,10 +39,12 @@ game.scenes.cinematic.update = function() {
 game.scenes.cinematic.draw = function() {
 
     // Text box
-    game.sprites.textBox._text='LEVEL COMPLETED'
-    if (game.state == 'ended') {
-        game.sprites.textBox._text='MORE LEVELS TO COME...'
-    }
+    console.log(game.variables.curlevel)
+    if (game.variables.curlevel == 1) {game.sprites.textBox._text='TUTO COMPLETED!'}
+    else if (game.variables.curlevel == 2) {game.sprites.textBox._text='GREAT, NUMBER 56 IS NO LONGER SCARED BY YOU!!'}
+    else if (game.variables.curlevel == 3) {game.sprites.textBox._text='CONGRATULATIONS, NUMBER 45 IS NOW YOUR FRIEND!'}
+    else {game.sprites.textBox._text = 'MORE LEVELS TO COME...'}
+
     game.sprites.textBox.x=mge.game.width/2
     game.sprites.textBox.y=100
     game.sprites.textBox.draw()
