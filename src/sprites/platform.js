@@ -105,6 +105,7 @@ game.sprites.platform.managePlatformCollisions = function () {
             game.sprites.player.velocityY = -this._autoJumpForce
             game.sprites.player.Y = this.Y - this.height/2 - game.sprites.player.height/2
             _p.collidesDown = false
+            mge.audio.playSound(game.instruments.superJump,440,mge.audio.currentAudioTime,1,0.8)
         }
     } 
     // ******************************************************
@@ -180,6 +181,8 @@ game.sprites.platform.managePlatformCollisions = function () {
                 _vX:5,
                 _size:15,
                 _fillStyle:[this._fillStyle]})
+            // Play explosion sound
+            mge.audio.playSound(game.instruments.explosion,880,mge.audio.currentAudioTime,1,0.8)
             game.variables.messages=game.variables.messages.filter(e => e !== _message)
         }
         // MOVES

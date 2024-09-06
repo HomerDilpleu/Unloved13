@@ -17,6 +17,17 @@ game.scenes.cinematic.start = function() {
         _vX:20,
         _size:10,
         _fillStyle:['#582970','#a26ac8','white']})
+
+    // Play explosion sound
+    mge.audio.playSound(game.instruments.endLevel,440,mge.audio.currentAudioTime,0.2,0.9)
+    mge.audio.playSound(game.instruments.endLevel,550,mge.audio.currentAudioTime,0.2,0.9)
+    mge.audio.playSound(game.instruments.endLevel,660,mge.audio.currentAudioTime,0.2,0.9)
+    mge.audio.playSound(game.instruments.endLevel,880,mge.audio.currentAudioTime,0.2,0.9)
+    mge.audio.playSound(game.instruments.endLevel,440,mge.audio.currentAudioTime+0.2,0.5,0.9)
+    mge.audio.playSound(game.instruments.endLevel,550,mge.audio.currentAudioTime+0.2,0.5,0.9)
+    mge.audio.playSound(game.instruments.endLevel,660,mge.audio.currentAudioTime+0.2,0.5,0.9)
+    mge.audio.playSound(game.instruments.endLevel,880,mge.audio.currentAudioTime+0.2,0.5,0.9)
+
 }
 
 //////////////////////

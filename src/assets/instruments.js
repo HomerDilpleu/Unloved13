@@ -48,3 +48,22 @@ game.instruments.piano = {
     }
 }
 
+// Effects
+game.instruments.explosion = {
+    volumeADSR: {a:0.01, d:0.3, s:0.2, r:0.2, minValue:0, maxValue: 10},
+    oscType:'noise',
+    filterType:'lowpass',
+    filterFreqADSR: {a:0.01, d:0.3, s:0.2, r:0.2, minValue:100, maxValue: 3000}
+}
+
+game.instruments.endLevel = {
+    volumeADSR: {a:0.01, d:0.3, s:0.8, r:0.1, minValue:0, maxValue: 0.8},
+    oscType:'square',
+    filterType:'lowpass',
+    filterFreqADSR: {a:0.01, d:0.3, s:0.8, r:0.1, minValue:100, maxValue: 2000}}
+
+game.instruments.superJump = {
+    volumeADSR: {a:0.01, d:0.3, s:0.2, r:0.2, minValue:0, maxValue: 10},
+    oscType:'sine',
+    pitchADSR: {a:0.8, d:0.2, s:0.9, r:0.2, minValue:100, maxValue: 3000}
+}
