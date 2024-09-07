@@ -139,7 +139,7 @@ game.levels.createLevels = function () {
                     {_id:'C',_width:1000,_height:200,X:300,Y:3700,_scrollRatio:1,_fillStyle:'#a26ac8'},
                     {_id:'D',_width:500,_height:1800,X:-200,Y:2700,_scrollRatio:1,_fillStyle:'#a26ac8'}],
       _platforms:[{_id:'1',_width:800,_height:30,X:0,Y:3600,_fillStyle:'#582970'},
-                  {_id:'1.0',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'TEXT_BOX:NUMBER 72 IS STUCKED, HELP HIM TO GO OUT!:640:50'}},
+                  {_id:'1.0',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'TEXT_BOX:NUMBER 72 IS STUCK, HELP HIM TO GO OUT!:640:50'}},
                   {_id:'1.1',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.1'}},
                   {_id:'1.2',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.2'}},
                   {_id:'1.3',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.3'}},
