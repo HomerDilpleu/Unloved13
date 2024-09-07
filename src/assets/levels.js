@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  game.levels.push({
+  /*game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -133,10 +133,12 @@ game.levels.createLevels = function () {
     _victory:{_plt:'5',_num:'Player'},
     _camera:{X:2300,Y:3200}})
     // LEVEL 4
-    game.levels.push({
-      _backgrounds:[{_id:'A',_width:5000,_height:1500,X:0,Y:3300,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
-                    {_id:'B',_width:7000,_height:1500,X:0,Y:3400,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2}],
-      _platforms:[{_id:'1',_width:1100,_height:30,X:-300,Y:3600,_fillStyle:'#582970'},
+   */ game.levels.push({
+      _backgrounds:[{_id:'A',_width:5000,_height:1500,X:0,Y:3200,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
+                    {_id:'B',_width:7000,_height:1500,X:0,Y:3300,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
+                    {_id:'C',_width:1000,_height:200,X:300,Y:3700,_scrollRatio:1,_fillStyle:'#a26ac8'},
+                    {_id:'D',_width:500,_height:1800,X:-200,Y:2700,_scrollRatio:1,_fillStyle:'#a26ac8'}],
+      _platforms:[{_id:'1',_width:800,_height:30,X:0,Y:3600,_fillStyle:'#582970'},
                   {_id:'1.0',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'TEXT_BOX:NUMBER 72 IS STUCKED, HELP HIM TO GO OUT!:640:50'}},
                   {_id:'1.1',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.1'}},
                   {_id:'1.2',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.2'}},
@@ -146,12 +148,12 @@ game.levels.createLevels = function () {
                   {_id:'1.6',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.6'}},
                   {_id:'2',_width:3000,_height:300,X:-300,Y:3800,_fillStyle:'#582970'},
                   {_id:'3',_width:200,_height:3000,X:0,Y:600,_fillStyle:'#582970'},
-                  {_id:'4.1',_width:50,_height:60,X:8600,Y:3200,_fillStyle:'#775b86',_movesTo:{X:800,Y:3740,_velocityX:0,_velocityY:1500}},
-                  {_id:'4.2',_width:40,_height:60,X:820,Y:3000,_fillStyle:'#775b86',_movesTo:{X:820,Y:3680,_velocityX:0,_velocityY:1500}},
-                  {_id:'4.3',_width:60,_height:30,X:860,Y:3100,_fillStyle:'#775b86',_movesTo:{X:860,Y:3770,_velocityX:0,_velocityY:1500}},
-                  {_id:'4.4',_width:70,_height:80,X:880,Y:2900,_fillStyle:'#775b86',_movesTo:{X:880,Y:3690,_velocityX:0,_velocityY:1500}},
-                  {_id:'4.5',_width:50,_height:30,X:860,Y:2800,_fillStyle:'#775b86',_movesTo:{X:860,Y:3660,_velocityX:0,_velocityY:1500}},
-                  {_id:'4.6',_width:30,_height:30,X:810,Y:2600,_fillStyle:'#775b86',_movesTo:{X:810,Y:3650,_velocityX:0,_velocityY:1500}},
+                  {_id:'4.1',_width:50,_height:60,X:8600,Y:3200,_fillStyle:'#775b86',_movesTo:{X:800,Y:3740,_velocityX:0,_velocityY:1500},_radiusStyle:[10,20,5,15]},
+                  {_id:'4.2',_width:40,_height:60,X:820,Y:3000,_fillStyle:'#775b86',_movesTo:{X:820,Y:3680,_velocityX:0,_velocityY:1500},_radiusStyle:[5,15,10,10]},
+                  {_id:'4.3',_width:60,_height:30,X:860,Y:3100,_fillStyle:'#775b86',_movesTo:{X:860,Y:3770,_velocityX:0,_velocityY:1500},_radiusStyle:[10,20,5,15]},
+                  {_id:'4.4',_width:70,_height:80,X:880,Y:2900,_fillStyle:'#775b86',_movesTo:{X:880,Y:3690,_velocityX:0,_velocityY:1500},_radiusStyle:[15,20,5,10]},
+                  {_id:'4.5',_width:50,_height:30,X:860,Y:2800,_fillStyle:'#775b86',_movesTo:{X:860,Y:3660,_velocityX:0,_velocityY:1500},_radiusStyle:[10,20,15,5]},
+                  {_id:'4.6',_width:30,_height:30,X:810,Y:2600,_fillStyle:'#775b86',_movesTo:{X:810,Y:3650,_velocityX:0,_velocityY:1500},_radiusStyle:[20,10,5,15]},
                   {_id:'5',_width:40,_height:60,X:1110,Y:3740,_fillStyle:'#582970'},
                   {_id:'6',_width:50,_height:10,X:1105,Y:3739,_fillStyle:'#d10c0c',_radiusStyle:[10,10,0,0],_actionable:{_message:'PLTF_MOVE:7'}},
                   {_id:'6.1',_width:50,_height:10,X:1105,Y:3739,_actionable:{_message:'PLTF_DESTROY:4.1'}},
@@ -161,19 +163,19 @@ game.levels.createLevels = function () {
                   {_id:'6.5',_width:50,_height:10,X:1105,Y:3739,_actionable:{_message:'PLTF_DESTROY:4.5'}},
                   {_id:'6.6',_width:50,_height:10,X:1105,Y:3739,_actionable:{_message:'PLTF_DESTROY:4.6'}},
                   {_id:'7',_width:100,_height:60,X:750,Y:3750,_movesTo:{X:200,Y:3750,_velocityX:-250,_velocityY:0}},
-                  {_id:'8',_width:120,_height:20,X:1080,Y:3700,_fillStyle:'#582970',_movesTo:{X:1160,Y:3740,_velocityX:100,_velocityY:0}},
+                  {_id:'8',_width:140,_height:20,X:1060,Y:3680,_fillStyle:'#582970',_movesTo:{X:960,Y:3740,_velocityX:100,_velocityY:0},_radiusStyle:[10,10,0,0]},
                   {_id:'9',_width:20,_height:100,X:1060,Y:3700,_fillStyle:'#582970'},
                   {_id:'9',_width:20,_height:100,X:1180,Y:3700,_fillStyle:'#582970'},
                   {_id:'11',_width:50,_height:50,X:1350,Y:3750,_image:game.images.jump,_autoJumpForce:2000},
                   {_id:'12',_width:50,_height:50,X:1540,Y:3450,_image:game.images.jump,_autoJumpForce:2000},
                   {_id:'13',_width:50,_height:50,X:1730,Y:3150,_image:game.images.jump,_autoJumpForce:2000},
                   {_id:'14',_width:50,_height:300,X:1540,Y:3500,_fillStyle:'#582970'},
-                  {_id:'15',_width:190,_height:30,X:1590,Y:3580,_fillStyle:'#582970'},
+                  {_id:'15',_width:190,_height:30,X:1590,Y:3580,_fillStyle:game.patterns.violetBlockCircle},
                   {_id:'16',_width:150,_height:10,X:1610,Y:3610,_fillStyle:'#d10c0c',_radiusStyle:[0,0,10,10],_actionable:{_message:'PLTF_MOVE:8'}},
                   {_id:'17',_width:50,_height:400,X:1730,Y:3200,_fillStyle:'#582970'},
-                  {_id:'18',_width:190,_height:30,X:1780,Y:3280,_fillStyle:'#582970'},
+                  {_id:'18',_width:190,_height:30,X:1780,Y:3280,_fillStyle:game.patterns.violetBlockCircle},
                   {_id:'19',_width:50,_height:430,X:1950,Y:2880,_fillStyle:'#582970'},
-                  {_id:'20',_width:50,_height:50,X:2150,Y:3750,_image:game.images.jump,_autoJumpForce:3200},
+                  {_id:'20',_width:50,_height:50,X:2300,Y:3750,_image:game.images.jump,_autoJumpForce:3200,_pushable:{_Xmin:1900,_Xmax:2400,_Xfall:10000,_Yfall:0,_fallSide:'right'}},
                   {_id:'21',_width:200,_height:3000,X:2500,Y:800,_fillStyle:'#582970'}],
       _player:{X:300,Y:3500},
       _numbers:[{_id:'72',X:400,Y:3765,
