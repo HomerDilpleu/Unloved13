@@ -247,7 +247,7 @@ stringsToUglify+=['violetBlockLosangeBeziers','violetBlockBright','violetBlockCi
 stringsToUglify+=['legsIdle','legsWalk']
 
 # instruments.js
-stringsToUglify+=['instruments','kick','snare','brass','piano']
+stringsToUglify+=['instruments','kick','snare','brass','piano','steps','explosion','superJump']
 
 # levels.js
 stringsToUglify+=['initLevel','_level','_platforms','_numbers','_backgrounds','_player','_victory','_camera']
@@ -293,7 +293,7 @@ stringsToUglify+=['generator','_param','_nbParticles','_size','_fillStyle','_con
 # player.js
 stringsToUglify+=['updatePhysics','player','ControllerLeft','ControllerRight','ControllerUp','ControllerDown','collidesRight','collidesLeft','collidesUp','collidesDown','HitBoxSize']
 stringsToUglify+=['hitBoxRight','hitBoxLeft','hitBoxUp','hitBoxDown','moveForce','moveForceWhenNoTouching','jumpForce','maxVelocity','frictionRate']
-stringsToUglify+=['accelerationX','accelerationY','velocityX','velocityY','_eye','_legs','lastX','lastY','lastJump']
+stringsToUglify+=['accelerationX','accelerationY','velocityX','velocityY','_eye','_legs','lastX','lastY','lastJump','_lastLegSound']
 
 outputFile='main.js'
 

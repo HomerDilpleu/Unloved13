@@ -42,6 +42,7 @@ game.sprites.player.init = function() {
     // Legs
     this._legs = game.sprites.legs.cloneCreate()
     mge.animation.activateOwnCloneAnimation(this._legs)
+    this._lastLegSound = Date.now()
     
 }
 
@@ -180,5 +181,11 @@ game.sprites.player.drawFunction = function (ctx) {
     this._legs.scaleX = 1
     if (!(this.ControllerRight || this.ControllerLeft)) {this._legs._curAnimation = 'idle'}
     if (this.ControllerLeft) {this._legs.scaleX = -1}
+
+    // Legs sound
+    if (this._legs._curAnimation == 'walk' && Date.now() - this._lastLegSound > 190 && this.collidesDown) {
+        game.instruments.steps.play(261, mge.audio.currentAudioTime,0.2,7)
+        this._lastLegSound = Date.now()
+    }
 }
 

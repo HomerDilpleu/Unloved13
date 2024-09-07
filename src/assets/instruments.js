@@ -69,6 +69,19 @@ game.instruments.brass = {
     }
 }
 
+
+game.instruments.steps = {
+    play: function (_frequency, _startTime, _duration, _volume) {
+        let _synthConfig = {volumeADSR: {a:0.01, d:0.3, s:0, r:0, minValue:0, maxValue: _volume},
+                            oscType:'sine',
+                            pitchADSR: {a:0.01, d:0.3, s:0, r:0, minValue:130, maxValue: 260}
+                        }
+        if (!isNaN(_frequency)) { 
+            mge.audio.playSound(_synthConfig, 100, _startTime, _duration, _volume)
+        }
+    }
+}
+
 // Effects
 game.instruments.explosion = {
     volumeADSR: {a:0.01, d:0.3, s:0.2, r:0.2, minValue:0, maxValue: 20},
