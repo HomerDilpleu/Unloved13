@@ -19,16 +19,16 @@ game.scenes.cinematic.start = function() {
         _fillStyle:['#582970','#a26ac8','white']})
 
     // Level up sound
-    game.instruments.brass.play(261, mge.audio.currentAudioTime,0.2,1)
-    game.instruments.brass.play(330, mge.audio.currentAudioTime,0.2,1)
-    game.instruments.brass.play(261, mge.audio.currentAudioTime+0.2,0.2,1)
-    game.instruments.brass.play(330, mge.audio.currentAudioTime+0.2,0.2,1)
-    game.instruments.brass.play(330, mge.audio.currentAudioTime+0.4,0.2,1)
-    game.instruments.brass.play(392, mge.audio.currentAudioTime+0.4,0.2,1)
-    game.instruments.brass.play(330, mge.audio.currentAudioTime+0.6,0.2,1)
-    game.instruments.brass.play(392, mge.audio.currentAudioTime+0.6,0.2,1)
-    game.instruments.brass.play(392, mge.audio.currentAudioTime+0.8,0.4,1)
-    game.instruments.brass.play(523, mge.audio.currentAudioTime+0.8,0.4,1)
+    game.instruments.brass.play(261, mge.audio.currentAudioTime,0.2,0.9)
+    game.instruments.brass.play(330, mge.audio.currentAudioTime,0.2,0.9)
+    game.instruments.brass.play(261, mge.audio.currentAudioTime+0.2,0.2,0.9)
+    game.instruments.brass.play(330, mge.audio.currentAudioTime+0.2,0.2,0.9)
+    game.instruments.brass.play(330, mge.audio.currentAudioTime+0.4,0.2,0.9)
+    game.instruments.brass.play(392, mge.audio.currentAudioTime+0.4,0.2,0.9)
+    game.instruments.brass.play(330, mge.audio.currentAudioTime+0.6,0.2,0.9)
+    game.instruments.brass.play(392, mge.audio.currentAudioTime+0.6,0.2,0.9)
+    game.instruments.brass.play(392, mge.audio.currentAudioTime+0.8,0.4,0.9)
+    game.instruments.brass.play(523, mge.audio.currentAudioTime+0.8,0.4,0.9)
 }
 
 //////////////////////
