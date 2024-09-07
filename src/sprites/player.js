@@ -139,16 +139,16 @@ game.sprites.player.update = function () {
     // Elapsed time
     let elapsedTime = Date.now()-this.lastFrame
     // Nb updates to calculate if FPS is very low
-    let nbUpdates = Math.round(elapsedTime/17)
+    //let nbUpdates = Math.round(elapsedTime/17)
 
     // If elapsed time > 17ms (equivalent to 60 fps)
     if (elapsedTime>=0.017) {
         // Reset lastFrame time
         this.lastFrame = Date.now()
         // Update pyhiscs for 17ms
-        for (let i = 0; i < nbUpdates; i++) {
+        //for (let i = 0; i < nbUpdates; i++) {
             this.updatePhysics(0.017)
-        }
+        //}
     }
 
     // Update Victory conditions
