@@ -184,7 +184,7 @@ game.sprites.player.drawFunction = function (ctx) {
 
     // Legs sound
     if (this._legs._curAnimation == 'walk' && Date.now() - this._lastLegSound > 190 && this.collidesDown) {
-        game.instruments.steps.play(261, mge.audio.currentAudioTime,0.2,7)
+        game.instruments.steps.play(261, mge.audio.currentAudioTime,0.2,3)
         this._lastLegSound = Date.now()
     }
 }

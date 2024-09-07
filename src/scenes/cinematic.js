@@ -51,10 +51,11 @@ game.scenes.cinematic.update = function() {
 game.scenes.cinematic.draw = function() {
 
     // Text box
-    if (game.variables.curlevel == 1) {game.sprites.textBox._text='TUTO COMPLETED!'}
-    else if (game.variables.curlevel == 2) {game.sprites.textBox._text='GREAT, NUMBER 56 IS NO LONGER SCARED BY YOU!!'}
-    else if (game.variables.curlevel == 3) {game.sprites.textBox._text='CONGRATULATIONS, NUMBER 45 IS NOW YOUR FRIEND!'}
-    else {game.sprites.textBox._text = 'MORE LEVELS TO COME...'}
+    if (game.variables.curlevel == 1) {game.sprites.textBox._text='TUTORIAL COMPLETE!'}
+    else if (game.variables.curlevel == 2) {game.sprites.textBox._text='NUMBER 56 IS NO LONGER SCARED OF YOU!!'}
+    else if (game.variables.curlevel == 3) {game.sprites.textBox._text='NUMBER 72 IS NOW YOUR FRIEND!'}
+    else if (game.variables.curlevel == 4) {game.sprites.textBox._text='NUMBER 45 IS GRATEFUL!'}
+    else {game.sprites.textBox._text = 'NUMBER 13 YOU NOW HAVE REAL FRIENDS!'}
 
     game.sprites.textBox.x=mge.game.width/2
     game.sprites.textBox.y=100
