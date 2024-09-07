@@ -134,8 +134,10 @@ game.levels.createLevels = function () {
     _camera:{X:2300,Y:3200}})*/
     // LEVEL 4
     game.levels.push({
-      _backgrounds:[],
+      _backgrounds:[{_id:'A',_width:5000,_height:1500,X:0,Y:3300,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
+                    {_id:'B',_width:7000,_height:1500,X:0,Y:3400,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2}],
       _platforms:[{_id:'1',_width:1100,_height:30,X:-300,Y:3600,_fillStyle:'#582970'},
+                  {_id:'1.0',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'TEXT_BOX:NUMBER 72 IS STUCKED, HELP HIM TO GO OUT!:640:50'}},
                   {_id:'1.1',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.1'}},
                   {_id:'1.2',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.2'}},
                   {_id:'1.3',_width:1100,_height:30,X:-300,Y:3600,_actionable:{_message:'PLTF_MOVE:4.3'}},
@@ -158,7 +160,7 @@ game.levels.createLevels = function () {
                   {_id:'6.4',_width:50,_height:10,X:1105,Y:3739,_actionable:{_message:'PLTF_DESTROY:4.4'}},
                   {_id:'6.5',_width:50,_height:10,X:1105,Y:3739,_actionable:{_message:'PLTF_DESTROY:4.5'}},
                   {_id:'6.6',_width:50,_height:10,X:1105,Y:3739,_actionable:{_message:'PLTF_DESTROY:4.6'}},
-                  {_id:'7',_width:100,_height:60,X:750,Y:3750,_movesTo:{X:200,Y:3750,_velocityX:-300,_velocityY:0}},
+                  {_id:'7',_width:100,_height:60,X:750,Y:3750,_movesTo:{X:200,Y:3750,_velocityX:-250,_velocityY:0}},
                   {_id:'8',_width:120,_height:20,X:1080,Y:3700,_fillStyle:'#582970',_movesTo:{X:1160,Y:3740,_velocityX:100,_velocityY:0}},
                   {_id:'9',_width:20,_height:100,X:1060,Y:3700,_fillStyle:'#582970'},
                   {_id:'9',_width:20,_height:100,X:1180,Y:3700,_fillStyle:'#582970'},
@@ -170,8 +172,8 @@ game.levels.createLevels = function () {
                   {_id:'16',_width:150,_height:10,X:1610,Y:3610,_fillStyle:'#d10c0c',_radiusStyle:[0,0,10,10],_actionable:{_message:'PLTF_MOVE:8'}},
                   {_id:'17',_width:50,_height:400,X:1730,Y:3200,_fillStyle:'#582970'},
                   {_id:'18',_width:190,_height:30,X:1780,Y:3280,_fillStyle:'#582970'},
-                  {_id:'19',_width:50,_height:450,X:1970,Y:2860,_fillStyle:'#582970'},
-                  {_id:'20',_width:50,_height:50,X:2200,Y:3750,_image:game.images.jump,_autoJumpForce:3200},
+                  {_id:'19',_width:50,_height:430,X:1950,Y:2880,_fillStyle:'#582970'},
+                  {_id:'20',_width:50,_height:50,X:2150,Y:3750,_image:game.images.jump,_autoJumpForce:3200},
                   {_id:'21',_width:200,_height:3000,X:2500,Y:800,_fillStyle:'#582970'}],
       _player:{X:300,Y:3500},
       _numbers:[{_id:'72',X:400,Y:3765,
