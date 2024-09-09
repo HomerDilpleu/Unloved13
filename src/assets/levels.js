@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-/*  game.levels.push({
+  game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -183,12 +183,13 @@ game.levels.createLevels = function () {
       _bodyFill:'#582970'}],
     _victory:{_plt:'5',_num:'Player'},
     _camera:{X:2300,Y:3200}})
-*/
+
 
     // LEVEL 5
 game.levels.push({
-  _backgrounds:[],
+  _backgrounds:[{_id:'A',_width:4300,_height:1800,X:800,Y:5,_scrollRatio:1,_fillStyle:game.patterns.violetBlockBright}],
   _platforms:[{_id:'1',_width:500,_height:30,X:100,Y:0,_fillStyle:'#582970'},
+              {_id:'1.1',_width:500,_height:30,X:100,Y:0,_actionable:{_message:'TEXT_BOX:IT SEEMS THERE IS NOBODY TO HELP THERE:640:50'}},
               {_id:'2',_width:800,_height:30,X:600,Y:-120,_fillStyle:'#582970'},
               {_id:'3',_width:1500,_height:30,X:-400,Y:-240,_fillStyle:'#582970'},
               {_id:'4',_width:30,_height:120,X:1100,Y:-240,_fillStyle:'#582970'},
@@ -201,6 +202,7 @@ game.levels.push({
               {_id:'11',_width:900,_height:30,X:1400,Y:0,_fillStyle:'#582970'},
               {_id:'12',_width:30,_height:150,X:2200,Y:-120,_fillStyle:'#582970'},
               {_id:'13',_width:600,_height:30,X:1600,Y:-120,_fillStyle:'#582970'},
+              {_id:'13.1',_width:600,_height:30,X:1600,Y:-120,_actionable:{_message:'TEXT_BOX:BUT WHERE ARE THEY ALL?:640:50'}},
               {_id:'14',_width:600,_height:30,X:1900,Y:-240,_fillStyle:'#582970'},
               {_id:'15',_width:600,_height:30,X:1900,Y:120,_fillStyle:'#582970'},
               {_id:'16',_width:300,_height:30,X:2200,Y:360,_fillStyle:'#582970'},
@@ -212,12 +214,13 @@ game.levels.push({
               {_id:'22',_width:300,_height:30,X:700,Y:600,_fillStyle:'#582970'},
               {_id:'23',_width:30,_height:150,X:700,Y:600,_fillStyle:'#582970'},
               {_id:'24',_width:600,_height:30,X:1700,Y:600,_fillStyle:'#582970'},
-              {_id:'25',_width:3300,_height:300,X:-800,Y:720,_fillStyle:'#582970'},
-              {_id:'26',_width:30,_height:1700,X:-800,Y:-700,_fillStyle:'#582970'},
-              {_id:'27',_width:30,_height:1700,X:2500,Y:-700,_fillStyle:'#582970'},
-              {_id:'25.1',_width:250,_height:30,X:-190,Y:720,_fillStyle:'red'}],
-//  _player:{X:400,Y:-100},
-  _player:{X:1400,Y:300},
+              {_id:'25',_width:3300,_height:300,X:-780,Y:725,_fillStyle:game.patterns.violetBlock},
+              {_id:'26',_width:630,_height:1700,X:-1400,Y:-700,_fillStyle:game.patterns.violetBlock},
+              {_id:'27',_width:600,_height:2000,X:2505,Y:-700,_fillStyle:game.patterns.violetBlock},
+              {_id:'25.1',_width:250,_height:30,X:-190,Y:720,_actionable:{_message:'END'}},
+              {_id:'25.2',_width:250,_height:30,X:-190,Y:720,_actionable:{_message:'TEXT_BOX:A PARTY FOR YOU LOVED 13!:640:50'}},
+              {_id:'30',_width:50,_height:50,X:-600,Y:670,_image:game.images.jump}],
+  _player:{X:400,Y:-100},
   _numbers:[{_id:'72',X:-210,Y:685,
             _Xmin:-500,_Xmax:-200,_velocityX:50,
             _bodyFill:'#582970'},
@@ -227,7 +230,7 @@ game.levels.push({
             {_id:'56',X:-400,Y:685,
             _Xmin:-500,_Xmax:-200,_velocityX:30,
             _bodyFill:'#582970'}],
-  _victory:{_plt:'toto',_num:'Player'},
+  _victory:{_plt:'30',_num:'Player'},
   _camera:{X:400,Y:0}})
 
 

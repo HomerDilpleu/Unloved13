@@ -28,7 +28,7 @@ game.scenes.main.start = function() {
 
         // Create textBox
         game.sprites.textBox.init()
-      
+
         // Update state
         game.state = 'running'
 }
@@ -77,6 +77,16 @@ game.scenes.main.update = function() {
                         game.sprites.textBox.y = _message.split(':')[3]
                         game.variables.messages=game.variables.messages.filter(e => e !== _message)
                 }
+                // END OF GAME PARTICLES
+                if (_message=='END') {
+                        game.sprites.particle.generator({
+                                _nbParticles:5,
+                                _x:mge.game.width/2,
+                                _y:250,
+                                _vX:20,
+                                _size:8,
+                                _fillStyle:['red','blue','yellow']})
+                        }
               }
 
         // Check victory condition
