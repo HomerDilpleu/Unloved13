@@ -38,7 +38,7 @@ game.levels.initLevel = function (_level) {
 
 game.levels.createLevels = function () {
   // LEVEL 1
-  game.levels.push({
+/*  game.levels.push({
         _backgrounds:[{_id:'B',_width:5000,_height:1500,X:3000,Y:-600,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
                       {_id:'C',_width:7000,_height:1500,X:3000,Y:-510,_scrollRatio:0.75,_fillStyle:game.patterns.violetBkg2},
                       {_id:'D',_width:200,_height:100,X:2400,Y:-48,_scrollRatio:1,_image:game.images.numberLand},
@@ -183,4 +183,52 @@ game.levels.createLevels = function () {
       _bodyFill:'#582970'}],
     _victory:{_plt:'5',_num:'Player'},
     _camera:{X:2300,Y:3200}})
+*/
+
+    // LEVEL 5
+game.levels.push({
+  _backgrounds:[],
+  _platforms:[{_id:'1',_width:500,_height:30,X:100,Y:0,_fillStyle:'#582970'},
+              {_id:'2',_width:800,_height:30,X:600,Y:-120,_fillStyle:'#582970'},
+              {_id:'3',_width:1500,_height:30,X:-400,Y:-240,_fillStyle:'#582970'},
+              {_id:'4',_width:30,_height:120,X:1100,Y:-240,_fillStyle:'#582970'},
+              {_id:'5',_width:700,_height:30,X:-600,Y:-120,_fillStyle:'#582970'},
+              {_id:'6',_width:400,_height:30,X:-800,Y:0,_fillStyle:'#582970'},
+              {_id:'7',_width:500,_height:30,X:-400,Y:120,_fillStyle:'#582970'},
+              {_id:'8',_width:500,_height:30,X:600,Y:120,_fillStyle:'#582970'},
+              {_id:'9',_width:30,_height:360,X:1400,Y:-120,_fillStyle:'#582970'},
+              {_id:'10',_width:3000,_height:30,X:-800,Y:240,_fillStyle:'#582970'},
+              {_id:'11',_width:900,_height:30,X:1400,Y:0,_fillStyle:'#582970'},
+              {_id:'12',_width:30,_height:150,X:2200,Y:-120,_fillStyle:'#582970'},
+              {_id:'13',_width:600,_height:30,X:1600,Y:-120,_fillStyle:'#582970'},
+              {_id:'14',_width:600,_height:30,X:1900,Y:-240,_fillStyle:'#582970'},
+              {_id:'15',_width:600,_height:30,X:1900,Y:120,_fillStyle:'#582970'},
+              {_id:'16',_width:300,_height:30,X:2200,Y:360,_fillStyle:'#582970'},
+              {_id:'17',_width:300,_height:30,X:1900,Y:480,_fillStyle:'#582970'},
+              {_id:'18',_width:600,_height:30,X:1300,Y:360,_fillStyle:'#582970'},
+              {_id:'19',_width:30,_height:150,X:1300,Y:360,_fillStyle:'#582970'},
+              {_id:'20',_width:300,_height:30,X:1000,Y:480,_fillStyle:'#582970'},
+              {_id:'21',_width:30,_height:150,X:1000,Y:480,_fillStyle:'#582970'},
+              {_id:'22',_width:300,_height:30,X:700,Y:600,_fillStyle:'#582970'},
+              {_id:'23',_width:30,_height:150,X:700,Y:600,_fillStyle:'#582970'},
+              {_id:'24',_width:600,_height:30,X:1700,Y:600,_fillStyle:'#582970'},
+              {_id:'25',_width:3300,_height:300,X:-800,Y:720,_fillStyle:'#582970'},
+              {_id:'26',_width:30,_height:1700,X:-800,Y:-700,_fillStyle:'#582970'},
+              {_id:'27',_width:30,_height:1700,X:2500,Y:-700,_fillStyle:'#582970'},
+              {_id:'25.1',_width:250,_height:30,X:-190,Y:720,_fillStyle:'red'}],
+//  _player:{X:400,Y:-100},
+  _player:{X:1400,Y:300},
+  _numbers:[{_id:'72',X:-210,Y:685,
+            _Xmin:-500,_Xmax:-200,_velocityX:50,
+            _bodyFill:'#582970'},
+            {_id:'45',X:-300,Y:685,
+            _Xmin:-500,_Xmax:-200,_velocityX:90,
+            _bodyFill:'#582970'},
+            {_id:'56',X:-400,Y:685,
+            _Xmin:-500,_Xmax:-200,_velocityX:30,
+            _bodyFill:'#582970'}],
+  _victory:{_plt:'toto',_num:'Player'},
+  _camera:{X:400,Y:0}})
+
+
 }
