@@ -98,6 +98,7 @@ game.levels.createLevels = function () {
                _bodyFill:'#582970'}],
     _victory:{_plt:'5',_num:'56'},
     _camera:{X:700,Y:300}})
+    
     // LEVEL 3
     game.levels.push({
       _backgrounds:[{_id:'A',_width:5000,_height:1500,X:0,Y:3200,_scrollRatio:0.5,_fillStyle:game.patterns.violetBkg1},
@@ -184,15 +185,16 @@ game.levels.createLevels = function () {
     _victory:{_plt:'5',_num:'Player'},
     _camera:{X:2300,Y:3200}})
 
-
     // LEVEL 5
 game.levels.push({
   _backgrounds:[{_id:'A',_width:4300,_height:1800,X:800,Y:5,_scrollRatio:1,_fillStyle:game.patterns.violetBlockBright}],
   _platforms:[{_id:'1',_width:500,_height:30,X:100,Y:0,_fillStyle:'#582970',_radiusStyle:10},
               {_id:'1.1',_width:500,_height:30,X:100,Y:0,_actionable:{_message:'TEXT_BOX:IT SEEMS THERE IS NOBODY TO HELP THERE:640:50'}},
               {_id:'2',_width:810,_height:30,X:600,Y:-120,_fillStyle:'#582970',_radiusStyle:10},
+              {_id:'2.1',_width:100,_height:10,X:1065,Y:-90,_fillStyle:'#d10c0c',_radiusStyle:[0,0,10,10],_actionable:{_message:'PLTF_DESTROY:4.1'}},
               {_id:'3',_width:1510,_height:30,X:-400,Y:-240,_fillStyle:'#582970',_radiusStyle:10},
               {_id:'4',_width:30,_height:120,X:1100,Y:-240,_fillStyle:'#582970'},
+              {_id:'4.1',_width:30,_height:200,X:1100,Y:-400,_fillStyle:'#582970'},
               {_id:'5',_width:700,_height:30,X:-600,Y:-120,_fillStyle:'#582970',_radiusStyle:10},
               {_id:'6',_width:400,_height:30,X:-800,Y:0,_fillStyle:'#582970',_radiusStyle:10},
               {_id:'7',_width:500,_height:30,X:-400,Y:120,_fillStyle:'#582970',_radiusStyle:10},
