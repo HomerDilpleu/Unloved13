@@ -55,7 +55,7 @@ game.scenes.cinematic.draw = function() {
     else if (game.variables.curlevel == 2) {game.sprites.textBox._text='NUMBER 56 IS NO LONGER SCARED OF YOU!!'}
     else if (game.variables.curlevel == 3) {game.sprites.textBox._text='NUMBER 72 IS NOW YOUR FRIEND!'}
     else if (game.variables.curlevel == 4) {game.sprites.textBox._text='NUMBER 45 IS GRATEFUL!'}
-    else {game.sprites.textBox._text = 'NUMBER 13 YOU NOW HAVE REAL FRIENDS!'}
+    else {game.sprites.textBox._text = 'CONGRATS NUMBER 13 YOU NOW HAVE REAL FRIENDS!'}
 
     game.sprites.textBox.x=mge.game.width/2
     game.sprites.textBox.y=100
