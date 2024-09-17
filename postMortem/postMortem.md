@@ -23,7 +23,7 @@ On August 15th, I started to create the platformer engine with:
 - a "platform" sprite that basically manages collisions with the player (more preciseluy, with 4 hit boxes: lefft, right, up and down)
 The collision
 
-![](20240818_081351.mp4)
+https://github.com/user-attachments/assets/22a94c8f-a110-40c7-98e5-95b5c0cae954
 
 
 # Before the jam
